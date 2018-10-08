@@ -8,7 +8,7 @@ International Legislation as Code exploration.
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ServiceInnovationLab/piccolo.png?columns=all)](https://waffle.io/ServiceInnovationLab/piccolo?utm_source=badge)
 
 # Demo URL:
-https://serviceinnovationlab.github.io/piccolo/
+https://serviceinnovationlab.github.io/Piccolo/
 
 ## How to get the project running locally
 
