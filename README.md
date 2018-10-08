@@ -7,6 +7,9 @@ International Legislation as Code exploration.
 [![Test Coverage](https://api.codeclimate.com/v1/badges/af09d7f2ebde3d8dbbb5/test_coverage)](https://codeclimate.com/github/ServiceInnovationLab/Piccolo/test_coverage)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ServiceInnovationLab/piccolo.png?columns=all)](https://waffle.io/ServiceInnovationLab/piccolo?utm_source=badge)
 
+# Demo URL:
+https://serviceinnovationlab.github.io/piccolo/
+
 ## How to get the project running locally
 
 Clone the project
