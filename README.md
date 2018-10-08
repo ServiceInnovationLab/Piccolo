@@ -1,5 +1,10 @@
 # Picollo
-International Legislation as Code exploration.
+
+Cross juristiction demostration of Legislation as Code.  Work in Progress.
+
+The git repo contains a reactjs application, that can be configured to talk to Open Fisca instances. It presents questions for a user to answer. These are used to run a similation on openfisca to calculate pension eligibility in multiple countries. For the demostration we are using Israel, Uruguay, and Aotearoa.
+
+Work is tracked as github issues, but managed using [Waffle.io](https://waffle.io/ServiceInnovationLab/piccolo)
 
 [![Build Status](https://travis-ci.org/ServiceInnovationLab/piccolo.svg?branch=master)](https://travis-ci.org/ServiceInnovationLab/piccolo)
 [![AwesomeCode Status for ServiceInnovationLab/piccolo](https://awesomecode.io/projects/b9288192-4edc-48ff-be22-df713e36b465/status)](https://awesomecode.io/projects/94)
