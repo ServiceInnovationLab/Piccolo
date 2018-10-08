@@ -6,7 +6,7 @@ The git repo contains a reactjs application that can be configured to talk to Op
 Work is tracked as github issues, but managed using [Waffle.io](https://waffle.io/ServiceInnovationLab/piccolo)
 
 [![Build Status](https://travis-ci.org/ServiceInnovationLab/piccolo.svg?branch=master)](https://travis-ci.org/ServiceInnovationLab/piccolo)
-[![AwesomeCode Status for ServiceInnovationLab/Piccolo](https://awesomecode.io/projects/431b2572-acad-4e10-9cbd-2db7cf14276c/status)](https://awesomecode.io/projects/111)
+[![AwesomeCode Status for ServiceInnovationLab/Piccolo](https://awesomecode.io/projects/431b2572-acad-4e10-9cbd-2db7cf14276c/status)](https://awesomecode.io/repos/ServiceInnovationLab/Piccolo)
 [![Maintainability](https://api.codeclimate.com/v1/badges/af09d7f2ebde3d8dbbb5/maintainability)](https://codeclimate.com/github/ServiceInnovationLab/Piccolo/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/af09d7f2ebde3d8dbbb5/test_coverage)](https://codeclimate.com/github/ServiceInnovationLab/Piccolo/test_coverage)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ServiceInnovationLab/piccolo.png?columns=all)](https://waffle.io/ServiceInnovationLab/piccolo?utm_source=badge)
