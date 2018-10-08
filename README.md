@@ -1,5 +1,5 @@
 # Picollo
-International Legislation as Code exploration
+International Legislation as Code exploration.
 
 
 ## How to configure and run
