@@ -4,5 +4,5 @@ import App from '../components/App';
 
 const AppRouter = () => <BrowserRouter>
   <App />
-                        </BrowserRouter>;
+</BrowserRouter>;
 export default AppRouter;
