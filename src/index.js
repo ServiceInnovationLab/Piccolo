@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <HashRouter>
         <div>
-          <h1>Project Boilerplate</h1>
+          <h1>Piccolo</h1>
           <Route exact path="/" component={AppCon} />
         </div>
       </HashRouter>
