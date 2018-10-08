@@ -1,0 +1,50 @@
+{
+  "name": "ProjectBoilerplate",
+  "homepage": "https://ServiceInnovationLab.github.io/ProjectBoilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "git@github.com:ServiceInnovationLab/ProjectBoilerplate.git",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "gh-pages": "^2.0.1",
+    "react": "^16.5.2",
+    "react-async-script-loader": "^0.3.0",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "sinon": "^6.3.5"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "sass": "sass --watch src/styles/scss:src/styles/"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "eslint": "^5.6.1",
+    "eslint-config-google": "^0.10.0",
+    "eslint-plugin-react": "^7.11.0",
+    "expect": "^23.6.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/test-setup.js"
+  }
+}
