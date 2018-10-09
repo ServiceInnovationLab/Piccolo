@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import App from '../components/App';
 
-const AppRouter = () => <BrowserRouter>
+const AppRouter = () => (<BrowserRouter>
   <App />
-                        </BrowserRouter>;
+</BrowserRouter>);
 export default AppRouter;
