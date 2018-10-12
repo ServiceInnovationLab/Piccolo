@@ -25,3 +25,7 @@ Clone the project
 # Run Tests
 
 `npm run test`
+
+# Deploy
+
+`npm run deploy`
