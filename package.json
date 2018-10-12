@@ -1,9 +1,9 @@
 {
-  "name": "ProjectBoilerplate",
-  "homepage": "https://ServiceInnovationLab.github.io/ProjectBoilerplate",
+  "name": "Piccolo",
+  "homepage": "https://ServiceInnovationLab.github.io/Piccolo",
   "version": "0.1.0",
   "private": true,
-  "repository": "git@github.com:ServiceInnovationLab/ProjectBoilerplate.git",
+  "repository": "git@github.com:ServiceInnovationLab/Piccolo.git",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-preset-stage-2": "^6.24.1",
