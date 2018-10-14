@@ -4,6 +4,11 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+branches:
+  ignore:
+    - gh-pages
+
 jobs:
   test:
     docker:
@@ -40,9 +45,28 @@ jobs:
       - run: npm install
       - run: npm run build
 
+  deploy:
+    docker:
+      - image: circleci/node:9.11.2
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: npm install
+      - run: npm run deploy
+
 workflows:
   version: 2
   test-and-build:
     jobs:
       - test
       - build
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
