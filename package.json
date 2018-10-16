@@ -8,13 +8,15 @@
     "axios": "^0.18.0",
     "babel-preset-stage-2": "^6.24.1",
     "gh-pages": "^2.0.1",
+    "i": "^0.3.6",
     "react-async-script-loader": "^0.3.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
-    "sinon": "^6.3.5"
+    "sinon": "^6.3.5",
+    "styled-icons": "^3.3.0"
   },
   "scripts": {
     "predeploy": "npm run build",
