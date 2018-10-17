@@ -14,11 +14,15 @@ import { PageHeader, SectionHeader } from '../page/Header';
 import { PageFooter } from '../page/Footer';
 import { Form } from '../components/Form/Form';
 import { Field } from '../components/Form/Field';
+import { Madlib } from '../components/Madlib';
 import { IconCircle } from '../elements/Icon';
 
 class App extends Component {
   render() {
     return <Fragment>
+      <Container>
+        <Madlib />
+      </Container>
       <IconCircle value="62" />
       <IconCircle dark check />
       <PageHeader />

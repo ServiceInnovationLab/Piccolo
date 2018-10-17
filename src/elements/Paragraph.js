@@ -6,7 +6,7 @@ function sizing(props) {
   } else if(props.medium) {
     return '24px';
   } else if(props.large) {
-    return '36px';
+    return '34px';
   } else {
     return '22px';
   }
