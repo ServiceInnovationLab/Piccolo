@@ -56,6 +56,7 @@ const Field = props => (
       <TextField
         name={props.name}
         type={props.type}
+        onChange={(e => props.handleChange(e, props.name))}
         small
       />
     </TextFieldWrapper>}

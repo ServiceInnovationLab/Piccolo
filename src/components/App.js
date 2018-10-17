@@ -16,13 +16,28 @@ import MadLib from '../components/Madlib';
 import { IconCircle } from '../elements/Icon';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e, name) {
+    this.setState({[name]: e.target.value});
+  }
+
   render() {
     return <Fragment>
       <PageHeader />
       <main>
         <SectionOne />
-        <SectionTwo />
-        <SectionThree />
+        <SectionTwo
+          handleChange={this.handleChange}
+        />
+        <SectionThree
+          state={this.state}
+        />
       </main>
       <PageFooter />
     </Fragment>;
@@ -43,7 +58,7 @@ const SectionOne = () => <Section light>
   </Container>
 </Section>;
 
-const SectionTwo = () => <Section dark center>
+const SectionTwo = props => <Section dark center>
   <SectionHeader
     title="When can I get a pension"
     subtitle="Enter some details to see eligibility across nations"
@@ -54,27 +69,32 @@ const SectionTwo = () => <Section dark center>
         label="What is your age?"
         name="age"
         type="number"
+        handleChange={props.handleChange}
       />
       <Field
         label="Years worked"
         name="years_worked"
         type="number"
+        handleChange={props.handleChange}
       />
       <Field
         label="Years lived in the country"
         name="years_lived_in_country"
         type="number"
+        handleChange={props.handleChange}
       />
       <Field
         label="Number of children"
         name="number_of_children"
         type="number"
+        handleChange={props.handleChange}
       />
       <Field
         label="Gender"
         name="gender"
         type="radio"
         values={['male', 'female']}
+        handleChange={props.handleChange}
       />
       <Field
         label="Do you have a partner?"
@@ -88,9 +108,11 @@ const SectionTwo = () => <Section dark center>
   </Container>
 </Section>;
 
-const SectionThree = () => <Section light>
+const SectionThree = props => <Section light>
   <Container>
-    <MadLib />
+    <MadLib
+      values={props.state}
+    />
     <Grid>
       <Column>
         <H2>New Zealand</H2>

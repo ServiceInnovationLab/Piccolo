@@ -19,7 +19,7 @@ const MadLibWrapper = styled.div`
   }
 
   input[type=text] {
-    width: 100px;
+    width: 60px;
     background: #d9f8fa;
   }
 
@@ -36,13 +36,13 @@ const Input = styled.input.attrs({ type: 'text' })`
   }
 `;
 
-const MadLib = () => (
+const MadLib = props => (
   <MadLibWrapper>
     <Paragraph>I am</Paragraph>
-    <Input />
+    <Input value={props.values.age} />
     <Paragraph>years old,</Paragraph><br />
     <Paragraph>I have lived in the country for</Paragraph>
-    <Input />
+    <Input value={props.values.years_lived_in_country} />
     <Paragraph> years.</Paragraph>
   </MadLibWrapper>
 );
