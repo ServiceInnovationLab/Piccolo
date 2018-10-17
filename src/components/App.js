@@ -11,11 +11,13 @@ import { List, Item } from '../elements/List';
 import { Grid, Column } from '../elements/Grid';
 import { CreativeCommons } from './CreativeCommons';
 import { PageHeader } from '../page/Header';
+import { PageFooter } from '../page/Footer';
 
 class App extends Component {
   render() {
     return <Fragment>
       <PageHeader />
+      <PageFooter />
       <main>
         <Container>
           <Paragraph small>This is what small text looks like</Paragraph>
