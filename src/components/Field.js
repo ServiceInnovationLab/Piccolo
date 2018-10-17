@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import TextField from '../elements/TextField';
+import RadioGroup from '../elements/RadioGroup';
 
 const FieldWrapper = styled.div`
   margin: 25px 0;
@@ -24,7 +25,7 @@ const Label = styled.label`
     flex: 1;
     width: 147px;
     text-align: right;
-    padding-top: 10px;
+    padding-top: ${props => props.type === 'radio' ? '24px' : '10px'};
     > span {
       margin-right: 15px;
     }
@@ -47,16 +48,24 @@ const TextFieldWrapper = styled.div`
 
 const Field = props => (
   <FieldWrapper>
-    <Label htmlFor={props.name}>
+    <Label htmlFor={props.name} type={props.type}>
       {props.label && <span>{props.label}</span>}
     </Label>
-    <TextFieldWrapper>
+
+    {props.type === 'number' && <TextFieldWrapper>
       <TextField
         name={props.name}
         type={props.type}
         small
       />
-    </TextFieldWrapper>
+    </TextFieldWrapper>}
+
+    {props.type === 'radio' && <TextFieldWrapper>
+      <RadioGroup
+        values={props.values}
+        name={props.name}
+      />
+    </TextFieldWrapper>}
   </FieldWrapper>
 );
 
