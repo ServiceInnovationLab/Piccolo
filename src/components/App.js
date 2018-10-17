@@ -12,7 +12,7 @@ import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
 import Form from './Form';
 import Field from './Field';
-import MadLib from './MadLib';
+import MadLib from '../components/Madlib';
 import { IconCircle } from '../elements/Icon';
 
 class App extends Component {
