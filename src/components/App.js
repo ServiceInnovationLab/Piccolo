@@ -10,7 +10,7 @@ import { Paragraph } from '../elements/Paragraph';
 import { List, Item } from '../elements/List';
 import { Grid, Column } from '../elements/Grid';
 import { CreativeCommons } from './CreativeCommons';
-import { PageHeader } from '../page/Header';
+import { PageHeader, SectionHeader } from '../page/Header';
 import { PageFooter } from '../page/Footer';
 
 class App extends Component {
@@ -19,42 +19,47 @@ class App extends Component {
       <PageHeader />
       <PageFooter />
       <main>
-        <Container>
-          <Paragraph small>This is what small text looks like</Paragraph>
-          <Paragraph medium>This is what medium text looks like</Paragraph>
-          <Paragraph large>This is what large text looks like</Paragraph>
-          <Grid>
-            <Column>Column 1</Column>
-            <Column>Column 2</Column>
-            <Column>Column 3</Column>
-          </Grid>
-          <p>International Legislation as Code exploration</p>
-          <CreativeCommons label="Content about creative commons"/>
+        <Paragraph small>This is what small text looks like</Paragraph>
+        <Paragraph medium>This is what medium text looks like</Paragraph>
+        <Paragraph large>This is what large text looks like</Paragraph>
+        <Grid>
+          <Column>Column 1</Column>
+          <Column>Column 2</Column>
+          <Column>Column 3</Column>
+        </Grid>
+        <p>International Legislation as Code exploration</p>
+        <CreativeCommons label="Content about creative commons"/>
 
-          <Button>Calculate</Button>
+        <Button>Calculate</Button>
 
-          <List stripped>
-            <Item>About this website</Item>
-            <Item>Contact Us</Item>
-          </List>
+        <List stripped>
+          <Item>About this website</Item>
+          <Item>Contact Us</Item>
+        </List>
 
-          <Section dark>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-          </Section>
+        <Section dark>
+          <SectionHeader
+            title="When can I get a pension"
+            subtitle="Enter some details to see eligibility across nations"
+          />
+        </Section>
 
-          <Section light>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-          </Section>
+        <Section light>
+          <SectionHeader
+            title="When can I get a pension"
+            subtitle="Enter some details to see eligibility across nations"
+          />
+        </Section>
 
-          <Section grey>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-          </Section>
+        <Section grey>
+          <SectionHeader
+            title="When can I get a pension"
+            subtitle="Enter some details to see eligibility across nations"
+          />
+        </Section>
 
-          <TextField />
-        </Container>
+        <TextField />
+
       </main>
     </Fragment>;
   }
