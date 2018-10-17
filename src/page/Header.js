@@ -33,6 +33,7 @@ export const SectionHeader = props => (
     <Container>
       <H2>{props.title}</H2>
       <Paragraph medium>{props.subtitle}</Paragraph>
+      <hr />
     </Container>
   </Fragment>
 );
