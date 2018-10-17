@@ -12,14 +12,36 @@ const _CreativeCommons = styled(CreativeCommons)`
 `;
 
 const _Check = styled(Check)`
-  color: #000;
-  font-size: 24px;
-  height: 24px;
+  color: #fff;
+  font-size: 40px;
+  height: 40px;
 `;
 
 export const Icon = props => (
   <Fragment>
     {props.creative_commons && <_CreativeCommons />}
-    {props.check && <_Check />}
   </Fragment>
+);
+
+const Circle = styled.div`
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: ${props => props.dark ? '#2e4554' : '#50a3d7'}
+  > span {
+    width: 100px;
+    display: inline-block;
+    font-size: 45px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+  }
+`;
+
+export const IconCircle = props => (
+  <Circle {...props}>
+    {props.value && <span>{props.value}</span>}
+    {props.check && <span><_Check /></span>}
+  </Circle>
 );

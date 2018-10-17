@@ -14,10 +14,13 @@ import { PageHeader, SectionHeader } from '../page/Header';
 import { PageFooter } from '../page/Footer';
 import { Form } from '../components/Form/Form';
 import { Field } from '../components/Form/Field';
+import { IconCircle } from '../elements/Icon';
 
 class App extends Component {
   render() {
     return <Fragment>
+      <IconCircle value="62" />
+      <IconCircle dark check />
       <PageHeader />
       <PageFooter />
       <main>
