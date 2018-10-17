@@ -51,18 +51,23 @@ const SectionTwo = () => <Section dark center>
   <Container>
     <Form>
       <Field
+        label="What is your age?"
+        name="age"
+        type="number"
+      />
+      <Field
         label="Years worked"
-        name="afield"
+        name="years_worked"
         type="number"
       />
       <Field
         label="Years lived in the country"
-        name="afield1"
+        name="years_lived_in_country"
         type="number"
       />
       <Field
         label="Number of children"
-        name="afield2"
+        name="number_of_children"
         type="number"
       />
       <Field
