@@ -18,7 +18,11 @@ export const Section = styled.section`
   font-family: sans-serif;
   padding: 55px 0;
   @media(min-width: 1024px) {
-    text-align: center;
+    text-align: ${props => props.center ? 'center' : 'left'};
+  }
+
+  p:first-child {
+    margin-top: 0;
   }
 
   h2 {

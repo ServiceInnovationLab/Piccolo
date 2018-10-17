@@ -20,6 +20,7 @@ const MadlibWrapper = styled.div`
 
   input[type=text] {
     width: 100px;
+    background: #d9f8fa;
   }
 
 `;

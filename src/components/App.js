@@ -2,14 +2,12 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/index';
 import '../styles/App.css';
-import { TextField } from '../elements/Input';
 import { Button } from '../elements/Button';
 import { Section } from '../elements/Section';
 import { Container } from '../elements/Container';
 import { Paragraph } from '../elements/Paragraph';
-import { List, Item } from '../elements/List';
+import { H2 } from '../elements/Headings';
 import { Grid, Column } from '../elements/Grid';
-import { CreativeCommons } from './CreativeCommons';
 import { PageHeader, SectionHeader } from '../page/Header';
 import { PageFooter } from '../page/Footer';
 import { Form } from '../components/Form/Form';
@@ -20,33 +18,22 @@ import { IconCircle } from '../elements/Icon';
 class App extends Component {
   render() {
     return <Fragment>
-      <Container>
-        <Madlib />
-      </Container>
-      <IconCircle value="62" />
-      <IconCircle dark check />
       <PageHeader />
-      <PageFooter />
       <main>
-        <Paragraph small>This is what small text looks like</Paragraph>
-        <Paragraph medium>This is what medium text looks like</Paragraph>
-        <Paragraph large>This is what large text looks like</Paragraph>
-        <Grid>
-          <Column>Column 1</Column>
-          <Column>Column 2</Column>
-          <Column>Column 3</Column>
-        </Grid>
-        <p>International Legislation as Code exploration</p>
-        <CreativeCommons label="Content about creative commons"/>
+        <Section light>
+          <Container>
+            <Paragraph small>
+              Welcome to the piccolo legislation as code demonstrator.
+            </Paragraph>
+            <Paragraph small>
+              There are many rules about how we do things around the world. Some of these are coded into law, such as voting ages, tax rates, and access to services. Sometimes these rules can be really complicated for a human to sit down and work out, but really easy for a machine to do.</Paragraph>
 
-        <Button>Calculate</Button>
-
-        <List stripped>
-          <Item>About this website</Item>
-          <Item>Contact Us</Item>
-        </List>
-
-        <Section dark>
+            <Paragraph small>
+              Legislation as code is when we turn those rules into things machines can use so they can work things out for us.
+            </Paragraph>
+          </Container>
+        </Section>
+        <Section dark center>
           <SectionHeader
             title="When can I get a pension"
             subtitle="Enter some details to see eligibility across nations"
@@ -76,27 +63,51 @@ class App extends Component {
                 label="Do you have a partner"
                 name="afield4"
               />
+              <Button>Calculate</Button>
             </Form>
+
           </Container>
         </Section>
-
         <Section light>
-          <SectionHeader
-            title="When can I get a pension"
-            subtitle="Enter some details to see eligibility across nations"
-          />
+          <Container>
+            <Madlib />
+            <Grid>
+              <Column>
+                <H2>New Zealand</H2>
+                <Paragraph medium>You are eligible for a pension in</Paragraph>
+                <IconCircle value="62" />
+                <Paragraph small>
+                  If you are a citizen or permanent resident, not on ACC.
+                  If you have a partner you can share your 'pension' with them if they aren't eligible
+                </Paragraph>
+              </Column>
+              <Column>
+                <H2>Israel</H2>
+                <Paragraph medium>You are eligible for a pension in</Paragraph>
+                <IconCircle value="62" />
+                <Paragraph small>
+                  Each child (up to max of 5) counts as a 'year of work'.
+                </Paragraph>
+                <Paragraph small>
+                  You must have contributed to your pension for 30 years or more.
+                </Paragraph>
+              </Column>
+              <Column>
+                <H2>Uruguay</H2>
+                <Paragraph medium>You are eligible now</Paragraph>
+                <IconCircle dark check />
+                <Paragraph small>
+                  Each child (up to max of 5) counts as a 'year of work'.
+                </Paragraph>
+                <Paragraph small>
+                  You must have contributed to your pension for 30 years or more.
+                </Paragraph>
+              </Column>
+            </Grid>
+          </Container>
         </Section>
-
-        <Section grey>
-          <SectionHeader
-            title="When can I get a pension"
-            subtitle="Enter some details to see eligibility across nations"
-          />
-        </Section>
-
-        <TextField />
-
       </main>
+      <PageFooter />
     </Fragment>;
   }
 }
