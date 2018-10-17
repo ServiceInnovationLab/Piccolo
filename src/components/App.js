@@ -12,6 +12,8 @@ import { Grid, Column } from '../elements/Grid';
 import { CreativeCommons } from './CreativeCommons';
 import { PageHeader, SectionHeader } from '../page/Header';
 import { PageFooter } from '../page/Footer';
+import { Form } from '../components/Form/Form';
+import { Field } from '../components/Form/Field';
 
 class App extends Component {
   render() {
@@ -42,6 +44,33 @@ class App extends Component {
             title="When can I get a pension"
             subtitle="Enter some details to see eligibility across nations"
           />
+          <Container>
+            <Form>
+              <Field
+                label="Years worked"
+                name="afield"
+                type="number"
+              />
+              <Field
+                label="Years lived in the country"
+                name="afield1"
+                type="number"
+              />
+              <Field
+                label="Number of children"
+                name="afield2"
+                type="number"
+              />
+              <Field
+                label="Gender"
+                name="afield3"
+              />
+              <Field
+                label="Do you have a partner"
+                name="afield4"
+              />
+            </Form>
+          </Container>
         </Section>
 
         <Section light>

@@ -9,7 +9,6 @@ const _CreativeCommons = styled(CreativeCommons)`
   height: 40px;
   position: relative;
   top: 7px;
-  left: 5px;
 `;
 
 const _Check = styled(Check)`
