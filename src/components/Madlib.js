@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Paragraph } from '../elements/Paragraph';
 
-const MadlibWrapper = styled.div`
+const MadLibWrapper = styled.div`
   text-align: center;
 
   > p {
@@ -36,14 +36,14 @@ const Input = styled.input.attrs({ type: 'text' })`
   }
 `;
 
-export const Madlib = () => (
-  <MadlibWrapper>
+export const MadLib = () => (
+  <MadLibWrapper>
     <Paragraph>I am</Paragraph>
     <Input />
     <Paragraph>years old,</Paragraph><br />
     <Paragraph>I have lived in the country for</Paragraph>
     <Input />
     <Paragraph> years.</Paragraph>
-  </MadlibWrapper>
+  </MadLibWrapper>
 );
 
