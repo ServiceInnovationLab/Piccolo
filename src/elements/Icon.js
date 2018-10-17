@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { CreativeCommons } from 'styled-icons/fa-brands';
 import { Check } from 'styled-icons/fa-solid';
 
-const _CreativeCommons = styled(CreativeCommons)`
+const CreativeCommonsIcon = styled(CreativeCommons)`
   color: #000;
   font-size: 40px;
   height: 40px;
@@ -11,7 +11,7 @@ const _CreativeCommons = styled(CreativeCommons)`
   top: 7px;
 `;
 
-const _Check = styled(Check)`
+const CheckIcon = styled(Check)`
   color: #fff;
   font-size: 40px;
   height: 40px;
@@ -19,7 +19,7 @@ const _Check = styled(Check)`
 
 export const Icon = props => (
   <Fragment>
-    {props.creative_commons && <_CreativeCommons />}
+    {props.creative_commons && <CreativeCommonsIcon />}
   </Fragment>
 );
 
@@ -45,6 +45,6 @@ const Circle = styled.div`
 export const IconCircle = props => (
   <Circle {...props}>
     {props.value && <span>{props.value}</span>}
-    {props.check && <span><_Check /></span>}
+    {props.check && <span><CheckIcon /></span>}
   </Circle>
 );
