@@ -7,7 +7,7 @@ import Section from '../elements/Section';
 import Container from '../elements/Container';
 import Paragraph from '../elements/Paragraph';
 import { H2 } from '../elements/Headings';
-import { Grid, Column } from '../elements/Grid';
+import Grid, { Column } from '../elements/Grid';
 import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
 import Form from './Form';
@@ -85,7 +85,7 @@ const SectionThree = () => <Section light>
     <Grid>
       <Column>
         <H2>New Zealand</H2>
-        <Paragraph medium>You are eligible for a pension in</Paragraph>
+        <Paragraph medium adjust>You are eligible for a pension in</Paragraph>
         <IconCircle value="62" />
         <Paragraph small>
           If you are a citizen or permanent resident, not on ACC.
@@ -96,7 +96,7 @@ const SectionThree = () => <Section light>
       </Column>
       <Column>
         <H2>Israel</H2>
-        <Paragraph medium>You are eligible for a pension in</Paragraph>
+        <Paragraph medium adjust>You are eligible for a pension in</Paragraph>
         <IconCircle value="62" />
         <Paragraph small>
           Each child (up to max of 5) counts as a 'year of work'.
@@ -107,7 +107,7 @@ const SectionThree = () => <Section light>
       </Column>
       <Column>
         <H2>Uruguay</H2>
-        <Paragraph medium height="55">
+        <Paragraph medium adjust>
           You are eligible now
         </Paragraph>
         <IconCircle dark check />

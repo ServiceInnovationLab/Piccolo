@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const List = styled.ul`
-  list-style: ${props => props.stripped ? 'none' : ''};
-  padding-left: ${props => props.stripped ? 0 : ''};
+const List = styled.ul`
+  ${props => props.stripped && css`
+    list-style: none;
+    padding-left: 0;
+  `}
   border-top: 3px solid #000;
   padding-top: 12px;
 `;
@@ -13,4 +15,5 @@ export const Item = styled.li`
   margin-bottom: 12px;
 `;
 
+export default List;
 
