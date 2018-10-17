@@ -133,7 +133,7 @@ const SectionTwo = props => <Section dark center>
 
 const ColumnHeader = props => <Fragment>
   <H2>{props.country}</H2>
-  <Paragraph medium adjust>{props.eligible ? 'You are eligible for a pension at' : 'You are eligible now'}</Paragraph>
+  <Paragraph medium adjust>{!props.eligible ? 'You are eligible for a pension at' : 'You are eligible now'}</Paragraph>
   <IconCircle value={props.age ? props.age : null } />
 </Fragment>;
 
