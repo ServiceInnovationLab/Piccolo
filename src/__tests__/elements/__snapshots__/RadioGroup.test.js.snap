@@ -27,7 +27,6 @@ exports[`RadioGroup renders correctly 1`] = `
   -ms-flex-flow: column;
   flex-flow: column;
   position: relative;
-  margin-top: .5em;
 }
 
 .c2 {
@@ -84,6 +83,12 @@ exports[`RadioGroup renders correctly 1`] = `
   font-weight: 600;
   padding: 9.5px 10px;
   text-transform: capitalize;
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    margin-top: .5em;
+  }
 }
 
 <div
