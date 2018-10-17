@@ -108,6 +108,12 @@ const SectionTwo = props => <Section dark center>
   </Container>
 </Section>;
 
+const ColumnHeader = props => <Fragment>
+  <H2>{props.country}</H2>
+  <Paragraph medium adjust>{props.text}</Paragraph>
+  <IconCircle value={props.age ? props.age : null } />
+</Fragment>;
+
 const SectionThree = props => <Section light>
   <Container>
     <MadLib
@@ -115,9 +121,11 @@ const SectionThree = props => <Section light>
     />
     <Grid>
       <Column>
-        <H2>New Zealand</H2>
-        <Paragraph medium adjust>You are eligible for a pension in</Paragraph>
-        <IconCircle value="62" />
+        <ColumnHeader
+          country="New Zealand"
+          text="You are eligible for a pension at"
+          age="60"
+        />
         <Paragraph small>
           If you are a citizen or permanent resident, not on ACC.
         </Paragraph>
@@ -126,9 +134,11 @@ const SectionThree = props => <Section light>
         </Paragraph>
       </Column>
       <Column>
-        <H2>Israel</H2>
-        <Paragraph medium adjust>You are eligible for a pension in</Paragraph>
-        <IconCircle value="62" />
+        <ColumnHeader
+          country="Israel"
+          text="You are eligible for a pension at"
+          age="62"
+        />
         <Paragraph small>
           Each child (up to max of 5) counts as a 'year of work'.
         </Paragraph>
@@ -137,11 +147,10 @@ const SectionThree = props => <Section light>
         </Paragraph>
       </Column>
       <Column>
-        <H2>Uruguay</H2>
-        <Paragraph medium adjust>
-          You are eligible now
-        </Paragraph>
-        <IconCircle dark check />
+        <ColumnHeader
+          country="Uruguay"
+          text="You are eligible now"
+        />
         <Paragraph small>
           Each child (up to max of 5) counts as a 'year of work'.
         </Paragraph>
