@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { Container } from '../elements/Container';
+import Container from '../elements/Container';
 import { List, Item } from '../elements/List';
 import { CreativeCommons } from '../components/CreativeCommons';
 
@@ -11,7 +11,7 @@ const Footer = styled.section`
 `;
 
 
-export const PageFooter = () => (
+const PageFooter = () => (
   <Fragment>
     <Footer>
       <Container>
@@ -27,4 +27,4 @@ export const PageFooter = () => (
   </Fragment>
 );
 
-
+export default PageFooter;

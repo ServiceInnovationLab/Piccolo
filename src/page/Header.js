@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { Container } from '../elements/Container';
+import Container from '../elements/Container';
 import { H2 } from '../elements/Headings';
-import { Paragraph } from '../elements/Paragraph';
+import Paragraph from '../elements/Paragraph';
 
 const Header = styled.section`
   height: 75px;

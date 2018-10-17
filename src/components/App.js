@@ -2,17 +2,17 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/index';
 import '../styles/App.css';
-import { Button } from '../elements/Button';
-import { Section } from '../elements/Section';
-import { Container } from '../elements/Container';
-import { Paragraph } from '../elements/Paragraph';
+import Button from '../elements/Button';
+import Section from '../elements/Section';
+import Container from '../elements/Container';
+import Paragraph from '../elements/Paragraph';
 import { H2 } from '../elements/Headings';
 import { Grid, Column } from '../elements/Grid';
 import { PageHeader, SectionHeader } from '../page/Header';
-import { PageFooter } from '../page/Footer';
-import { Form } from './Form';
-import { Field } from './Field';
-import { MadLib } from './MadLib';
+import PageFooter from '../page/Footer';
+import Form from './Form';
+import Field from './Field';
+import MadLib from './MadLib';
 import { IconCircle } from '../elements/Icon';
 
 class App extends Component {
