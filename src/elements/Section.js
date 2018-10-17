@@ -10,18 +10,25 @@ function theme(props) {
   } else {
     return 'transparent';
   }
-};
+}
 
 
 export const Section = styled.section`
   background: ${props => theme(props)};
   font-family: sans-serif;
-  color: ${props => theme(props)};
-  padding: 40px 0;
+  padding: 55px 0;
   text-align: center;
+
   h2 {
     color: ${props => props.dark ? '#42e2ee' : '#2f3045'};
+    margin-bottom: 0;
   }
+
+  h2 ~ p {
+    margin-top: 10px;
+    color: ${props => props.dark ? '#fff' : '#000'};
+  }
+
   h3 {
     color: ${props => props.dark ? '#fff' : '#2f3045'};
     font-weight: 400;

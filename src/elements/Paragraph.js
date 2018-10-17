@@ -13,9 +13,6 @@ function sizing(props) {
 }
 export const Paragraph = styled.p`
   font-size: ${props => sizing(props)};
-`;
-
-export const H2 = styled.h2`
-  font-size: 34px;
+  color: ${props => props.light ? '#fff' : '#000'};
 `;
 

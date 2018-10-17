@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Container } from '../elements/Container';
+import { H2 } from '../elements/Headings';
+import { Paragraph } from '../elements/Paragraph';
 
 const Header = styled.section`
   height: 75px;
@@ -23,6 +25,15 @@ export const PageHeader = () => (
         <Logo>piccolo</Logo>
       </Container>
     </Header>
+  </Fragment>
+);
+
+export const SectionHeader = props => (
+  <Fragment>
+    <Container>
+      <H2>{props.title}</H2>
+      <Paragraph medium>{props.subtitle}</Paragraph>
+    </Container>
   </Fragment>
 );
 
