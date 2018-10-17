@@ -12,7 +12,9 @@ const RadioGroupInner = styled.div`
   justify-content: center;
   flex-flow: column;
   position: relative;
-  margin-top: .5em;
+  @media(min-width: 1024px) {
+    margin-top: .5em;
+  }
 `;
 
 const Label = styled.label`
