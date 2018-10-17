@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TextField } from '../../elements/Input';
+import { TextField } from '../elements/Input';
 
 const FieldWrapper = styled.div`
   margin: 25px 0;
