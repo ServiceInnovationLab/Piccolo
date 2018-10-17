@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { TextField } from '../elements/Input';
+import TextField from '../elements/TextField';
 
 const FieldWrapper = styled.div`
   margin: 25px 0;
@@ -51,11 +51,11 @@ const Field = props => (
       {props.label && <span>{props.label}</span>}
     </Label>
     <TextFieldWrapper>
-      {/* <TextField
-        small
+      <TextField
         name={props.name}
         type={props.type}
-      /> */}
+        small
+      />
     </TextFieldWrapper>
   </FieldWrapper>
 );
