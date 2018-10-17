@@ -17,7 +17,9 @@ export const Section = styled.section`
   background: ${props => theme(props)};
   font-family: sans-serif;
   padding: 55px 0;
-  // text-align: center;
+  @media(min-width: 1024px) {
+    text-align: center;
+  }
 
   h2 {
     color: ${props => props.dark ? '#42e2ee' : '#2f3045'};
