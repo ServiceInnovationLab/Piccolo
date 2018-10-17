@@ -10,10 +10,12 @@ import { Paragraph } from '../elements/Paragraph';
 import { List, Item } from '../elements/List';
 import { Grid, Column } from '../elements/Grid';
 import { CreativeCommons } from './CreativeCommons';
+import { PageHeader } from '../page/Header';
 
 class App extends Component {
   render() {
     return <Fragment>
+      <PageHeader />
       <main>
         <Container>
           <Paragraph small>This is what small text looks like</Paragraph>
