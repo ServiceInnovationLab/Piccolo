@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Paragraph } from '../elements/Paragraph';
+import Paragraph from '../elements/Paragraph';
 
 const MadLibWrapper = styled.div`
   text-align: center;
@@ -36,7 +36,7 @@ const Input = styled.input.attrs({ type: 'text' })`
   }
 `;
 
-export const MadLib = () => (
+const MadLib = () => (
   <MadLibWrapper>
     <Paragraph>I am</Paragraph>
     <Input />
@@ -47,3 +47,4 @@ export const MadLib = () => (
   </MadLibWrapper>
 );
 
+export default MadLib;

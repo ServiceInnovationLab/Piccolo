@@ -45,7 +45,7 @@ const TextFieldWrapper = styled.div`
   }
 `;
 
-export const Field = props => (
+const Field = props => (
   <FieldWrapper>
     <Label htmlFor={props.name}>
       {props.label && <span>{props.label}</span>}
@@ -60,3 +60,4 @@ export const Field = props => (
   </FieldWrapper>
 );
 
+export default Field;

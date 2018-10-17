@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Paragraph = styled.p`
+const Paragraph = styled.p`
   font-size: 24px;
   ${props => props.small && css`
     font-size: 22px;
@@ -15,3 +15,4 @@ export const Paragraph = styled.p`
   height: ${props => props.height}px;
 `;
 
+export default Paragraph;

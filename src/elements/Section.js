@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Section = styled.section`
+const Section = styled.section`
   font-family: sans-serif;
   padding: 55px 0;
   @media(min-width: 1024px) {
@@ -66,4 +66,5 @@ export const Section = styled.section`
   }
 `;
 
+export default Section;
 
