@@ -12,7 +12,7 @@ import { PageHeader, SectionHeader } from '../page/Header';
 import { PageFooter } from '../page/Footer';
 import { Form } from './Form';
 import { Field } from './Field';
-import { Madlib } from '../components/Madlib';
+import { MadLib } from './MadLib';
 import { IconCircle } from '../elements/Icon';
 
 class App extends Component {
@@ -81,7 +81,7 @@ const SectionTwo = () => <Section dark center>
 
 const SectionThree = () => <Section light>
   <Container>
-    <Madlib />
+    <MadLib />
     <Grid>
       <Column>
         <H2>New Zealand</H2>
