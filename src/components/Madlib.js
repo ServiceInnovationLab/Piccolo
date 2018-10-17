@@ -21,6 +21,7 @@ const MadLibWrapper = styled.div`
   input[type=text] {
     width: 60px;
     background: #d9f8fa;
+    text-align: center;
   }
 
 `;
