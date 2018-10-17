@@ -65,6 +65,7 @@ const Field = props => (
       <RadioGroup
         values={props.values}
         name={props.name}
+        handleClick={props.handleChange}
       />
     </TextFieldWrapper>}
   </FieldWrapper>

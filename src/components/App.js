@@ -28,15 +28,37 @@ class App extends Component {
   }
 
   render() {
+    var countries = [
+      {
+        name: 'New Zealand',
+        eligible: false,
+        age: 60,
+        hasCitizenship: true
+      },
+      {
+        name: 'Israel',
+        eligible: false,
+        age: 62,
+        hasCitizenship: true
+      },
+      {
+        name: 'Uruguay',
+        eligible: true,
+        hasCitizenship: true
+      }
+    ];
+
     return <Fragment>
       <PageHeader />
       <main>
         <SectionOne />
         <SectionTwo
+          countries={countries}
           handleChange={this.handleChange}
         />
         <SectionThree
           state={this.state}
+          countries={countries}
         />
       </main>
       <PageFooter />
@@ -101,6 +123,7 @@ const SectionTwo = props => <Section dark center>
         name="do_you_have_a_partner"
         type="radio"
         values={['yes', 'no']}
+        handleChange={props.handleChange}
       />
       <Button>Calculate</Button>
     </Form>
@@ -110,7 +133,7 @@ const SectionTwo = props => <Section dark center>
 
 const ColumnHeader = props => <Fragment>
   <H2>{props.country}</H2>
-  <Paragraph medium adjust>{props.text}</Paragraph>
+  <Paragraph medium adjust>{props.eligible ? 'You are eligible for a pension at' : 'You are eligible now'}</Paragraph>
   <IconCircle value={props.age ? props.age : null } />
 </Fragment>;
 
@@ -120,44 +143,29 @@ const SectionThree = props => <Section light>
       values={props.state}
     />
     <Grid>
-      <Column>
-        <ColumnHeader
-          country="New Zealand"
-          text="You are eligible for a pension at"
-          age="60"
-        />
-        <Paragraph small>
-          If you are a citizen or permanent resident, not on ACC.
-        </Paragraph>
-        <Paragraph small>
-          If you have a partner you can share your 'pension' with them if they aren't eligible
-        </Paragraph>
-      </Column>
-      <Column>
-        <ColumnHeader
-          country="Israel"
-          text="You are eligible for a pension at"
-          age="62"
-        />
-        <Paragraph small>
-          Each child (up to max of 5) counts as a 'year of work'.
-        </Paragraph>
-        <Paragraph small>
-          You must have contributed to your pension for 30 years or more.
-        </Paragraph>
-      </Column>
-      <Column>
-        <ColumnHeader
-          country="Uruguay"
-          text="You are eligible now"
-        />
-        <Paragraph small>
-          Each child (up to max of 5) counts as a 'year of work'.
-        </Paragraph>
-        <Paragraph small>
-          You must have contributed to your pension for 30 years or more.
-        </Paragraph>
-      </Column>
+      {props.countries.map((item, i) => {
+        return <Column key={i}>
+          <ColumnHeader
+            country={item.name}
+            eligible={item.eligible}
+            age={item.age}
+          />
+          {props.state.hasCitizenship && <Paragraph small>
+            If you are a citizen or permanent resident, not on ACC.
+          </Paragraph>}
+          {props.state.do_you_have_a_partner === 'yes' && <Paragraph small>
+            If you have a partner you can share your 'pension' with them if they aren't eligible
+          </Paragraph>}
+
+          {props.state.number_of_children > 0 && item.name !== 'New Zealand' && <Paragraph small>
+            Each child (up to max of 5) counts as a 'year of work'.
+          </Paragraph>}
+
+          {props.state.years_worked > 0 && <Paragraph small>
+            You must have contributed to your pension for {item.requiredContribution} years or more.
+          </Paragraph>}
+        </Column>;
+      })};
     </Grid>
   </Container>
 </Section>;
