@@ -10,5 +10,8 @@ export const Button = styled.button`
   height: 74px;
   width: 100%;
   font-size: 34px;
+  @media(min-width: 1024px) {
+    width: 360px;
+  }
 `;
 
