@@ -8,7 +8,6 @@ import Container from '../elements/Container';
 import Paragraph from '../elements/Paragraph';
 import { H2 } from '../elements/Headings';
 import Grid, { Column } from '../elements/Grid';
-import RadioGroup from '../elements/RadioGroup';
 import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
 import Form from './Form';
@@ -68,15 +67,15 @@ const SectionTwo = () => <Section dark center>
       />
       <Field
         label="Gender"
-        name="afield3"
+        name="gender"
+        type="radio"
+        values={['male', 'female']}
       />
-      {/* <Field
-        label="Do you have a partner"
-        name="afield4"
-      /> */}
-      <RadioGroup
+      <Field
+        label="Do you have a partner?"
+        name="do_you_have_a_partner"
+        type="radio"
         values={['yes', 'no']}
-        name="do_you_have_partner"
       />
       <Button>Calculate</Button>
     </Form>
