@@ -27,6 +27,14 @@ export const Section = styled.section`
   h2 ~ p {
     margin-top: 10px;
     color: ${props => props.dark ? '#fff' : '#000'};
+    padding-bottom: 35px;
+  }
+
+  p ~ hr {
+    color: ${props => props.dark ? '#ccc' : '#000'};
+    height: 1px;
+    border: 0;
+    border-top: 1px solid ${props => props.dark ? '#ccc' : '#000'};
   }
 
   h3 {
