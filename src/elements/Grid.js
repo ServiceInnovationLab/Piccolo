@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Grid = styled.div`
+const Grid = styled.div`
   margin: 30px 0;
   @media(min-width: 1024px) {
     display: flex;
@@ -33,4 +33,5 @@ export const Column = styled.div`
   }
 `;
 
+export default Grid;
 

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph colour should be light if specified 1`] = `
+.c0 {
+  font-size: 24px;
+  color: #000;
+  color: #fff;
+  height: auto;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`Paragraph default styles applied 1`] = `
+.c0 {
+  font-size: 24px;
+  color: #000;
+  height: auto;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`Paragraph height should be adjusted 1`] = `
+.c0 {
+  font-size: 24px;
+  color: #000;
+  color: #fff;
+  height: 55px;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`Paragraph large styles applied 1`] = `
+.c0 {
+  font-size: 24px;
+  color: #000;
+  font-size: 34px;
+  height: auto;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`Paragraph medium styles applied 1`] = `
+.c0 {
+  font-size: 24px;
+  color: #000;
+  font-size: 24px;
+  height: auto;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`Paragraph small styles applied 1`] = `
+.c0 {
+  font-size: 24px;
+  color: #000;
+  font-size: 22px;
+  height: auto;
+}
+
+<p
+  className="c0"
+/>
+`;

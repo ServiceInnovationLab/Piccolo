@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dark Section default styles applied 1`] = `
+.c0 {
+  font-family: sans-serif;
+  padding: 55px 0;
+  background: #2f3045;
+}
+
+.c0 p:first-child {
+  margin-top: 0;
+}
+
+.c0 h2 {
+  color: #2f3045;
+  margin-bottom: 0;
+  color: #42e2ee;
+}
+
+.c0 h2 ~ p {
+  margin-top: 10px;
+  color: #000;
+  padding-bottom: 35px;
+  color: #fff;
+}
+
+.c0 p ~ hr {
+  color: #000;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #000;
+  color: #ccc;
+  border-top: 1px solid #ccc;
+}
+
+.c0 h3 {
+  color: #2f3045;
+  font-weight: 400;
+}
+
+.c0 h2 ~ h3 {
+  margin-top: 0;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    text-align: left;
+  }
+}
+
+<section
+  className="c0"
+/>
+`;
+
+exports[`Grey Section default styles applied 1`] = `
+.c0 {
+  font-family: sans-serif;
+  padding: 55px 0;
+  background: #ccc;
+}
+
+.c0 p:first-child {
+  margin-top: 0;
+}
+
+.c0 h2 {
+  color: #2f3045;
+  margin-bottom: 0;
+}
+
+.c0 h2 ~ p {
+  margin-top: 10px;
+  color: #000;
+  padding-bottom: 35px;
+}
+
+.c0 p ~ hr {
+  color: #000;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #000;
+}
+
+.c0 h3 {
+  color: #2f3045;
+  font-weight: 400;
+}
+
+.c0 h2 ~ h3 {
+  margin-top: 0;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    text-align: left;
+  }
+}
+
+<section
+  className="c0"
+/>
+`;
+
+exports[`Light Section default styles applied 1`] = `
+.c0 {
+  font-family: sans-serif;
+  padding: 55px 0;
+  background: #d9f8fa;
+}
+
+.c0 p:first-child {
+  margin-top: 0;
+}
+
+.c0 h2 {
+  color: #2f3045;
+  margin-bottom: 0;
+}
+
+.c0 h2 ~ p {
+  margin-top: 10px;
+  color: #000;
+  padding-bottom: 35px;
+}
+
+.c0 p ~ hr {
+  color: #000;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #000;
+}
+
+.c0 h3 {
+  color: #2f3045;
+  font-weight: 400;
+}
+
+.c0 h2 ~ h3 {
+  margin-top: 0;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    text-align: left;
+  }
+}
+
+<section
+  className="c0"
+/>
+`;
+
+exports[`Section default styles applied 1`] = `
+.c0 {
+  font-family: sans-serif;
+  padding: 55px 0;
+}
+
+.c0 p:first-child {
+  margin-top: 0;
+}
+
+.c0 h2 {
+  color: #2f3045;
+  margin-bottom: 0;
+}
+
+.c0 h2 ~ p {
+  margin-top: 10px;
+  color: #000;
+  padding-bottom: 35px;
+}
+
+.c0 p ~ hr {
+  color: #000;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #000;
+}
+
+.c0 h3 {
+  color: #2f3045;
+  font-weight: 400;
+}
+
+.c0 h2 ~ h3 {
+  margin-top: 0;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    text-align: left;
+  }
+}
+
+<section
+  className="c0"
+/>
+`;

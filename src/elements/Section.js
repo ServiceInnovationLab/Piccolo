@@ -5,21 +5,22 @@ const Section = styled.section`
   padding: 55px 0;
   @media(min-width: 1024px) {
     text-align: left;
-
     ${props => props.center && css`
      text-align: center;
     `}
-
-    ${props => props.dark && css`
-     background: #2f3045;
-    `}
-    ${props => props.light && css`
-     background: #d9f8fa;
-    `}
-    ${props => props.grey && css`
-     background: #ccc;
-    `}
   }
+
+  ${props => props.dark && css`
+    background: #2f3045;
+ `}
+
+ ${props => props.light && css`
+    background: #d9f8fa;
+ `}
+
+ ${props => props.grey && css`
+    background: #ccc;
+ `}
 
   p:first-child {
     margin-top: 0;

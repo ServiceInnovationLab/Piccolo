@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const Paragraph = styled.p`
   font-size: 24px;
+  color: #000;
   ${props => props.small && css`
     font-size: 22px;
   `}
@@ -11,8 +12,11 @@ const Paragraph = styled.p`
   ${props => props.large && css`
     font-size: 34px;
   `}
-  color: ${props => props.light ? '#fff' : '#000'};
-  height: ${props => props.height}px;
+  ${props => props.light && css`
+    color: #fff;
+  `}
+
+  height: ${props => props.adjust ? '55px' : 'auto'};
 `;
 
 export default Paragraph;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Column renders correctly 1`] = `
+.c0 {
+  padding: 0 40px 10px 40px;
+  border-top: 1px solid #000;
+  padding-top: 40px;
+  margin-top: 50px;
+}
+
+.c0 h2:first-child {
+  margin-top: 0;
+}
+
+.c0 h2 + p {
+  margin-top: 20px;
+}
+
+.c0 h2 ~ p {
+  margin-bottom: 0;
+}
+
+.c0 p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border-left: 1px solid #000;
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Grid renders correctly 1`] = `
+.c0 {
+  margin: 30px 0;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
