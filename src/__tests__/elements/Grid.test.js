@@ -3,17 +3,18 @@ import Grid, { Column } from '../../elements/Grid';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+let grid = renderer.create(<Grid />).toJSON();
+let column = renderer.create(<Column />).toJSON();
+
 test('Grid renders correctly', () => {
-  const tree = renderer.create(<Grid />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('margin', '30px 0');
+  expect(grid).toMatchSnapshot();
+  expect(grid).toHaveStyleRule('margin', '30px 0');
 });
 
 test('Column renders correctly', () => {
-  const tree = renderer.create(<Column />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('padding', '0 40px 10px 40px');
-  expect(tree).toHaveStyleRule('border-top', '1px solid #000');
-  expect(tree).toHaveStyleRule('padding-top', '40px');
-  expect(tree).toHaveStyleRule('margin-top', '50px');
+  expect(column).toMatchSnapshot();
+  expect(column).toHaveStyleRule('padding', '0 40px 10px 40px');
+  expect(column).toHaveStyleRule('border-top', '1px solid #000');
+  expect(column).toHaveStyleRule('padding-top', '40px');
+  expect(column).toHaveStyleRule('margin-top', '50px');
 });
