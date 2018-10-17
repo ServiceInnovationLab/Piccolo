@@ -3,36 +3,37 @@ import Paragraph from '../../elements/Paragraph';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+const paragraph = renderer.create(<Paragraph />).toJSON();
+const paragraph_sm = renderer.create(<Paragraph small />).toJSON();
+const paragraph_md = renderer.create(<Paragraph medium />).toJSON();
+const paragraph_lg = renderer.create(<Paragraph large />).toJSON();
+const paragraph_light = renderer.create(<Paragraph light />).toJSON();
+
 test('Paragraph default styles applied', () => {
-  const tree = renderer.create(<Paragraph />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('font-size', '24px');
-  expect(tree).toHaveStyleRule('color', '#000');
-  expect(tree).toHaveStyleRule('height', 'auto');
+  expect(paragraph).toMatchSnapshot();
+  expect(paragraph).toHaveStyleRule('font-size', '24px');
+  expect(paragraph).toHaveStyleRule('color', '#000');
+  expect(paragraph).toHaveStyleRule('height', 'auto');
 });
 
 test('Paragraph small styles applied', () => {
-  const tree = renderer.create(<Paragraph small />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('font-size', '22px');
+  expect(paragraph_sm).toMatchSnapshot();
+  expect(paragraph_sm).toHaveStyleRule('font-size', '22px');
 });
 
 test('Paragraph medium styles applied', () => {
-  const tree = renderer.create(<Paragraph medium />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('font-size', '24px');
+  expect(paragraph_md).toMatchSnapshot();
+  expect(paragraph_md).toHaveStyleRule('font-size', '24px');
 });
 
 test('Paragraph large styles applied', () => {
-  const tree = renderer.create(<Paragraph large />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('font-size', '34px');
+  expect(paragraph_lg).toMatchSnapshot();
+  expect(paragraph_lg).toHaveStyleRule('font-size', '34px');
 });
 
 test('Paragraph colour should be light if specified', () => {
-  const tree = renderer.create(<Paragraph light />).toJSON();
-  expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule('color', '#fff');
+  expect(paragraph_light).toMatchSnapshot();
+  expect(paragraph_light).toHaveStyleRule('color', '#fff');
 });
 
 test('Paragraph height should be adjusted', () => {
