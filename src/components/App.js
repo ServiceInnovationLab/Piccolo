@@ -78,6 +78,8 @@ class App extends Component {
                 <IconCircle value="62" />
                 <Paragraph small>
                   If you are a citizen or permanent resident, not on ACC.
+                </Paragraph>
+                <Paragraph small>
                   If you have a partner you can share your 'pension' with them if they aren't eligible
                 </Paragraph>
               </Column>
@@ -94,7 +96,9 @@ class App extends Component {
               </Column>
               <Column>
                 <H2>Uruguay</H2>
-                <Paragraph medium>You are eligible now</Paragraph>
+                <Paragraph medium height="55">
+                  You are eligible now
+                </Paragraph>
                 <IconCircle dark check />
                 <Paragraph small>
                   Each child (up to max of 5) counts as a 'year of work'.

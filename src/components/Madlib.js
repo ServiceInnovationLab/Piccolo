@@ -40,7 +40,8 @@ export const Madlib = () => (
   <MadlibWrapper>
     <Paragraph>I am</Paragraph>
     <Input />
-    <Paragraph> years old, I have lived in the country for</Paragraph>
+    <Paragraph>years old,</Paragraph><br />
+    <Paragraph>I have lived in the country for</Paragraph>
     <Input />
     <Paragraph> years.</Paragraph>
   </MadlibWrapper>
