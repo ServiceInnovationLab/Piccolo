@@ -18,15 +18,19 @@ test('Section default styles applied', () => {
 
 test('Dark Section default styles applied', () => {
   expect(section_dark).toMatchSnapshot();
-  expect(section_dark).toHaveStyleRule('background', '#2f3045');
+  background(section_dark, '#2f3045');
 });
 
 test('Light Section default styles applied', () => {
   expect(section_light).toMatchSnapshot();
-  expect(section_light).toHaveStyleRule('background', '#d9f8fa');
+  background(section_light, '#d9f8fa');
 });
 
 test('Grey Section default styles applied', () => {
   expect(section_grey).toMatchSnapshot();
-  expect(section_grey).toHaveStyleRule('background', '#ccc');
+  background(section_grey, '#ccc');
 });
+
+function background(section, color) {
+  expect(section).toHaveStyleRule('background', color);
+}
