@@ -14,6 +14,7 @@ import Form from './Form';
 import Field from './Field';
 import MadLib from '../components/Madlib';
 import { IconCircle } from '../elements/Icon';
+import countries from '../data/countries';
 
 class App extends Component {
 
@@ -28,38 +29,12 @@ class App extends Component {
   }
 
   render() {
-    var countries = [
-      {
-        name: 'New Zealand',
-        eligible: false,
-        age: 60,
-        hasCitizenship: true
-      },
-      {
-        name: 'Israel',
-        eligible: false,
-        age: 62,
-        hasCitizenship: true
-      },
-      {
-        name: 'Uruguay',
-        eligible: true,
-        hasCitizenship: true
-      }
-    ];
-
     return <Fragment>
       <PageHeader />
       <main>
         <SectionOne />
-        <SectionTwo
-          countries={countries}
-          handleChange={this.handleChange}
-        />
-        <SectionThree
-          state={this.state}
-          countries={countries}
-        />
+        <SectionTwo handleChange={this.handleChange} />
+        <SectionThree state={this.state} />
       </main>
       <PageFooter />
     </Fragment>;
@@ -143,7 +118,7 @@ const SectionThree = props => <Section light>
       values={props.state}
     />
     <Grid>
-      {props.countries.map((item, i) => {
+      {countries.map((item, i) => {
         return <Column key={i}>
           <ColumnHeader
             country={item.name}
