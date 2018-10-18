@@ -103,7 +103,9 @@ exports[`RadioGroup renders correctly 1`] = `
       >
         <input
           className="c3"
+          onClick={[Function]}
           type="radio"
+          value="yes"
         />
         <span
           className="c4"
@@ -116,7 +118,9 @@ exports[`RadioGroup renders correctly 1`] = `
       >
         <input
           className="c3"
+          onClick={[Function]}
           type="radio"
+          value="no"
         />
         <span
           className="c4"
