@@ -1,4 +1,4 @@
-let countries = [
+const countries = [
   {
     name: 'New Zealand',
     eligible: false,
