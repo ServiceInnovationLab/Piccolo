@@ -119,9 +119,9 @@ const SectionThree = props => <Section light>
     <Grid>
       {countries.map((item, i) => <Column key={i}>
         <ColumnHeader
-            country={item.name}
-            eligible={item.eligible}
-            age={item.age}
+          country={item.name}
+          eligible={item.eligible}
+          age={item.age}
           />
         {props.state.hasCitizenship && <Paragraph small>
             If you are a citizen or permanent resident, not on ACC.
