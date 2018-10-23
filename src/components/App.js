@@ -118,26 +118,26 @@ const SectionThree = props => <Section light>
     />
     <Grid>
       {countries.map((item, i) => <Column key={i}>
-          <ColumnHeader
+        <ColumnHeader
             country={item.name}
             eligible={item.eligible}
             age={item.age}
           />
-          {props.state.hasCitizenship && <Paragraph small>
+        {props.state.hasCitizenship && <Paragraph small>
             If you are a citizen or permanent resident, not on ACC.
           </Paragraph>}
-          {props.state.do_you_have_a_partner === 'yes' && <Paragraph small>
+        {props.state.do_you_have_a_partner === 'yes' && <Paragraph small>
             If you have a partner you can share your 'pension' with them if they aren't eligible
           </Paragraph>}
 
-          {props.state.number_of_children > 0 && item.name !== 'New Zealand' && <Paragraph small>
+        {props.state.number_of_children > 0 && item.name !== 'New Zealand' && <Paragraph small>
             Each child (up to max of 5) counts as a 'year of work'.
           </Paragraph>}
 
-          {props.state.years_worked > 0 && <Paragraph small>
+        {props.state.years_worked > 0 && <Paragraph small>
             You must have contributed to your pension for {item.requiredContribution} years or more.
           </Paragraph>}
-        </Column>)};
+      </Column>)};
     </Grid>
   </Container>
 </Section>;
