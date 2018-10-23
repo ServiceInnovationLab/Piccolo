@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-let props = props => props;
+const props = props => props;
 
 const TextField = styled.input.attrs({ type: props.type })`
   border: 4px solid #d1d1d1;
