@@ -118,8 +118,7 @@ const SectionThree = props => <Section light>
       values={props.state}
     />
     <Grid>
-      {countries.map((item, i) => {
-        return <Column key={i}>
+      {countries.map((item, i) => <Column key={i}>
           <ColumnHeader
             country={item.name}
             eligible={item.eligible}
@@ -139,8 +138,7 @@ const SectionThree = props => <Section light>
           {props.state.years_worked > 0 && <Paragraph small>
             You must have contributed to your pension for {item.requiredContribution} years or more.
           </Paragraph>}
-        </Column>;
-      })};
+        </Column>)};
     </Grid>
   </Container>
 </Section>;
