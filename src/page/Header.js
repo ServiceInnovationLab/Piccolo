@@ -37,5 +37,3 @@ export const SectionHeader = props => (
     </Container>
   </Fragment>
 );
-
-

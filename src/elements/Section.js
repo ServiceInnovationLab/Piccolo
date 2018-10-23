@@ -68,4 +68,3 @@ const Section = styled.section`
 `;
 
 export default Section;
-

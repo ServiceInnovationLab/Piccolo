@@ -20,4 +20,3 @@ export const CreativeCommons = props => (
     <Text>{props.label}</Text>
   </Fragment>
 );
-

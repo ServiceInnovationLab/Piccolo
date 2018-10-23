@@ -16,4 +16,3 @@ export const Item = styled.li`
 `;
 
 export default List;
-

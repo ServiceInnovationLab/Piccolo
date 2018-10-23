@@ -34,4 +34,3 @@ export const Column = styled.div`
 `;
 
 export default Grid;
-
