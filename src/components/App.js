@@ -122,7 +122,7 @@ const SectionThree = props => <Section light>
           country={item.name}
           eligible={item.eligible}
           age={item.age}
-          />
+        />
         {props.state.hasCitizenship && <Paragraph small>
             If you are a citizen or permanent resident, not on ACC.
           </Paragraph>}
