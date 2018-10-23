@@ -1,4 +1,4 @@
-var countries = [
+let countries = [
   {
     name: 'New Zealand',
     eligible: false,
