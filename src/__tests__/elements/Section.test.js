@@ -1,6 +1,6 @@
 import React from 'react';
-import Section from '../../elements/Section';
 import renderer from 'react-test-renderer';
+import Section from '../../elements/Section';
 import 'jest-styled-components';
 
 const section_dark = renderer.create(<Section dark />).toJSON();

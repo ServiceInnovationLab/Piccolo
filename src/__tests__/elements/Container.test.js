@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '../../elements/Container';
 import renderer from 'react-test-renderer';
+import Container from '../../elements/Container';
 import 'jest-styled-components';
 
 test('Container renders correctly', () => {
