@@ -15,6 +15,8 @@ import Field from './Field';
 import MadLib from '../components/Madlib';
 import { IconCircle } from '../elements/Icon';
 import countries from '../data/countries';
+import IsraelQuery from './IsraelQuery';
+
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +46,7 @@ const SectionOne = () => <Section light>
   <Container>
     <Paragraph small>
       Welcome to the piccolo legislation as code demonstrator.
+
     </Paragraph>
     <Paragraph small>
       There are many rules about how we do things around the world. Some of these are coded into law, such as voting ages, tax rates, and access to services. Sometimes these rules can be really complicated for a human to sit down and work out, but really easy for a machine to do.</Paragraph>
@@ -51,8 +54,13 @@ const SectionOne = () => <Section light>
     <Paragraph small>
       Legislation as code is when we turn those rules into things machines can use so they can work things out for us.
     </Paragraph>
+
+    <IsraelQuery />
   </Container>
 </Section>;
+
+
+
 
 const SectionTwo = props => <Section dark center>
   <SectionHeader
