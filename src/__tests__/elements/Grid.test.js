@@ -1,6 +1,6 @@
 import React from 'react';
-import Grid, { Column } from '../../elements/Grid';
 import renderer from 'react-test-renderer';
+import Grid, { Column } from '../../elements/Grid';
 import 'jest-styled-components';
 
 let grid = renderer.create(<Grid />).toJSON();
