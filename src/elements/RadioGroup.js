@@ -73,16 +73,14 @@ const RadioGroup = props => (
   <RadioGroupWrapper>
     <RadioGroupInner>
       <div>
-        {props.values.map((val, i) => {
-          return <Label key={i}>
+        {props.values.map((val, i) => <Label key={i}>
             <Radio
               name={props.name}
               value={val}
               onClick={e=>props.handleClick(e, props.name)}
             />
             <Span>{val}</Span>
-          </Label>;
-        })}
+          </Label>)}
       </div>
     </RadioGroupInner>
   </RadioGroupWrapper>
