@@ -3,8 +3,8 @@ import renderer from 'react-test-renderer';
 import Grid, { Column } from '../../elements/Grid';
 import 'jest-styled-components';
 
-let grid = renderer.create(<Grid />).toJSON();
-let column = renderer.create(<Column />).toJSON();
+const grid = renderer.create(<Grid />).toJSON();
+const column = renderer.create(<Column />).toJSON();
 
 test('Grid renders correctly', () => {
   expect(grid).toMatchSnapshot();
