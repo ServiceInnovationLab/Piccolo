@@ -1,41 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import Israel from '../data/israel';
 
 class IsraelQuery extends React.Component {
 
   componentDidMount(){
-    const data = {
-      'persons': {
-        'Tahi': {
-          'gender': {
-            '2018-01': 'woman'
-          },
-          'pension_contributing_years': {
-            '2018-01': 22
-          },
-          'is_resident': {
-            '2018-01': true
-          },
-          'born_in_israel': {
-            '2018-01': true
-          },
-          'pension_eligibility_age': {
-            '2018-01': null
-          },
-          'eligible_for_pension': {
-            '2018-01': null
-          }
-        }
-      },
-      'households': {
-        'one': {
-          'parents': ['Tahi']
-        }
-      }
-    };
-
     axios
-      .post('https://openfisca-israel.herokuapp.com/calculate', data)
+      .post('https://openfisca-israel.herokuapp.com/calculate', Israel)
       .then(res => res)
       .catch(err => err);
   }
