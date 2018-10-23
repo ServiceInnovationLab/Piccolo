@@ -16,7 +16,7 @@ const Paragraph = styled.p`
     color: #fff;
   `}
 
-  height: ${props => props.adjust ? '55px' : 'auto'};
+  height: ${props => (props.adjust ? '55px' : 'auto')};
 `;
 
 export default Paragraph;

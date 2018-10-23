@@ -10,7 +10,7 @@ const TextField = styled.input.attrs({ type: props.type })`
   padding-left: 10px;
   width: 100%;
   @media(min-width: 1024px) {
-    width: ${props => props.small ? '147px' : ''};
+    width: ${props => (props.small ? '147px' : '')};
   }
   &:focus {
     border: 4px solid #42e2ee;

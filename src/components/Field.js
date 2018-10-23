@@ -25,7 +25,7 @@ const Label = styled.label`
     flex: 1;
     width: 147px;
     text-align: right;
-    padding-top: ${props => props.type === 'radio' ? '24px' : '10px'};
+    padding-top: ${props => (props.type === 'radio' ? '24px' : '10px')};
     > span {
       margin-right: 15px;
     }
