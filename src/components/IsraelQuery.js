@@ -2,9 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 class IsraelQuery extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount(){
     const data = {
