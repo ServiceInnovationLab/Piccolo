@@ -1,6 +1,6 @@
 import React from 'react';
-import Paragraph from '../../elements/Paragraph';
 import renderer from 'react-test-renderer';
+import Paragraph from '../../elements/Paragraph';
 import 'jest-styled-components';
 
 const paragraph = renderer.create(<Paragraph />).toJSON();
