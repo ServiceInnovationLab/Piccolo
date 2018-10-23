@@ -49,4 +49,3 @@ class IsraelQuery extends React.Component {
 }
 
 export default IsraelQuery;
-
