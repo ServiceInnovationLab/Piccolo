@@ -27,7 +27,7 @@ const Circle = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: ${props => props.dark ? '#2e4554' : '#50a3d7'};
+  background: ${props => (props.dark ? '#2e4554' : '#50a3d7')};
   margin: 0 auto;
   margin-bottom: 40px;
 
