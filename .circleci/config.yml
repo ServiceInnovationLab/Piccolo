@@ -50,8 +50,8 @@ jobs:
       - image: circleci/node:9.11.2
     steps:
       - add_ssh_keys:
-        fingerprints:
-          - "27:76:4f:70:da:ef:0d:ed:53:69:70:7b:c7:f3:94:81"
+          fingerprints:
+            - "27:76:4f:70:da:ef:0d:ed:53:69:70:7b:c7:f3:94:81"
       - checkout
       - restore_cache:
           keys:
