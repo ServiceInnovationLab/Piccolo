@@ -4,6 +4,9 @@ import axios from 'axios';
 class IsraelQuery extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount(){
     const data = {
       'persons': {
         'Tahi': {
@@ -36,8 +39,8 @@ class IsraelQuery extends React.Component {
 
     axios
       .post('https://openfisca-israel.herokuapp.com/calculate', data)
-      .then(res => { console.log(res) })
-      .catch(err => console.log('err fetching properties', err));
+      .then(res => res)
+      .catch(err => err);
   }
 
   render() {
