@@ -77,7 +77,7 @@ const RadioGroup = props => (
           <Radio
             name={props.name}
             value={val || ''}
-            onClick={e=>props.handleClick(e, e.target.name)}
+            onClick={e=>props.handleChange(e, props.name)}
           />
           <Span>{val}</Span>
         </Label>)}

@@ -17,7 +17,7 @@ import { IconCircle } from '../elements/Icon';
 import countries from '../data/countries';
 import IsraelData from '../data/IsraelData';
 import IsraelQuery from '../components/IsraelQuery';
-
+import formFields from '../data/formFields';
 
 class App extends Component {
   constructor(props) {
@@ -90,51 +90,16 @@ const SectionTwo = props => <Section dark center>
   />
   <Container>
     <Form onSubmit={props.onSubmit}>
-      <Field
-        label="What is your age?"
-        name="age"
-        type="number"
-        value={props.state.age || ''}
-        handleChange={e=>props.handleChange(e, e.target.name)}
-      />
-
-      <Field
-        label="Years worked"
-        name="years_worked"
-        type="number"
-        value={props.state.years_worked || ''}
-        handleChange={e=>props.handleChange(e, e.target.name)}
-      />
-      <Field
-        label="Years lived in the country"
-        name="years_lived_in_country"
-        type="number"
-        value={props.state.years_lived_in_country || ''}
-        handleChange={e=>props.handleChange(e, e.target.name)}
-      />
-      <Field
-        label="Number of children"
-        name="number_of_children"
-        type="number"
-        value={props.state.number_of_children || ''}
-        handleChange={e=>props.handleChange(e, e.target.name)}
-      />
-      <Field
-        label="Gender"
-        name="gender"
-        type="radio"
-        values={['male', 'female']}
-        value={props.state.gender || ''}
-        handleClick={props.handleChange}
-      />
-      <Field
-        label="Do you have a partner?"
-        name="has_partner"
-        type="radio"
-        values={['yes', 'no']}
-        value={props.state.has_partner || ''}
-        handleClick={props.handleChange}
-      />
+      {formFields.map(item => {
+        return <Field
+          key={item.name}
+          label={item.label}
+          name={item.name}
+          type={item.type}
+          values={item.values && item.values}
+          handleChange={item.type.toString() === 'radio' ? props.handleChange : e=>props.handleChange(e, e.target.name)}
+        />;
+      })}
       <Button>Calculate</Button>
     </Form>
 
