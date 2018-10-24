@@ -84,7 +84,6 @@ class App extends Component {
   render() {
     return <Fragment>
       <PageHeader />
-      {console.log(this.state.form_data)}
       <main>
         <SectionOne />
         <SectionTwo
@@ -93,7 +92,6 @@ class App extends Component {
           state={this.state}
           setRadio={this.setRadio.bind(this)}
         />
-        {/* {TODO: Loading screen when request status is 200} */}
         <SectionThree
           show={this.state.isLoading ? 'block' : 'none'}
           state={this.state}
