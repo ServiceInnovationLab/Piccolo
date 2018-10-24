@@ -5,6 +5,7 @@ import '../styles/App.css';
 import { PageHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
 import IsraelData from '../data/IsraelData';
+import NzData from '../data/NzData';
 import {SectionOne, SectionTwo, SectionThree} from '../page/Sections';
 
 class App extends Component {
@@ -13,10 +14,13 @@ class App extends Component {
     this.state = {
       israel_input_data: {},
       israel_results: {},
+      nz_input_data: {},
+      nz_results: {},
       isLoading: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleIsraelResults = this.handleIsraelResults.bind(this);
+    this.handleNzResults = this.handleNzResults.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.setRadio = this.setRadio.bind(this);
     this.setName = this.setName.bind(this);
@@ -32,6 +36,9 @@ class App extends Component {
 
   handleIsraelResults(data) {
     this.setState({israel_results: data, isLoading: true});
+  }
+  handleNzResults(data) {
+    this.setState({nz_results: data, isLoading: true});
   }
 
   setName(el) {
@@ -53,7 +60,7 @@ class App extends Component {
         ...form,
         [el.name]: this.setName(el),
       }), {});
-    this.setState({israel_input_data: IsraelData(values), isLoading: true});
+    this.setState({israel_input_data: IsraelData(values), isLoading: true, nz_input_data: NzData(values)});
   }
 
   setRadio(event) {

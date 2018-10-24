@@ -13,6 +13,7 @@ import MadLib from '../components/Madlib';
 import { IconCircle } from '../elements/Icon';
 import countries from '../data/countries';
 import IsraelQuery from '../components/IsraelQuery';
+import NzQuery from '../components/NzQuery';
 
 export const SectionOne = () => <Section light>
   <Container>
@@ -57,6 +58,7 @@ export const ColumnHeader = props => <Fragment>
   <H2>{props.country}</H2>
   <Paragraph medium adjust>{!props.eligible ? 'You are eligible for a pension at' : 'You are eligible now'}</Paragraph>
   {props.country === 'Israel' && <IconCircle value={props.israel.data ? props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : ''} />}
+  {/* {props.country === 'New Zealand' && <IconCircle value={props.nz.data ? props.nz.data.persons.Tahi.pension_eligibility_age['2018-01'] : ''} />} */}
 </Fragment>;
 
 export const SectionThree = props => <div style={{display: props.show}}><Section light>
@@ -68,6 +70,10 @@ export const SectionThree = props => <div style={{display: props.show}}><Section
       handleIsraelResults={props.handleIsraelResults}
       data={props.israel_input_data}
     />}
+    <NzQuery
+      handleNzResults={props.handleNZResults}
+      data={props.nz_input_data}
+    />
 
     <Grid>
       {countries.map((item, i) => <Column key={i}>
@@ -75,19 +81,20 @@ export const SectionThree = props => <div style={{display: props.show}}><Section
           country={item.name}
           eligible={item.eligible}
           israel={props.israel_results}
+          nz={props.nz_results}
         />
         {props.state.hasCitizenship && <Paragraph small>
           If you are a citizen or permanent resident, not on ACC.
         </Paragraph>}
-        {item.name === 'Israel' && props.state.has_partner === 'yes' && <Paragraph small>
+        {props.state.has_partner === 'yes' && <Paragraph small>
           If you have a partner you can share your 'pension' with them if they aren't eligible
         </Paragraph>}
 
-        {item.name === 'Israel' && props.state.number_of_children > 0 && item.name !== 'New Zealand' && <Paragraph small>
+        {props.state.number_of_children > 0 && item.name !== 'New Zealand' && <Paragraph small>
           Each child (up to max of 5) counts as a 'year of work'.
         </Paragraph>}
 
-        {item.name === 'Israel' && props.state.years_worked < item.reqContributionYears && <Paragraph small>
+        {props.state.years_worked < item.reqContributionYears && <Paragraph small>
           You must have contributed to your pension for {item.reqContributionYears} years or more.
         </Paragraph>}
       </Column>)};
