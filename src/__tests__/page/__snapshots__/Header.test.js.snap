@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionHeader renders correctly 1`] = `
+.c0 {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.c1 {
+  font-size: 34px;
+}
+
+.c2 {
+  font-size: 24px;
+  color: #000;
+  font-size: 24px;
+  height: auto;
+}
+
+<div
+  className="c0"
+>
+  <h2
+    className="c1"
+  >
+    this is the title
+  </h2>
+  <p
+    className="c2"
+  >
+    this is the subtitle
+  </p>
+  <hr />
+</div>
+`;

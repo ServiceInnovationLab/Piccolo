@@ -62,7 +62,7 @@ const Field = props => (
     </TextFieldWrapper>}
 
     {props.type === 'radio' && <TextFieldWrapper>
-      <RadioGroup {...props} />
+      <RadioGroup {...props} setRadio={props.setRadio} />
     </TextFieldWrapper>}
   </FieldWrapper>
 );

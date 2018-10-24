@@ -3,7 +3,7 @@ function IsraelData(data) {
     'persons': {
       'Tahi': {
         'gender': {
-          '2018-01': data.gender.toString() === 'female' ? 'woman' : 'man'
+          '2018-01': data.gender
         },
         'pension_contributing_years': {
           '2018-01': data.years_worked

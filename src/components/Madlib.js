@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styled from 'styled-components';
 import Paragraph from '../elements/Paragraph';
 
@@ -42,6 +42,11 @@ const MadLib = props => (
     <Paragraph>I am</Paragraph>
     <Input defaultValue={props.values.age} />
     <Paragraph>years old,</Paragraph><br />
+    {props.values.number_of_children > 0 && <Fragment>
+      <Paragraph>I have</Paragraph>
+      <Input defaultValue={props.values.number_of_children} />
+      <Paragraph>children,</Paragraph><br />
+    </Fragment>}
     <Paragraph>I have lived in the country for</Paragraph>
     <Input defaultValue={props.values.years_lived_in_country} />
     <Paragraph> years.</Paragraph>

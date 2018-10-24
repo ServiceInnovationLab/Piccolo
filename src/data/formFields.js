@@ -23,7 +23,7 @@ const formFields = [
     label: 'Gender',
     name: 'gender',
     type: 'radio',
-    values: ['female', 'male']
+    values: ['woman', 'man']
   },
   {
     label: 'Do you have a partner',
