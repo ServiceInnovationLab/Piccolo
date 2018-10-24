@@ -40,10 +40,10 @@ const Input = styled.input.attrs({ type: 'text' })`
 const MadLib = props => (
   <MadLibWrapper>
     <Paragraph>I am</Paragraph>
-    <Input value={props.values.age} />
+    <Input defaultValue={props.values.age} />
     <Paragraph>years old,</Paragraph><br />
     <Paragraph>I have lived in the country for</Paragraph>
-    <Input value={props.values.years_lived_in_country} />
+    <Input defaultValue={props.values.years_lived_in_country} />
     <Paragraph> years.</Paragraph>
   </MadLibWrapper>
 );

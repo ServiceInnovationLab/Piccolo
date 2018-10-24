@@ -1,12 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import Israel from '../data/israel';
 
 class IsraelQuery extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  componentDidMount(){
+  componentDidUpdate(){
     axios
-      .post('https://openfisca-israel.herokuapp.com/calculate', Israel)
+      .post('https://openfisca-israel.herokuapp.com/calculate', this.props.data)
       .then(res => res)
       .catch(err => err);
   }

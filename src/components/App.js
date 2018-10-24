@@ -15,27 +15,46 @@ import Field from './Field';
 import MadLib from '../components/Madlib';
 import { IconCircle } from '../elements/Icon';
 import countries from '../data/countries';
-import IsraelQuery from './IsraelQuery';
+import IsraelData from '../data/IsraelData';
+import IsraelQuery from '../components/IsraelQuery';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      israel_data: {}
+    };
     this.handleChange = this.handleChange.bind(this);
-    this.age = React.createRef();
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleChange(e, name) {
     this.setState({ [name]: e.target.value });
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+
+    const values = Array.prototype.slice.call(e.target)
+      .filter(el => el.name)
+      .reduce((form, el) => ({
+        ...form,
+        [el.name]: el.value,
+      }), {});
+
+    this.setState({israel_data: IsraelData(values)});
+  }
+
   render() {
     return <Fragment>
       <PageHeader />
       <main>
-        <SectionOne />
+        <SectionOne
+          israel_data={this.state.israel_data}
+        />
         <SectionTwo
+          onSubmit={this.onSubmit}
           handleChange={this.handleChange}
           state={this.state}
         />
@@ -46,7 +65,7 @@ class App extends Component {
   }
 }
 
-const SectionOne = () => <Section light>
+const SectionOne = props => <Section light>
   <Container>
     <Paragraph small>
       Welcome to the piccolo legislation as code demonstrator.
@@ -59,11 +78,9 @@ const SectionOne = () => <Section light>
       Legislation as code is when we turn those rules into things machines can use so they can work things out for us.
     </Paragraph>
 
-    <IsraelQuery />
+    <IsraelQuery data={props.israel_data} />
   </Container>
 </Section>;
-
-
 
 
 const SectionTwo = props => <Section dark center>
@@ -72,7 +89,7 @@ const SectionTwo = props => <Section dark center>
     subtitle="Enter some details to see eligibility across nations"
   />
   <Container>
-    <Form>
+    <Form onSubmit={props.onSubmit}>
       <Field
         label="What is your age?"
         name="age"
@@ -143,19 +160,19 @@ const SectionThree = props => <Section light>
           age={item.age}
         />
         {props.state.hasCitizenship && <Paragraph small>
-            If you are a citizen or permanent resident, not on ACC.
-          </Paragraph>}
+          If you are a citizen or permanent resident, not on ACC.
+        </Paragraph>}
         {props.state.do_you_have_a_partner === 'yes' && <Paragraph small>
-            If you have a partner you can share your 'pension' with them if they aren't eligible
-          </Paragraph>}
+          If you have a partner you can share your 'pension' with them if they aren't eligible
+        </Paragraph>}
 
         {props.state.number_of_children > 0 && item.name !== 'New Zealand' && <Paragraph small>
-            Each child (up to max of 5) counts as a 'year of work'.
-          </Paragraph>}
+          Each child (up to max of 5) counts as a 'year of work'.
+        </Paragraph>}
 
         {props.state.years_worked > 0 && <Paragraph small>
-            You must have contributed to your pension for {item.requiredContribution} years or more.
-          </Paragraph>}
+          You must have contributed to your pension for {item.requiredContribution} years or more.
+        </Paragraph>}
       </Column>)};
     </Grid>
   </Container>
