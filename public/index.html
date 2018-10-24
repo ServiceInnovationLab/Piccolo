@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy" content="connect-src 'self'; style-src https://serviceinnovationlab.github.io 'unsafe-inline'; script-src 'self' https://serviceinnovationlab.github.io 'unsafe-eval' 'unsafe-inline' 'unsafe-inline'; default-src 'none'; img-src 'self' https://serviceinnovationlab.github.io; child-src 'none'; base-uri https://serviceinnovationlab.github.io; form-action https://serviceinnovationlab.github.io; object-src 'none';">
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://openfisca-israel.herokuapp.com/calculate ws://localhost:3000/ https://api.rules.nz/calculate; style-src https://serviceinnovationlab.github.io 'unsafe-inline'; script-src 'self' https://serviceinnovationlab.github.io 'unsafe-eval' 'unsafe-inline' 'unsafe-inline'; default-src 'none'; img-src 'self' https://serviceinnovationlab.github.io; child-src 'none'; base-uri https://serviceinnovationlab.github.io; form-action https://serviceinnovationlab.github.io; object-src 'none';">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,9 +11,7 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
