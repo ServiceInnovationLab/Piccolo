@@ -90,8 +90,7 @@ class App extends Component {
           onSubmit={this.onSubmit}
           handleChange={this.handleChange}
           state={this.state}
-          setRadio={this.setRadio.bind(this)}
-        />
+          setRadio={this.setRadio.bind(this)} />
         <SectionThree
           show={this.state.isLoading ? 'block' : 'none'}
           state={this.state}
@@ -103,8 +102,7 @@ class App extends Component {
           nz_results={this.state.nz_results}
           uruguay_input_data={this.state.uruguay_input_data}
           handleUruguayResults={this.handleUruguayResults}
-          uruguay_results={this.state.uruguay_results}
-        />
+          uruguay_results={this.state.uruguay_results} />
       </main>
       <PageFooter />
     </Fragment>;
