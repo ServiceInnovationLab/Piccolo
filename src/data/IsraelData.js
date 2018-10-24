@@ -22,11 +22,7 @@ function IsraelData(data) {
         }
       }
     },
-    'households': {
-      'one': {
-        'parents': ['Tahi']
-      }
-    }
+    'households': {'one': {'parents': ['Tahi']}}
   };
 }
 
