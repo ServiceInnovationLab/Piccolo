@@ -1,4 +1,4 @@
-function NzData(data) {
+function UruguayData(data) {
   return {
     'persons': {
       'Tahi': {
@@ -30,4 +30,4 @@ function NzData(data) {
   };
 }
 
-export default NzData;
+export default UruguayData;

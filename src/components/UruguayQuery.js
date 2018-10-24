@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class IsraelQuery extends React.Component {
+class UruguayQuery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ class IsraelQuery extends React.Component {
   componentDidMount(){
     axios
       .post('https://openfisca-israel.herokuapp.com/calculate', this.props.data)
-      .then(res => this.props.handleIsraelResults(res))
+      .then(res => this.props.handleUruguayResults(res))
       .catch(err => err);
   }
 
@@ -21,4 +21,4 @@ class IsraelQuery extends React.Component {
   }
 }
 
-export default IsraelQuery;
+export default UruguayQuery;

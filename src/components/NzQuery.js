@@ -11,8 +11,8 @@ class NzQuery extends React.Component {
 
   componentDidMount(){
     axios
-      .post('https://api.rules.nz/calculate', this.props.data)
-      .then(res => console.log(res))
+      .post('https://openfisca-israel.herokuapp.com/calculate', this.props.data)
+      .then(res => this.props.handleNzResults(res))
       .catch(err => err);
   }
 

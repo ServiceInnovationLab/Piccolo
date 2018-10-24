@@ -5,6 +5,7 @@ import '../styles/App.css';
 import { PageHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
 import IsraelData from '../data/IsraelData';
+import UruguayData from '../data/UruguayData';
 import NzData from '../data/NzData';
 import {SectionOne, SectionTwo, SectionThree} from '../page/Sections';
 
@@ -16,11 +17,15 @@ class App extends Component {
       israel_results: {},
       nz_input_data: {},
       nz_results: {},
+      uruguay_input_data: {},
+      uruguay_results: {},
+      form_data: {},
       isLoading: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleIsraelResults = this.handleIsraelResults.bind(this);
     this.handleNzResults = this.handleNzResults.bind(this);
+    this.handleUruguayResults = this.handleUruguayResults.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.setRadio = this.setRadio.bind(this);
     this.setName = this.setName.bind(this);
@@ -39,6 +44,9 @@ class App extends Component {
   }
   handleNzResults(data) {
     this.setState({nz_results: data, isLoading: true});
+  }
+  handleUruguayResults(data) {
+    this.setState({uruguay_results: data, isLoading: true});
   }
 
   setName(el) {
@@ -60,7 +68,13 @@ class App extends Component {
         ...form,
         [el.name]: this.setName(el),
       }), {});
-    this.setState({israel_input_data: IsraelData(values), isLoading: true, nz_input_data: NzData(values)});
+    this.setState({
+      israel_input_data: IsraelData(values),
+      isLoading: true,
+      nz_input_data: NzData(values),
+      uruguay_input_data: UruguayData(values),
+      form_data: values
+    });
   }
 
   setRadio(event) {
@@ -70,6 +84,7 @@ class App extends Component {
   render() {
     return <Fragment>
       <PageHeader />
+      {console.log(this.state.form_data)}
       <main>
         <SectionOne />
         <SectionTwo
@@ -85,6 +100,12 @@ class App extends Component {
           israel_input_data={this.state.israel_input_data}
           handleIsraelResults={this.handleIsraelResults}
           israel_results={this.state.israel_results}
+          nz_input_data={this.state.nz_input_data}
+          handleNzResults={this.handleNzResults}
+          nz_results={this.state.nz_results}
+          uruguay_input_data={this.state.uruguay_input_data}
+          handleUruguayResults={this.handleUruguayResults}
+          uruguay_results={this.state.uruguay_results}
         />
       </main>
       <PageFooter />
