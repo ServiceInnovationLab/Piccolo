@@ -31,6 +31,7 @@ class App extends Component {
 
   render() {
     return <Fragment>
+      <PageHeader />
       <main>
         <SectionOne />
         <SectionTwo handleChange={this.handleChange} />
