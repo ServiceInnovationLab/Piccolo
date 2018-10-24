@@ -31,7 +31,6 @@ class App extends Component {
 
   render() {
     return <Fragment>
-      <PageHeader />
       <main>
         <SectionOne />
         <SectionTwo handleChange={this.handleChange} />
@@ -45,7 +44,7 @@ class App extends Component {
 const SectionOne = () => <Section light>
   <Container>
     <Paragraph small>
-      Welcome to the piccolo legislation as code demonstrator.
+      Welcome to the legislation as code demonstrator.
 
     </Paragraph>
     <Paragraph small>
