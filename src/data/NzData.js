@@ -22,11 +22,7 @@ function NzData(data) {
         }
       }
     },
-    'households': {
-      'one': {
-        'parents': ['Tahi']
-      }
-    }
+    'households': {'one': {'parents': ['Tahi']}}
   };
 }
 
