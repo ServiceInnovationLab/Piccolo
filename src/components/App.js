@@ -23,6 +23,7 @@ class App extends Component {
     super(props);
     this.state = {};
     this.handleChange = this.handleChange.bind(this);
+    this.age = React.createRef();
   }
 
   handleChange(e, name) {
@@ -34,7 +35,10 @@ class App extends Component {
       <PageHeader />
       <main>
         <SectionOne />
-        <SectionTwo handleChange={this.handleChange} />
+        <SectionTwo
+          handleChange={this.handleChange}
+          state={this.state}
+        />
         <SectionThree state={this.state} />
       </main>
       <PageFooter />
@@ -73,39 +77,46 @@ const SectionTwo = props => <Section dark center>
         label="What is your age?"
         name="age"
         type="number"
-        handleChange={props.handleChange}
+        value={props.state.age || ''}
+        handleChange={e=>props.handleChange(e, e.target.name)}
       />
+
       <Field
         label="Years worked"
         name="years_worked"
         type="number"
-        handleChange={props.handleChange}
+        value={props.state.years_worked || ''}
+        handleChange={e=>props.handleChange(e, e.target.name)}
       />
       <Field
         label="Years lived in the country"
         name="years_lived_in_country"
         type="number"
-        handleChange={props.handleChange}
+        value={props.state.years_lived_in_country || ''}
+        handleChange={e=>props.handleChange(e, e.target.name)}
       />
       <Field
         label="Number of children"
         name="number_of_children"
         type="number"
-        handleChange={props.handleChange}
+        value={props.state.number_of_children || ''}
+        handleChange={e=>props.handleChange(e, e.target.name)}
       />
       <Field
         label="Gender"
         name="gender"
         type="radio"
         values={['male', 'female']}
-        handleChange={props.handleChange}
+        value={props.state.gender || ''}
+        handleClick={props.handleChange}
       />
       <Field
         label="Do you have a partner?"
-        name="do_you_have_a_partner"
+        name="has_partner"
         type="radio"
         values={['yes', 'no']}
-        handleChange={props.handleChange}
+        value={props.state.has_partner || ''}
+        handleClick={props.handleChange}
       />
       <Button>Calculate</Button>
     </Form>
