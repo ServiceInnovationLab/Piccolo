@@ -22,7 +22,7 @@ export const PageHeader = () => (
   <Fragment>
     <Header>
       <Container>
-        <Logo>piccolo</Logo>
+        <Logo>Legislation as Code</Logo>
       </Container>
     </Header>
   </Fragment>

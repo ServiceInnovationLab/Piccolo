@@ -45,7 +45,7 @@ class App extends Component {
 const SectionOne = () => <Section light>
   <Container>
     <Paragraph small>
-      Welcome to the piccolo legislation as code demonstrator.
+      Welcome to the legislation as code demonstrator.
 
     </Paragraph>
     <Paragraph small>
@@ -97,7 +97,7 @@ const SectionTwo = props => <Section dark center>
         label="Gender"
         name="gender"
         type="radio"
-        values={['male', 'female']}
+        values={['man', 'woman']}
         handleChange={props.handleChange}
       />
       <Field
