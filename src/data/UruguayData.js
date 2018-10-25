@@ -22,7 +22,7 @@ function UruguayData(data) {
         }
       }
     },
-    'households': {'one': {'parents': ['Tahi']}}
+    'households': { 'one': { 'parents': ['Tahi'] } }
   };
 }
 

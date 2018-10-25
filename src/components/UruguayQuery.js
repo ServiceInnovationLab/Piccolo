@@ -9,7 +9,7 @@ class UruguayQuery extends React.Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios
       .post('https://openfisca-israel.herokuapp.com/calculate', this.props.data)
       .then(res => this.props.handleUruguayResults(res))
