@@ -78,7 +78,7 @@ class ColumnHeader extends React.Component {
 
   render() {
 
-    let age = this.handleAge(this.props.country);
+    const age = this.handleAge(this.props.country);
 
     return <Fragment>
       <H2>{this.props.country}</H2>
