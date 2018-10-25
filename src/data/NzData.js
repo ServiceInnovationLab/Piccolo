@@ -2,27 +2,26 @@ function NzData(data) {
   return {
     'persons': {
       'Tahi': {
-        'gender': {
-          '2018-01': data.gender
+        'is_permanent_resident': {
+          '2018-08': true
         },
-        'pension_contributing_years': {
-          '2018-01': data.years_worked
+        'acc__is_receiving_compensation': {
+          '2018-08': true
         },
-        'is_resident': {
-          '2018-01': true
+        'veterans_support__is_entitled_to_be_paid_veterans_pension': {
+          '2018-08': false
         },
-        'born_in_israel': {
-          '2018-01': true
+        'total_number_of_years_lived_in_nz_since_age_20': {
+          '2018-08': data.years_worked
         },
-        'pension_eligibility_age': {
-          '2018-01': null
+        'total_number_of_years_lived_in_nz_since_age_50': {
+          '2018-08': data.years_worked
         },
-        'eligible_for_pension': {
-          '2018-01': null
+        'super___eligibility_age': {
+          '2018-08': null
         }
       }
-    },
-    'households': {'one': {'parents': ['Tahi']}}
+    }
   };
 }
 
