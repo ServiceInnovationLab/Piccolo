@@ -39,8 +39,8 @@ export const SectionTwo = props => <Section dark center>
     subtitle="Enter in some details to see eligibility across nations."
   />
   <Container>
-    <Form onSubmit={(e) => props.onSubmit(e)}>
-      {formFields.map(item => {
+    <Form onSubmit={e => props.onSubmit(e)}>
+      {formFields.map((item) => {
         return <Field
           key={item.name}
           label={item.label}
