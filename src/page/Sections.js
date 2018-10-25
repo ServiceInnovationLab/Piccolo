@@ -48,7 +48,7 @@ export const SectionTwo = props => <Section dark center>
           values={item.values && item.values}
           handleChange={item.type.toString() === 'radio' ? props.handleChange : e => props.handleChange(e, e.target.name)}
           setRadio={props.setRadio}
-        />)}
+                              />)}
       {!props.state.isLoading && <Button>Calculate</Button>}
     </Form>
 
@@ -137,15 +137,15 @@ export const SectionFive = props => <div style={{ display: props.show }}><Sectio
     {props.israel_input_data.persons && <IsraelQuery
       handleIsraelResults={props.handleIsraelResults}
       data={props.israel_input_data}
-    />}
+                                        />}
     {props.nz_input_data.persons && <NzQuery
       handleNzResults={props.handleNzResults}
       data={props.nz_input_data}
-    />}
+                                    />}
     {props.uruguay_input_data.persons && <UruguayQuery
       handleNzResults={props.handleUruguayResults}
       data={props.uruguay_input_data}
-    />}
+                                         />}
 
     <Grid>
       {countries.map((item, i) => <Column key={i}>
