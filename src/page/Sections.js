@@ -39,7 +39,7 @@ export const SectionTwo = props => <Section dark center>
     subtitle="Enter in some details to see eligibility across nations."
   />
   <Container>
-    <Form onSubmit={(e)=>props.onSubmit(e)}>
+    <Form onSubmit={(e) => props.onSubmit(e)}>
       {formFields.map(item => {
         return <Field
           key={item.name}
@@ -47,7 +47,7 @@ export const SectionTwo = props => <Section dark center>
           name={item.name}
           type={item.type}
           values={item.values && item.values}
-          handleChange={item.type.toString() === 'radio' ? props.handleChange : e=>props.handleChange(e, e.target.name)}
+          handleChange={item.type.toString() === 'radio' ? props.handleChange : e => props.handleChange(e, e.target.name)}
           setRadio={props.setRadio}
         />;
       })}
@@ -69,7 +69,7 @@ class ColumnHeader extends React.Component {
   }
 
   handleAge(country) {
-    if(country === 'Israel') {
+    if (country === 'Israel') {
       return this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
     } else {
       return this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
@@ -117,7 +117,7 @@ class ColumnHeader extends React.Component {
   }
 }
 
-export const SectionThree = props => <div style={{display: props.show}}><Section light>
+export const SectionThree = props => <div style={{ display: props.show }}><Section light>
   <Container>
     <MadLib
       values={props.state}
@@ -125,15 +125,15 @@ export const SectionThree = props => <div style={{display: props.show}}><Section
   </Container>
 </Section></div>;
 
-export const SectionFour = props => <div style={{display: props.show}}><Section dark>
+export const SectionFour = props => <div style={{ display: props.show }}><Section dark>
   <Container>
-    <Paragraph style={{color: '#fff', textAlign: 'center'}}>
+    <Paragraph style={{ color: '#fff', textAlign: 'center' }}>
       Based on the information you entered, here is your eligibility for government pensions if you were applying in one of the following countries.
     </Paragraph>
   </Container>
 </Section></div>;
 
-export const SectionFive = props => <div style={{display: props.show}}><Section light>
+export const SectionFive = props => <div style={{ display: props.show }}><Section light>
   <Container>
 
     {props.israel_input_data.persons && <IsraelQuery
@@ -159,10 +159,10 @@ export const SectionFive = props => <div style={{display: props.show}}><Section 
           uruguay={props.uruguay_results}
           age={props.form_data}
         />
-        {props.state.hasCitizenship  && item.name === 'New Zealand' && <Paragraph small>
+        {props.state.hasCitizenship && item.name === 'New Zealand' && <Paragraph small>
           If you are a citizen or permanent resident, not on ACC.
         </Paragraph>}
-        {props.state.has_partner === 'yes'  && item.name === 'New Zealand'  && <Paragraph small>
+        {props.state.has_partner === 'yes' && item.name === 'New Zealand' && <Paragraph small>
           If you have a partner you can share your 'pension' with them if they aren't eligible
         </Paragraph>}
 
@@ -170,7 +170,7 @@ export const SectionFive = props => <div style={{display: props.show}}><Section 
           Each child (up to max of 5) counts as a 'year of work'.
         </Paragraph>}
 
-        {props.state.years_worked < item.reqContributionYears  && item.name === 'Uruguay' && <Paragraph small>
+        {props.state.years_worked < item.reqContributionYears && item.name === 'Uruguay' && <Paragraph small>
           You must have contributed to your pension for {item.reqContributionYears} years or more.
         </Paragraph>}
       </Column>)}

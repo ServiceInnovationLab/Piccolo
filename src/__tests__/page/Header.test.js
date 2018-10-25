@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {SectionHeader} from '../../page/Header';
+import { SectionHeader } from '../../page/Header';
 import 'jest-styled-components';
 
 test('SectionHeader renders correctly', () => {
