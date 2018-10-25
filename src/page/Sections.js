@@ -71,9 +71,9 @@ class ColumnHeader extends React.Component {
   handleAge(country) {
     if (country === 'Israel') {
       return this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
-    } else {
-      return this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
     }
+      return this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
+
   }
 
   render() {
