@@ -41,13 +41,13 @@ export const SectionTwo = props => <Section dark center>
   <Container>
     <Form onSubmit={(e) => props.onSubmit(e)}>
       {formFields.map(item => <Field
-          key={item.name}
-          label={item.label}
-          name={item.name}
-          type={item.type}
-          values={item.values && item.values}
-          handleChange={item.type.toString() === 'radio' ? props.handleChange : e => props.handleChange(e, e.target.name)}
-          setRadio={props.setRadio}
+        key={item.name}
+        label={item.label}
+        name={item.name}
+        type={item.type}
+        values={item.values && item.values}
+        handleChange={item.type.toString() === 'radio' ? props.handleChange : e => props.handleChange(e, e.target.name)}
+        setRadio={props.setRadio}
         />)}
       {!props.state.isLoading && <Button>Calculate</Button>}
     </Form>
