@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { CreativeCommons } from 'styled-icons/fa-brands';
-import { Check } from 'styled-icons/fa-solid';
+// import { Check } from 'styled-icons/fa-solid';
 
 const CreativeCommonsIcon = styled(CreativeCommons)`
   color: #000;
