@@ -21,7 +21,7 @@ import Link from '../elements/Link';
 export const SectionOne = () => <Section light>
   <Container>
     <Paragraph small>
-      Welcome to the piccolo legislation as code demonstrator.
+      Welcome to the Legislation as Code demonstrator.
     </Paragraph>
     <Paragraph small>
       There are many rules about how we do things around the world. Some of these are coded into law, such as voting ages, tax rates, and access to services. Sometimes these rules can be really complicated for a human to sit down and work out, but really easy for a machine to do.</Paragraph>
