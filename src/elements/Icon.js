@@ -11,11 +11,11 @@ const CreativeCommonsIcon = styled(CreativeCommons)`
   top: 7px;
 `;
 
-const CheckIcon = styled(Check)`
-  color: #fff;
-  font-size: 40px;
-  height: 40px;
-`;
+// const CheckIcon = styled(Check)`
+//   color: #fff;
+//   font-size: 40px;
+//   height: 40px;
+// `;
 
 export const Icon = props => (
   <Fragment>
