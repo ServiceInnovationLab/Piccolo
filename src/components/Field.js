@@ -56,17 +56,13 @@ const Field = props => (
       <TextField
         name={props.name}
         type={props.type}
-        onChange={(e => props.handleChange(e, props.name))}
+        onChange={e => props.handleChange(e, props.name)}
         small
       />
     </TextFieldWrapper>}
 
     {props.type === 'radio' && <TextFieldWrapper>
-      <RadioGroup
-        values={props.values}
-        name={props.name}
-        handleClick={props.handleChange}
-      />
+      <RadioGroup {...props} setRadio={props.setRadio} />
     </TextFieldWrapper>}
   </FieldWrapper>
 );

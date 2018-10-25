@@ -69,21 +69,23 @@ const Span = styled.span`
   text-transform: capitalize;
 `;
 
-const RadioGroup = props => (
-  <RadioGroupWrapper>
-    <RadioGroupInner>
-      <div>
-        {props.values.map((val, i) => <Label key={i}>
-          <Radio
-            name={props.name}
-            value={val}
-            onClick={e => props.handleClick(e, props.name)}
-          />
-          <Span>{val}</Span>
-        </Label>)}
-      </div>
-    </RadioGroupInner>
-  </RadioGroupWrapper>
-);
+class RadioGroup extends React.Component {
+
+  render() {
+    return <RadioGroupWrapper>
+      <RadioGroupInner>
+        <div onChange={this.props.setRadio}>
+          {this.props.values.map((val, i) => <Label key={i}>
+            <Radio
+              name={this.props.name}
+              value={val || ''}
+            />
+            <Span>{val}</Span>
+          </Label>)}
+        </div>
+      </RadioGroupInner>
+    </RadioGroupWrapper>;
+  }
+}
 
 export default RadioGroup;

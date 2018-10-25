@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styled from 'styled-components';
 import Paragraph from '../elements/Paragraph';
 
@@ -32,6 +32,7 @@ const Input = styled.input.attrs({ type: 'text' })`
   border-bottom: 2px solid #000;
   font-size: 24px;
   margin: 0 10px;
+  font-weight: bold;
   @media(min-width: 1024px) {
     font-size: 34px;
   }
@@ -39,11 +40,20 @@ const Input = styled.input.attrs({ type: 'text' })`
 
 const MadLib = props => (
   <MadLibWrapper>
-    <Paragraph>I am</Paragraph>
-    <Input value={props.values.age} />
-    <Paragraph>years old,</Paragraph><br />
+    <Paragraph>I am a</Paragraph>
+    <Input defaultValue={props.values.age} />
+    <Paragraph>year old</Paragraph>
+    <Input style={{width: '130px'}} defaultValue={props.values.setGender} /><br />
+    {props.values.number_of_children > 0 && <Fragment>
+      <Paragraph>who has had</Paragraph>
+      <Input defaultValue={props.values.number_of_children} />
+      <Paragraph>children.</Paragraph><br />
+    </Fragment>}
     <Paragraph>I have lived in the country for</Paragraph>
-    <Input value={props.values.years_lived_in_country} />
+    <Input defaultValue={props.values.years_lived_in_country} />
+    <Paragraph> years, </Paragraph><br />
+    <Paragraph> and worked there for </Paragraph>
+    <Input defaultValue={props.values.years_worked} />
     <Paragraph> years.</Paragraph>
   </MadLibWrapper>
 );

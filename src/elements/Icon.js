@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { CreativeCommons } from 'styled-icons/fa-brands';
-import { Check } from 'styled-icons/fa-solid';
+// import { Check } from 'styled-icons/fa-solid';
 
 const CreativeCommonsIcon = styled(CreativeCommons)`
   color: #000;
@@ -11,11 +11,11 @@ const CreativeCommonsIcon = styled(CreativeCommons)`
   top: 7px;
 `;
 
-const CheckIcon = styled(Check)`
-  color: #fff;
-  font-size: 40px;
-  height: 40px;
-`;
+// const CheckIcon = styled(Check)`
+//   color: #fff;
+//   font-size: 40px;
+//   height: 40px;
+// `;
 
 export const Icon = props => (
   <Fragment>
@@ -43,8 +43,8 @@ const Circle = styled.div`
 `;
 
 export const IconCircle = props => (
-  <Circle dark={!props.value}>
-    {props.value && <span>{props.value}</span>}
-    {props.value === null && <span><CheckIcon /></span>}
+  <Circle>
+    {<span>{props.value}</span>}
+    {/* {props.value === 0 && <span><CheckIcon /></span>} */}
   </Circle>
 );

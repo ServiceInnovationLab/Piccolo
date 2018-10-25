@@ -2,31 +2,89 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/index';
 import '../styles/App.css';
-import Button from '../elements/Button';
-import Section from '../elements/Section';
-import Container from '../elements/Container';
-import Paragraph from '../elements/Paragraph';
-import { H2 } from '../elements/Headings';
-import Grid, { Column } from '../elements/Grid';
-import { PageHeader, SectionHeader } from '../page/Header';
+import { PageHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
-import Form from './Form';
-import Field from './Field';
-import MadLib from '../components/Madlib';
-import { IconCircle } from '../elements/Icon';
-import countries from '../data/countries';
-import IsraelQuery from './IsraelQuery';
-
+import IsraelData from '../data/IsraelData';
+import UruguayData from '../data/UruguayData';
+import NzData from '../data/NzData';
+import {
+  SectionOne,
+  SectionTwo,
+  SectionThree,
+  SectionFour,
+  SectionFive
+} from '../page/Sections';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      israel_input_data: {},
+      israel_results: {},
+      nz_input_data: {},
+      nz_results: {},
+      uruguay_input_data: {},
+      uruguay_results: {},
+      form_data: {},
+      isLoading: true,
+    };
     this.handleChange = this.handleChange.bind(this);
+    this.handleIsraelResults = this.handleIsraelResults.bind(this);
+    this.handleNzResults = this.handleNzResults.bind(this);
+    this.handleUruguayResults = this.handleUruguayResults.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.setRadio = this.setRadio.bind(this);
+    this.setName = this.setName.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({isLoading: false});
   }
 
   handleChange(e, name) {
     this.setState({ [name]: e.target.value });
+  }
+
+  handleIsraelResults(data) {
+    this.setState({israel_results: data, isLoading: true});
+  }
+  handleNzResults(data) {
+    this.setState({nz_results: data, isLoading: true});
+  }
+  handleUruguayResults(data) {
+    this.setState({uruguay_results: data, isLoading: true});
+  }
+
+  setName(el) {
+    if(el.name === 'gender') {
+      return this.state.setGender;
+    } else if(el.name === 'has_partner') {
+      return this.state.setPartner;
+    } else {
+      return el.value;
+    }
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({isLoading: false});
+
+    const values = Array.prototype.slice.call(e.target)
+      .reduce((form, el) => ({
+        ...form,
+        [el.name]: this.setName(el),
+      }), {});
+    this.setState({
+      israel_input_data: IsraelData(values),
+      isLoading: true,
+      nz_input_data: NzData(values),
+      uruguay_input_data: UruguayData(values),
+      form_data: values
+    });
+  }
+
+  setRadio(event) {
+    this.setState({[event.target.name === 'gender' ? 'setGender' : 'setPartner']: event.target.value});
   }
 
   render() {
@@ -34,121 +92,36 @@ class App extends Component {
       <PageHeader />
       <main>
         <SectionOne />
-        <SectionTwo handleChange={this.handleChange} />
-        <SectionThree state={this.state} />
+        <SectionTwo
+          onSubmit={this.onSubmit}
+          handleChange={this.handleChange}
+          state={this.state}
+          setRadio={this.setRadio.bind(this)} />
+        <SectionThree
+          show={this.state.isLoading ? 'block' : 'none'}
+          state={this.state}
+        />
+        <SectionFour
+          show={this.state.isLoading ? 'block' : 'none'}
+        />
+        <SectionFive
+          show={this.state.isLoading ? 'block' : 'none'}
+          state={this.state}
+          israel_input_data={this.state.israel_input_data}
+          handleIsraelResults={this.handleIsraelResults}
+          israel_results={this.state.israel_results}
+          nz_input_data={this.state.nz_input_data}
+          handleNzResults={this.handleNzResults}
+          nz_results={this.state.nz_results}
+          uruguay_input_data={this.state.uruguay_input_data}
+          handleUruguayResults={this.handleUruguayResults}
+          uruguay_results={this.state.uruguay_results}
+        />
       </main>
       <PageFooter />
     </Fragment>;
   }
 }
-
-const SectionOne = () => <Section light>
-  <Container>
-    <Paragraph small>
-      Welcome to the legislation as code demonstrator.
-
-    </Paragraph>
-    <Paragraph small>
-      There are many rules about how we do things around the world. Some of these are coded into law, such as voting ages, tax rates, and access to services. Sometimes these rules can be really complicated for a human to sit down and work out, but really easy for a machine to do.</Paragraph>
-
-    <Paragraph small>
-      Legislation as code is when we turn those rules into things machines can use so they can work things out for us.
-    </Paragraph>
-
-    <IsraelQuery />
-  </Container>
-</Section>;
-
-
-
-
-const SectionTwo = props => <Section dark center>
-  <SectionHeader
-    title="When can I get a pension"
-    subtitle="Enter some details to see eligibility across nations"
-  />
-  <Container>
-    <Form>
-      <Field
-        label="What is your age?"
-        name="age"
-        type="number"
-        handleChange={props.handleChange}
-      />
-      <Field
-        label="Years worked"
-        name="years_worked"
-        type="number"
-        handleChange={props.handleChange}
-      />
-      <Field
-        label="Years lived in the country"
-        name="years_lived_in_country"
-        type="number"
-        handleChange={props.handleChange}
-      />
-      <Field
-        label="Number of children"
-        name="number_of_children"
-        type="number"
-        handleChange={props.handleChange}
-      />
-      <Field
-        label="Gender"
-        name="gender"
-        type="radio"
-        values={['man', 'woman']}
-        handleChange={props.handleChange}
-      />
-      <Field
-        label="Do you have a partner?"
-        name="do_you_have_a_partner"
-        type="radio"
-        values={['yes', 'no']}
-        handleChange={props.handleChange}
-      />
-      <Button>Calculate</Button>
-    </Form>
-
-  </Container>
-</Section>;
-
-const ColumnHeader = props => <Fragment>
-  <H2>{props.country}</H2>
-  <Paragraph medium adjust>{!props.eligible ? 'You are eligible for a pension at' : 'You are eligible now'}</Paragraph>
-  <IconCircle value={props.age ? props.age : null} />
-</Fragment>;
-
-const SectionThree = props => <Section light>
-  <Container>
-    <MadLib
-      values={props.state}
-    />
-    <Grid>
-      {countries.map((item, i) => <Column key={i}>
-        <ColumnHeader
-          country={item.name}
-          eligible={item.eligible}
-          age={item.age}
-        />
-        {props.state.hasCitizenship && <Paragraph small>
-            If you are a citizen or permanent resident, not on ACC.
-          </Paragraph>}
-        {props.state.do_you_have_a_partner === 'yes' && <Paragraph small>
-            If you have a partner you can share your 'pension' with them if they aren't eligible
-          </Paragraph>}
-
-        {props.state.number_of_children > 0 && item.name !== 'New Zealand' && <Paragraph small>
-            Each child (up to max of 5) counts as a 'year of work'.
-          </Paragraph>}
-
-        {props.state.years_worked > 0 && <Paragraph small>
-            You must have contributed to your pension for {item.requiredContribution} years or more.
-          </Paragraph>}
-      </Column>)};
-    </Grid>
-  </Container>
-</Section>;
 
 function mapStateToProps(state) {
   return { state };

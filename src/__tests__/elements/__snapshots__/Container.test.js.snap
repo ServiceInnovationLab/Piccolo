@@ -6,6 +6,12 @@ exports[`Container renders correctly 1`] = `
   width: 75%;
 }
 
+@media (min-width:1440px) {
+  .c0 {
+    width: 55%;
+  }
+}
+
 <div
   className="c0"
 />

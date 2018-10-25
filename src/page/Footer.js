@@ -15,7 +15,7 @@ const PageFooter = () => (
   <Fragment>
     <Footer>
       <Container>
-        <List stripped>
+        <List stripped bordered>
           <Item>About this website</Item>
           <Item>Contact Us</Item>
         </List>
