@@ -13,12 +13,12 @@ const countries = [
     hasCitizenship: true,
     reqContributionYears: 30
   },
-  {
-    name: 'Uruguay',
-    eligible: true,
-    hasCitizenship: true,
-    reqContributionYears: 30
-  }
+  // {
+  //   name: 'Uruguay',
+  //   eligible: true,
+  //   hasCitizenship: true,
+  //   reqContributionYears: 30
+  // }
 ];
 
 export default countries;

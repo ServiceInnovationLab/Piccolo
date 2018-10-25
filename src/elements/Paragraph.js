@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 const Paragraph = styled.p`
   font-size: 24px;
   color: #000;
+  line-height: 1.5;
   ${props => props.small && css`
     font-size: 22px;
   `}

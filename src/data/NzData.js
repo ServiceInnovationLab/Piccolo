@@ -5,9 +5,6 @@ function NzData(data) {
         'is_permanent_resident': {
           '2018-08': true
         },
-        'acc__is_receiving_compensation': {
-          '2018-08': true
-        },
         'veterans_support__is_entitled_to_be_paid_veterans_pension': {
           '2018-08': false
         },
@@ -20,6 +17,16 @@ function NzData(data) {
         'super___eligibility_age': {
           '2018-08': null
         }
+      }
+    },
+    'titled_properties': {
+      'house': {
+        'others': ['Tahi']
+      }
+    },
+    'families': {
+      'family': {
+        'others': ['Tahi']
       }
     }
   };

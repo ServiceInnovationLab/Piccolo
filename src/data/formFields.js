@@ -5,7 +5,7 @@ const formFields = [
     type: 'number'
   },
   {
-    label: 'Years worked',
+    label: 'Years worked in the country',
     name: 'years_worked',
     type: 'number'
   },

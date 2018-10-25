@@ -7,7 +7,13 @@ import PageFooter from '../page/Footer';
 import IsraelData from '../data/IsraelData';
 import UruguayData from '../data/UruguayData';
 import NzData from '../data/NzData';
-import {SectionOne, SectionTwo, SectionThree} from '../page/Sections';
+import {
+  SectionOne,
+  SectionTwo,
+  SectionThree,
+  SectionFour,
+  SectionFive
+} from '../page/Sections';
 
 class App extends Component {
   constructor(props) {
@@ -94,6 +100,13 @@ class App extends Component {
         <SectionThree
           show={this.state.isLoading ? 'block' : 'none'}
           state={this.state}
+        />
+        <SectionFour
+          show={this.state.isLoading ? 'block' : 'none'}
+        />
+        <SectionFive
+          show={this.state.isLoading ? 'block' : 'none'}
+          state={this.state}
           israel_input_data={this.state.israel_input_data}
           handleIsraelResults={this.handleIsraelResults}
           israel_results={this.state.israel_results}
@@ -102,7 +115,8 @@ class App extends Component {
           nz_results={this.state.nz_results}
           uruguay_input_data={this.state.uruguay_input_data}
           handleUruguayResults={this.handleUruguayResults}
-          uruguay_results={this.state.uruguay_results} />
+          uruguay_results={this.state.uruguay_results}
+        />
       </main>
       <PageFooter />
     </Fragment>;
