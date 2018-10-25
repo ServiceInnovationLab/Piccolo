@@ -97,7 +97,7 @@ const SectionTwo = props => <Section dark center>
         label="Gender"
         name="gender"
         type="radio"
-        values={['male', 'female']}
+        values={['man', 'woman']}
         handleChange={props.handleChange}
       />
       <Field
