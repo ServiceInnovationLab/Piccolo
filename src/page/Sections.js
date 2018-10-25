@@ -62,9 +62,6 @@ const EligibleHeader = props => <Paragraph medium adjust>
 </Paragraph>;
 
 class ColumnHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     let israel_age = this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
