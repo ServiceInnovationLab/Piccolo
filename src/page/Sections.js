@@ -63,17 +63,30 @@ const EligibleHeader = props => <Paragraph medium adjust>
 
 class ColumnHeader extends React.Component {
 
-  render() {
-    let israel_age = this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
+  constructor(props) {
+    super(props);
+    this.handleAge = this.handleAge.bind(this);
+  }
 
-    let nz_age = this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
+  handleAge(country) {
+    if(country === 'Israel') {
+      return this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
+    } else {
+      return this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
+    }
+  }
+
+  render() {
+
+    let age = this.handleAge(this.props.country);
+
     return <Fragment>
       <H2>{this.props.country}</H2>
 
       {this.props.country === 'Israel' &&
         <Fragment>
-          <EligibleHeader israel_age/>
-          <IconCircle value={israel_age} />
+          <EligibleHeader age/>
+          <IconCircle value={age} />
           <Paragraph>Government pensions are known as old age pensions, sometimes referred to as insurance.</Paragraph>
           <List>
             <Item>Eligibility is determined by gender, payments to old age insurance, income test and the type of employment you have been in.</Item>
@@ -85,8 +98,8 @@ class ColumnHeader extends React.Component {
 
       {this.props.country === 'New Zealand' &&
         <Fragment>
-          <EligibleHeader nz_age />
-          <IconCircle value={nz_age} />
+          <EligibleHeader age />
+          <IconCircle value={age} />
           <Paragraph>
             Government pension is called  New Zealand Superannuation, known as NZ Super for short.
           </Paragraph>
