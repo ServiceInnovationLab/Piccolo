@@ -4,7 +4,7 @@ import {SectionHeader} from '../../page/Header';
 import 'jest-styled-components';
 
 test('SectionHeader renders correctly', () => {
-  let props = {
+  const props = {
     title: 'this is the title',
     subtitle: 'this is the subtitle'
   };
