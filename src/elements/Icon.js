@@ -44,7 +44,7 @@ const Circle = styled.div`
 
 export const IconCircle = props => (
   <Circle>
-    {props.value && <span>{props.value}</span>}
+    {<span>{props.value}</span>}
     {/* {props.value === 0 && <span><CheckIcon /></span>} */}
   </Circle>
 );

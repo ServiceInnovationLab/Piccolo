@@ -58,7 +58,7 @@ export const SectionTwo = props => <Section dark center>
 </Section>;
 
 const EligibleHeader = props => <Paragraph medium adjust>
-  You are eligible for a pension at age {props.israel_age}
+  You are eligible for a pension at age <span>{props.israel_age}</span>
 </Paragraph>;
 
 class ColumnHeader extends React.Component {
