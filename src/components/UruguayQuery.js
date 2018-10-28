@@ -12,7 +12,7 @@ class UruguayQuery extends React.Component {
   componentDidMount() {
     axios
       .post('https://openfisca-israel.herokuapp.com/calculate', this.props.data)
-      .then(res => this.props.handleUruguayResults(res))
+      .then(res => this.props.handleData(res, 'uruguay'))
       .catch(err => err);
   }
 

@@ -26,12 +26,14 @@ class App extends Component {
       uruguay_input_data: {},
       uruguay_results: {},
       form_data: {},
+      data_results: [],
       isLoading: true,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleIsraelResults = this.handleIsraelResults.bind(this);
-    this.handleNzResults = this.handleNzResults.bind(this);
-    this.handleUruguayResults = this.handleUruguayResults.bind(this);
+    // this.handleIsraelResults = this.handleIsraelResults.bind(this);
+    // this.handleNzResults = this.handleNzResults.bind(this);
+    // this.handleUruguayResults = this.handleUruguayResults.bind(this);
+    this.handleData = this.handleData.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.setRadio = this.setRadio.bind(this);
     this.setName = this.setName.bind(this);
@@ -45,14 +47,8 @@ class App extends Component {
     this.setState({ [name]: e.target.value });
   }
 
-  handleIsraelResults(data) {
-    this.setState({israel_results: data, isLoading: true});
-  }
-  handleNzResults(data) {
-    this.setState({nz_results: data, isLoading: true});
-  }
-  handleUruguayResults(data) {
-    this.setState({uruguay_results: data, isLoading: true});
+  handleData(data, country) {
+    this.setState({[country]: data});
   }
 
   setName(el) {
@@ -108,15 +104,12 @@ class App extends Component {
           show={this.state.isLoading ? 'block' : 'none'}
           state={this.state}
           israel_input_data={this.state.israel_input_data}
-          handleIsraelResults={this.handleIsraelResults}
-          israel_results={this.state.israel_results}
+          handleData={this.handleData}
           nz_input_data={this.state.nz_input_data}
-          handleNzResults={this.handleNzResults}
-          nz_results={this.state.nz_results}
           uruguay_input_data={this.state.uruguay_input_data}
-          handleUruguayResults={this.handleUruguayResults}
-          uruguay_results={this.state.uruguay_results}
+          data_results={{...this.state.israel_results, ...this.state.new_zealand_results, ...this.state.uruguay_results}}
         />
+        {console.log(this.state)}
       </main>
       <PageFooter />
     </Fragment>;

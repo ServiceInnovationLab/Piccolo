@@ -12,7 +12,7 @@ class IsraelQuery extends React.Component {
   componentDidMount() {
     axios
       .post('https://openfisca-israel.herokuapp.com/calculate', this.props.data)
-      .then(res => this.props.handleIsraelResults(res))
+      .then(res => this.props.handleData(res, 'israel'))
       .catch(err => err);
   }
 

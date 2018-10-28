@@ -133,30 +133,30 @@ export const SectionFour = props => <div style={{ display: props.show }}><Sectio
 
 export const SectionFive = props => <div style={{ display: props.show }}><Section light>
   <Container>
-
     {props.israel_input_data.persons && <IsraelQuery
-      handleIsraelResults={props.handleIsraelResults}
+      handleData={props.handleData}
       data={props.israel_input_data}
                                         />}
     {props.nz_input_data.persons && <NzQuery
-      handleNzResults={props.handleNzResults}
+      handleData={props.handleData}
       data={props.nz_input_data}
                                     />}
     {props.uruguay_input_data.persons && <UruguayQuery
-      handleNzResults={props.handleUruguayResults}
+      handleData={props.handleData}
       data={props.uruguay_input_data}
                                          />}
 
     <Grid>
       {countries.map((item, i) => <Column key={i}>
-        <ColumnHeader
+        {props.data_results[`${item.name.toLowerCase().replace(' ', '_')}`] && <div><ColumnHeader
           country={item.name}
-          eligible={item.eligible}
+          eligible={props.state.israel_results.data.persons.Tahi.eligible_for_pension}
           israel={props.israel_results}
           new_zealand={props.nz_results}
           uruguay={props.uruguay_results}
           age={props.form_data}
         />
+        {/* {console.log('hi',props.state.israel_results.status === 200 ? props.state.israel_results.data.persons.Tahi.eligible_for_pension : 'no')} */}
         {props.state.hasCitizenship && item.name === 'New Zealand' && <Paragraph small>
           If you are a citizen or permanent resident, not on ACC.
         </Paragraph>}
@@ -171,6 +171,7 @@ export const SectionFive = props => <div style={{ display: props.show }}><Sectio
         {props.state.years_worked < item.reqContributionYears && item.name === 'Uruguay' && <Paragraph small>
           You must have contributed to your pension for {item.reqContributionYears} years or more.
         </Paragraph>}
+        </div>}
       </Column>)}
     </Grid>
   </Container>

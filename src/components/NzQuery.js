@@ -12,7 +12,7 @@ class NzQuery extends React.Component {
   componentDidMount() {
     axios
       .post('https://api.rules.nz/calculate', this.props.data)
-      .then(res => this.props.handleNzResults(res))
+      .then(res => this.props.handleData(res, 'new_zealand'))
       .catch(err => err);
   }
 
