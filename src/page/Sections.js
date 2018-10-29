@@ -56,6 +56,7 @@ export const SectionTwo = props => <Section dark center>
 </Section>;
 
 const EligibleHeader = props => <Paragraph medium adjust>
+{console.log('eligible header', props.data)}
   You are eligible for a pension at age <span>{props.israel_age}</span>
 </Paragraph>;
 
@@ -67,23 +68,37 @@ class ColumnHeader extends React.Component {
   }
 
   handleAge(country) {
-    if (country === 'Israel') {
-      return this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
-    }
-      return this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
+    // if (country === 'Israel') {
+    //   // return this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
+    // }
+    // return this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
+    // console.log('in handle age', this.props.data)
+    return 1;
+  }
 
+  returnCountry(data) {
+    // console.log(data.length)
+
+    if(data.length > 0) {
+      data.map(item => console.log(item));
+    }
   }
 
   render() {
 
-    const age = this.handleAge(this.props.country);
+    // const age = this.handleAge(this.props.country);
 
     return <Fragment>
-      <H2>{this.props.country}</H2>
+      {/* {console.log('in section', this.props.data)} */}
 
-      {this.props.country === 'Israel' &&
+      {/* {this.props.data.map(item=>console.log('stuff', item[this.props.country.toLowerCase().replace(' ', '_')]))} */}
+
+      {this.props.data && this.returnCountry(this.props.data)}
+      {/* <H2>{this.props.country}</H2> */}
+
+      {/* {this.props.country === 'Israel' &&
         <Fragment>
-          <EligibleHeader age/>
+          <EligibleHeader age data={this.props.data} />
           <IconCircle value={age} />
           <Paragraph>Government pensions are known as old age pensions, sometimes referred to as insurance.</Paragraph>
           <List>
@@ -96,7 +111,7 @@ class ColumnHeader extends React.Component {
 
       {this.props.country === 'New Zealand' &&
         <Fragment>
-          <EligibleHeader age />
+          <EligibleHeader age data={this.props.data} />
           <IconCircle value={age} />
           <Paragraph>
             Government pension is called  New Zealand Superannuation, known as NZ Super for short.
@@ -110,7 +125,7 @@ class ColumnHeader extends React.Component {
           <Paragraph>
             <Link href="https://www.govt.nz/browse/tax-benefits-and-finance/new-zealand-superannuation-and-the-veterans-pension/nz-superannuation-and-the-veterans-pension-overview/" text="Apply for NZ Super Online"></Link>
           </Paragraph>
-        </Fragment>}
+        </Fragment>} */}
     </Fragment>;
   }
 }
@@ -148,12 +163,9 @@ export const SectionFive = props => <div style={{ display: props.show }}><Sectio
 
     <Grid>
       {countries.map((item, i) => <Column key={i}>
-        {props.data_results[`${item.name.toLowerCase().replace(' ', '_')}`] && <div><ColumnHeader
+        <div><ColumnHeader
           country={item.name}
-          eligible={props.state.israel_results.data.persons.Tahi.eligible_for_pension}
-          israel={props.israel_results}
-          new_zealand={props.nz_results}
-          uruguay={props.uruguay_results}
+          data={props.data}
           age={props.form_data}
         />
         {/* {console.log('hi',props.state.israel_results.status === 200 ? props.state.israel_results.data.persons.Tahi.eligible_for_pension : 'no')} */}
@@ -171,7 +183,7 @@ export const SectionFive = props => <div style={{ display: props.show }}><Sectio
         {props.state.years_worked < item.reqContributionYears && item.name === 'Uruguay' && <Paragraph small>
           You must have contributed to your pension for {item.reqContributionYears} years or more.
         </Paragraph>}
-        </div>}
+        </div>
       </Column>)}
     </Grid>
   </Container>

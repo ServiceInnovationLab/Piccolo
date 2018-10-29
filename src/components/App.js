@@ -26,7 +26,7 @@ class App extends Component {
       uruguay_input_data: {},
       uruguay_results: {},
       form_data: {},
-      data_results: [],
+      data: [],
       isLoading: true,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -48,7 +48,8 @@ class App extends Component {
   }
 
   handleData(data, country) {
-    this.setState({[country]: data});
+    let results = {[country]: data};
+    this.state.data.push(results);
   }
 
   setName(el) {
@@ -107,9 +108,9 @@ class App extends Component {
           handleData={this.handleData}
           nz_input_data={this.state.nz_input_data}
           uruguay_input_data={this.state.uruguay_input_data}
-          data_results={{...this.state.israel_results, ...this.state.new_zealand_results, ...this.state.uruguay_results}}
+          data={this.state.data}
         />
-        {console.log(this.state)}
+        {/* {console.log(this.state)} */}
       </main>
       <PageFooter />
     </Fragment>;
