@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextField from '../elements/TextField';
+// import TextField from '../elements/TextField';
 import RadioGroup from '../elements/RadioGroup';
 
 export const FieldWrapper = styled.div`
@@ -54,17 +54,17 @@ const Field = props => (
     </Label>
 
     {props.type === 'number' && <TextFieldWrapper>
-      <TextField
+      {/* <TextField
         name={props.name}
         type={props.type}
         onChange={e => props.handleValue(e)}
         small
-      />
+      /> */}
     </TextFieldWrapper>}
 
-    {/* {props.type === 'radio' && <TextFieldWrapper>
+    {props.type === 'radio' && <TextFieldWrapper>
       <RadioGroup {...props} setRadio={props.setRadio} />
-    </TextFieldWrapper>} */}
+    </TextFieldWrapper>}
   </FieldWrapper>
 );
 

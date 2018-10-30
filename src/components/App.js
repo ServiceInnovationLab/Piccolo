@@ -69,10 +69,10 @@ import axios from 'axios';
 //   }
 
 //   onSubmit(e) {
-    
+
 //     e.preventDefault();
 //     // console.log(data)
-    
+
 //     this.setState({isLoading: false});
 
 
@@ -125,10 +125,10 @@ import axios from 'axios';
 //         />
 //         {/* section 5 */}
 //         {/* {console.log(this.state.data2)} */}
-//         {this.state.data2 !== undefined ? 
+//         {this.state.data2 !== undefined ?
 //           console.log(this.state.data2.length)
 //           : console.log(2)}
-        
+
 //       </main>
 //       <PageFooter />
 //     </Fragment>;
@@ -144,6 +144,16 @@ import axios from 'axios';
 import formFields from '../data/formFields';
 import DATA from '../data/Data';
 import Container from '../elements/Container';
+// import TextField  from '../elements/TextField ';
+
+import {
+  RadioGroupWrapper,
+  RadioGroupInner,
+  Radio,
+  RadioLabel,
+  RadioSpan
+} from '../elements/RadioGroup';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -186,21 +196,27 @@ class App extends Component {
                   <Label htmlFor={field.name}>
                     <span>{field.label}</span>
                   </Label>
-                      
-                  {field.type === 'number' && 
-                    <TextField
-                      type={field.type}
-                      name={field.name}
-                      onChange={e=>this.handleValue(e)}
-                    />}
+                  {field.type === 'number' && <TextFieldWrapper>
+                    <TextField type={field.type} name={field.name} onChange={e => this.handleValue(e)} small />
+                  </TextFieldWrapper>}
 
-                  {field.type === 'radio' && <div>
-                    {field.values.map((item, i) =><Fragment key={i}>
-                      <label>{item}
-                        <input type={field.type} name={field.name} value={item} onClick={e => this.handleValue(e)} />
-                      </label>
-                    </Fragment>)}
-                  </div>}
+                  {field.type === 'radio' && <TextFieldWrapper>
+                    <RadioGroupWrapper>
+                      <RadioGroupInner>
+                        <div onChange={e=>this.handleValue(e)}>
+                          {field.values.map((val, i) => <RadioLabel key={i}>
+                            <Radio
+                              name={field.name}
+                              value={val || ''}
+                            />
+                            <RadioSpan>{val}</RadioSpan>
+                          </RadioLabel>)}
+                        </div>
+                      </RadioGroupInner>
+                    </RadioGroupWrapper>
+                  </TextFieldWrapper>}
+
+
                 </FieldWrapper>)}
               </Form>
             </Container>

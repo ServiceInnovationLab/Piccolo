@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const RadioGroupWrapper = styled.div`
+export const RadioGroupWrapper = styled.div`
   display: flex;
   flex-flow: column;
 `;
 
-const RadioGroupInner = styled.div`
+export const RadioGroupInner = styled.div`
   flex: 1 0 auto;
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@ const RadioGroupInner = styled.div`
   }
 `;
 
-const Label = styled.label`
+export const RadioLabel = styled.label`
   display: inline-block;
   cursor: pointer;
   line-height: 1.5;
@@ -39,7 +39,7 @@ const Label = styled.label`
   }
 `;
 
-const Radio = styled.input.attrs({ type: 'radio' })`
+export const Radio = styled.input.attrs({ type: 'radio' })`
   position: absolute;
   left: -9999px;
   margin: 0;
@@ -55,7 +55,7 @@ const Radio = styled.input.attrs({ type: 'radio' })`
   }
 `;
 
-const Span = styled.span`
+export const RadioSpan = styled.span`
   display: inline-block;
   border: 4px solid #2f3045;
   width: 100%;
@@ -75,13 +75,13 @@ class RadioGroup extends React.Component {
     return <RadioGroupWrapper>
       <RadioGroupInner>
         <div onChange={this.props.setRadio}>
-          {this.props.values.map((val, i) => <Label key={i}>
+          {this.props.values.map((val, i) => <RadioLabel key={i}>
             <Radio
               name={this.props.name}
               value={val || ''}
             />
-            <Span>{val}</Span>
-          </Label>)}
+            <RadioSpan>{val}</RadioSpan>
+          </RadioLabel>)}
         </div>
       </RadioGroupInner>
     </RadioGroupWrapper>;
