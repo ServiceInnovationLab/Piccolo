@@ -22,10 +22,10 @@
 //         }
 //       }
 //     },
-//     'households': { 
-//       'one': { 
-//         'parents': ['Tahi'] 
-//       } 
+//     'households': {
+//       'one': {
+//         'parents': ['Tahi']
+//       }
 //     }
 //   };
 // }
@@ -47,7 +47,7 @@ var DATA = {
           '2018-08': null
         },
         'super___eligibility_age': {
-          '2018-08': null
+          '2018 -08': null
         }
       }
     },
@@ -85,10 +85,39 @@ var DATA = {
         }
       }
     },
-    'households': { 
-      'one': { 
-        'parents': ['Tahi'] 
-      } 
+    'households': {
+      'one': {
+        'parents': ['Tahi']
+      }
+    }
+  },
+  'Uruguay': {
+    'persons': {
+      'Tahi': {
+        'gender': {
+          '2018-01': null
+        },
+        'pension_contributing_years': {
+          '2018-01': null
+        },
+        'is_resident': {
+          '2018-01': true
+        },
+        'born_in_israel': {
+          '2018-01': true
+        },
+        'pension_eligibility_age': {
+          '2018-01': null
+        },
+        'eligible_for_pension': {
+          '2018-01': null
+        }
+      }
+    },
+    'households': {
+      'one': {
+        'parents': ['Tahi']
+      }
     }
   }
 };

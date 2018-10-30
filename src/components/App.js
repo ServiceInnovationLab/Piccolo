@@ -1,18 +1,13 @@
 import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
-import * as actionCreators from '../actions/index';
 import '../styles/App.css';
 import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
-// import IsraelData from '../data/IsraelData';
-// import UruguayData from '../data/UruguayData';
 import {FieldWrapper, Label, TextFieldWrapper} from '../components/Field';
 import Form from '../components/Form';
 import Section from '../elements/Section';
 import TextField from '../elements/TextField';
 import {
   SectionOne,
-  SectionTwo,
   SectionThree,
   SectionFour,
   SectionFive
