@@ -47,7 +47,7 @@ var DATA = {
           '2018-08': null
         },
         'super___eligibility_age': {
-          '2018 -08': null
+          '2018-08': null
         }
       }
     },

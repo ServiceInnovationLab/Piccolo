@@ -49,6 +49,7 @@ export class SectionFive extends React.Component {
     return (
       <Section light>
         <Container>
+          {console.log(this.props)}
           <Grid>
             {this.props.new_zealand !== undefined && <Column>
               <H2>New Zealand</H2>
@@ -65,8 +66,8 @@ export class SectionFive extends React.Component {
                 <Link href="https://www.govt.nz/browse/tax-benefits-and-finance/new-zealand-superannuation-and-the-veterans-pension/nz-superannuation-and-the-veterans-pension-overview/" text="Apply for NZ Super Online"></Link>
               </Paragraph>
             </Column>}
-
-            {this.props.israel !== undefined && <Column>
+            {console.log(this.props)}
+            {this.props.israel !== undefined && this.props.eligible_for_pension && <Column>
               <H2>Israel</H2>
               <EligibleHeader age={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
               <IconCircle value={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
