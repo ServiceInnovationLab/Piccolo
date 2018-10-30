@@ -2,11 +2,14 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/index';
 import '../styles/App.css';
-import { PageHeader } from '../page/Header';
+import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
-import IsraelData from '../data/IsraelData';
-import UruguayData from '../data/UruguayData';
-import NzData from '../data/NzData';
+// import IsraelData from '../data/IsraelData';
+// import UruguayData from '../data/UruguayData';
+import {FieldWrapper, Label, TextFieldWrapper} from '../components/Field';
+import Form from '../components/Form';
+import Section from '../elements/Section';
+import TextField from '../elements/TextField';
 import {
   SectionOne,
   SectionTwo,
@@ -14,111 +17,208 @@ import {
   SectionFour,
   SectionFive
 } from '../page/Sections';
+import countries from '../data/countries';
+import axios from 'axios';
 
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       input_data: [],
+//       israel_results: {},
+//       nz_results: {},
+//       uruguay_results: {},
+//       form_data: {},
+//       data: [],
+//       isLoading: true,
+//     };
+//     this.handleChange = this.handleChange.bind(this);
+//     this.handleData = this.handleData.bind(this);
+//     this.onSubmit = this.onSubmit.bind(this);
+//     this.setRadio = this.setRadio.bind(this);
+//     this.setName = this.setName.bind(this);
+//   }
+
+//   componentDidMount() {
+//     this.setState({isLoading: false});
+//   }
+
+//   componentDidUpdate() {
+//     countries.map(country=>this.getResults(country));
+//   }
+
+//   handleChange(e, name) {
+//     this.setState({ [name]: e.target.value });
+//   }
+
+//   handleData(data, country) {
+//     if(data.data !== null) {
+//       let results = {[country]: data.data};
+//       this.state.data.push(results);
+//     }
+//   }
+
+//   setName(el) {
+//     if(el.name === 'gender') {
+//       return this.state.setGender;
+//     } else if(el.name === 'has_partner') {
+//       return this.state.setPartner;
+//     } else {
+//       return el.value;
+//     }
+//   }
+
+//   onSubmit(e) {
+    
+//     e.preventDefault();
+//     // console.log(data)
+    
+//     this.setState({isLoading: false});
+
+
+//     const values = Array.prototype.slice.call(e.target)
+//       .reduce((form, el) => ({
+//         ...form,
+//         [el.name]: this.setName(el),
+//       }), {});
+//     this.setState({
+//       isLoading: true,
+//       form_data: values,
+//       input_data: [{'Israel': IsraelData(values)}, {'New Zealand': NzData(values)}]
+//     });
+//   }
+
+//   setRadio(event) {
+//     this.setState({[event.target.name === 'gender' ? 'setGender' : 'setPartner']: event.target.value});
+//   }
+
+//   getResults(country) {
+//     if(this.state.input_data.length > 0) {
+//       this.state.input_data.forEach((item) => {
+//         return axios
+//           .post(country.api_url, item[country.name])
+//           .then(res => this.handleData(res, country.name))
+//           .catch(err => err);
+//       });
+//     }
+//   }
+
+//   render() {
+//     return <Fragment>
+//       <PageHeader />
+//       <main>
+//         {/* {console.log(this.state)} */}
+//         <SectionOne />
+//         <SectionTwo
+//           // onSubmit={this.onSubmit}
+//           handleChange={this.handleChange}
+//           state={this.state}
+//           setRadio={this.setRadio.bind(this)}
+//           onSubmit={this.onSubmit}
+//         />
+//         <SectionThree
+//           show={this.state.isLoading ? 'block' : 'none'}
+//           state={this.state}
+//         />
+//         <SectionFour
+//           show={this.state.isLoading ? 'block' : 'none'}
+//         />
+//         {/* section 5 */}
+//         {/* {console.log(this.state.data2)} */}
+//         {this.state.data2 !== undefined ? 
+//           console.log(this.state.data2.length)
+//           : console.log(2)}
+        
+//       </main>
+//       <PageFooter />
+//     </Fragment>;
+//   }
+// }
+
+// function mapStateToProps(state) {
+//   return { state };
+// }
+
+// export default connect(mapStateToProps, actionCreators)(App);
+
+import formFields from '../data/formFields';
+import DATA from '../data/Data';
+import Container from '../elements/Container';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      israel_input_data: {},
-      israel_results: {},
-      nz_input_data: {},
-      nz_results: {},
-      uruguay_input_data: {},
-      uruguay_results: {},
-      form_data: {},
-      data: [],
-      isLoading: true,
-    };
-    this.handleChange = this.handleChange.bind(this);
-    // this.handleIsraelResults = this.handleIsraelResults.bind(this);
-    // this.handleNzResults = this.handleNzResults.bind(this);
-    // this.handleUruguayResults = this.handleUruguayResults.bind(this);
-    this.handleData = this.handleData.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.setRadio = this.setRadio.bind(this);
-    this.setName = this.setName.bind(this);
+    this.state = {};
+    this.handleValue = this.handleValue.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({isLoading: false});
+  handleValue(e) {
+    this.setState({[e.target.name]: e.target.value});
+    this.queryApi(e.target.name === 'gender' ? e.target.value : 'unspecified');
   }
 
-  handleChange(e, name) {
-    this.setState({ [name]: e.target.value });
-  }
+  queryApi(state) {
+    DATA['New Zealand'].persons.Tahi.total_number_of_years_lived_in_nz_since_age_20['2018-08'] = Number(this.state.years_worked);
+    DATA['New Zealand'].persons.Tahi.total_number_of_years_lived_in_nz_since_age_50['2018-08'] = Number(this.state.years_worked);
+    DATA['Israel'].persons.Tahi.gender['2018-01'] = state;
+    DATA['Israel'].persons.Tahi.pension_contributing_years['2018-01'] = Number(this.state.years_worked);
 
-  handleData(data, country) {
-    let results = {[country]: data};
-    this.state.data.push(results);
-  }
-
-  setName(el) {
-    if(el.name === 'gender') {
-      return this.state.setGender;
-    } else if(el.name === 'has_partner') {
-      return this.state.setPartner;
-    } else {
-      return el.value;
-    }
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-    this.setState({isLoading: false});
-
-    const values = Array.prototype.slice.call(e.target)
-      .reduce((form, el) => ({
-        ...form,
-        [el.name]: this.setName(el),
-      }), {});
-    this.setState({
-      israel_input_data: IsraelData(values),
-      isLoading: true,
-      nz_input_data: NzData(values),
-      uruguay_input_data: UruguayData(values),
-      form_data: values
-    });
-  }
-
-  setRadio(event) {
-    this.setState({[event.target.name === 'gender' ? 'setGender' : 'setPartner']: event.target.value});
+    countries.map(country => axios
+      .post(country.api_url, DATA[country.name])
+      .then(results => results.status && results.status === 200 ? this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}) : {})
+      .catch(err => err)
+    );
   }
 
   render() {
-    return <Fragment>
-      <PageHeader />
-      <main>
+    return (
+      <Fragment>
+        <PageHeader />
         <SectionOne />
-        <SectionTwo
-          onSubmit={this.onSubmit}
-          handleChange={this.handleChange}
-          state={this.state}
-          setRadio={this.setRadio.bind(this)} />
+        <main>
+          <Section dark center>
+            <SectionHeader
+              title="When can I get a pension"
+              subtitle="Enter in some details to see eligibility across nations."
+            />
+            <Container>
+              <Form>
+                {formFields.map((field, i)=><FieldWrapper key={i}>
+                  <Label htmlFor={field.name}>
+                    <span>{field.label}</span>
+                  </Label>
+                      
+                  {field.type === 'number' && 
+                    <TextField
+                      type={field.type}
+                      name={field.name}
+                      onChange={e=>this.handleValue(e)}
+                    />}
+
+                  {field.type === 'radio' && <div>
+                    {field.values.map((item, i) =><Fragment key={i}>
+                      <label>{item}
+                        <input type={field.type} name={field.name} value={item} onClick={e => this.handleValue(e)} />
+                      </label>
+                    </Fragment>)}
+                  </div>}
+                </FieldWrapper>)}
+              </Form>
+            </Container>
+          </Section>
+        </main>
         <SectionThree
-          show={this.state.isLoading ? 'block' : 'none'}
-          state={this.state}
+          values={this.state}
         />
-        <SectionFour
-          show={this.state.isLoading ? 'block' : 'none'}
-        />
-        <SectionFive
-          show={this.state.isLoading ? 'block' : 'none'}
-          state={this.state}
-          israel_input_data={this.state.israel_input_data}
-          handleData={this.handleData}
-          nz_input_data={this.state.nz_input_data}
-          uruguay_input_data={this.state.uruguay_input_data}
-          data={this.state.data}
-        />
-        {/* {console.log(this.state)} */}
-      </main>
-      <PageFooter />
-    </Fragment>;
+        <SectionFour />
+        {this.state.israel_results && this.state.new_zealand_results && <SectionFive
+          israel={this.state.israel_results && this.state.israel_results}
+          new_zealand={this.state.new_zealand_results && this.state.new_zealand_results}
+          age={this.state.age}
+        />}
+        <PageFooter />
+      </Fragment>
+    );
   }
 }
 
-function mapStateToProps(state) {
-  return { state };
-}
-
-export default connect(mapStateToProps, actionCreators)(App);
+export default App;

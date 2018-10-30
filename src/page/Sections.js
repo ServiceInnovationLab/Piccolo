@@ -11,10 +11,6 @@ import formFields from '../data/formFields';
 import Button from '../elements/Button';
 import MadLib from '../components/Madlib';
 import { IconCircle } from '../elements/Icon';
-import countries from '../data/countries';
-import IsraelQuery from '../components/IsraelQuery';
-import NzQuery from '../components/NzQuery';
-import UruguayQuery from '../components/UruguayQuery';
 import List, { Item } from '../elements/List';
 import Link from '../elements/Link';
 
@@ -39,7 +35,7 @@ export const SectionTwo = props => <Section dark center>
     subtitle="Enter in some details to see eligibility across nations."
   />
   <Container>
-    <Form onSubmit={e => props.onSubmit(e)}>
+    <Form>
       {formFields.map(item => <Field
         key={item.name}
         label={item.label}
@@ -48,92 +44,92 @@ export const SectionTwo = props => <Section dark center>
         values={item.values && item.values}
         handleChange={item.type.toString() === 'radio' ? props.handleChange : e => props.handleChange(e, e.target.name)}
         setRadio={props.setRadio}
-                              />)}
-      {!props.state.isLoading && <Button>Calculate</Button>}
+      />)}
+      {!props.state.isLoading && <Button onClick={e => props.onSubmit(e)}>Calculate</Button>}
+      {console.log('children', props.children)}
     </Form>
 
   </Container>
 </Section>;
 
 const EligibleHeader = props => <Paragraph medium adjust>
-{console.log('eligible header', props.data)}
-  You are eligible for a pension at age <span>{props.israel_age}</span>
+  You are eligible for a pension at age <span>{props.age}</span>
 </Paragraph>;
 
-class ColumnHeader extends React.Component {
+// class ColumnHeader extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.handleAge = this.handleAge.bind(this);
-  }
+//   constructor(props) {
+//     super(props);
+//     // this.handleAge = this.handleAge.bind(this);
+//   }
 
-  handleAge(country) {
-    // if (country === 'Israel') {
-    //   // return this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
-    // }
-    // return this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
-    // console.log('in handle age', this.props.data)
-    return 1;
-  }
+//   // handleAge(country) {
+//   //   // if (country === 'Israel') {
+//   //   //   // return this.props.israel.data ? this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01'] : '';
+//   //   // }
+//   //   // return this.props.new_zealand.data ? this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] : '';
+//   //   // console.log('in handle age', this.props.data)
+//   //   return 1;
+//   // }
 
-  returnCountry(data) {
-    // console.log(data.length)
+//   returnCountry(data) {
+//     // console.log(data.length)
 
-    if(data.length > 0) {
-      data.map(item => console.log(item));
-    }
-  }
+//     if(data.length > 0) {
+//       data.map(item => console.log(item));
+//     }
+//   }
 
-  render() {
+//   render() {
 
-    // const age = this.handleAge(this.props.country);
+//     // const age = this.handleAge(this.props.country);
 
-    return <Fragment>
-      {/* {console.log('in section', this.props.data)} */}
+//     return <Fragment>
+//       {/* {console.log('in section', this.props.data)} */}
 
-      {/* {this.props.data.map(item=>console.log('stuff', item[this.props.country.toLowerCase().replace(' ', '_')]))} */}
+//       {/* {this.props.data.map(item=>console.log('stuff', item[this.props.country.toLowerCase().replace(' ', '_')]))} */}
 
-      {this.props.data && this.returnCountry(this.props.data)}
-      {/* <H2>{this.props.country}</H2> */}
+//       {/* {this.props.data && this.returnCountry(this.props.data)} */}
+//       {/* <H2>{this.props.country}</H2> */}
 
-      {/* {this.props.country === 'Israel' &&
-        <Fragment>
-          <EligibleHeader age data={this.props.data} />
-          <IconCircle value={age} />
-          <Paragraph>Government pensions are known as old age pensions, sometimes referred to as insurance.</Paragraph>
-          <List>
-            <Item>Eligibility is determined by gender, payments to old age insurance, income test and the type of employment you have been in.</Item>
-            <Item>You must have been living in Israel for at least 5 years before you retire.</Item>
-            <Item>There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.</Item>
-          </List>
-        </Fragment>
-      }
+//       {/* {this.props.country === 'Israel' &&
+//         <Fragment>
+//           <EligibleHeader age data={this.props.data} />
+//           <IconCircle value={age} />
+//           <Paragraph>Government pensions are known as old age pensions, sometimes referred to as insurance.</Paragraph>
+          // <List>
+          //   <Item>Eligibility is determined by gender, payments to old age insurance, income test and the type of employment you have been in.</Item>
+          //   <Item>You must have been living in Israel for at least 5 years before you retire.</Item>
+          //   <Item>There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.</Item>
+          // </List>
+//         </Fragment>
+//       }
 
-      {this.props.country === 'New Zealand' &&
-        <Fragment>
-          <EligibleHeader age data={this.props.data} />
-          <IconCircle value={age} />
-          <Paragraph>
-            Government pension is called  New Zealand Superannuation, known as NZ Super for short.
-          </Paragraph>
-          <List>
-            <Item>Gender does not determine eligibility in New Zealand.</Item>
-            <Item>You don't have to be retired from work to get NZ Super as it is not income tested.</Item>
-            <Item>Overseas benefits or pensions will generally be deducted from NZ Super.</Item>
-            <Item>To get NZ Super you must have lived in NZ for at least 10 years since you turned 20. Five of those years must be since you turned 50.</Item>
-          </List>
-          <Paragraph>
-            <Link href="https://www.govt.nz/browse/tax-benefits-and-finance/new-zealand-superannuation-and-the-veterans-pension/nz-superannuation-and-the-veterans-pension-overview/" text="Apply for NZ Super Online"></Link>
-          </Paragraph>
-        </Fragment>} */}
-    </Fragment>;
-  }
-}
+//       {this.props.country === 'New Zealand' &&
+//         <Fragment>
+//           <EligibleHeader age data={this.props.data} />
+//           <IconCircle value={age} />
+//           <Paragraph>
+//             Government pension is called  New Zealand Superannuation, known as NZ Super for short.
+//           </Paragraph>
+          // <List>
+          //   <Item>Gender does not determine eligibility in New Zealand.</Item>
+          //   <Item>You don't have to be retired from work to get NZ Super as it is not income tested.</Item>
+          //   <Item>Overseas benefits or pensions will generally be deducted from NZ Super.</Item>
+          //   <Item>To get NZ Super you must have lived in NZ for at least 10 years since you turned 20. Five of those years must be since you turned 50.</Item>
+          // </List>
+          // <Paragraph>
+          //   <Link href="https://www.govt.nz/browse/tax-benefits-and-finance/new-zealand-superannuation-and-the-veterans-pension/nz-superannuation-and-the-veterans-pension-overview/" text="Apply for NZ Super Online"></Link>
+          // </Paragraph>
+//         </Fragment>} */}
+//     </Fragment>;
+//   }
+// }
 
 export const SectionThree = props => <div style={{ display: props.show }}><Section light>
   <Container>
     <MadLib
-      values={props.state}
+      values={props.values}
     />
   </Container>
 </Section></div>;
@@ -146,45 +142,47 @@ export const SectionFour = props => <div style={{ display: props.show }}><Sectio
   </Container>
 </Section></div>;
 
-export const SectionFive = props => <div style={{ display: props.show }}><Section light>
-  <Container>
-    {props.israel_input_data.persons && <IsraelQuery
-      handleData={props.handleData}
-      data={props.israel_input_data}
-                                        />}
-    {props.nz_input_data.persons && <NzQuery
-      handleData={props.handleData}
-      data={props.nz_input_data}
-                                    />}
-    {props.uruguay_input_data.persons && <UruguayQuery
-      handleData={props.handleData}
-      data={props.uruguay_input_data}
-                                         />}
+export class SectionFive extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    <Grid>
-      {countries.map((item, i) => <Column key={i}>
-        <div><ColumnHeader
-          country={item.name}
-          data={props.data}
-          age={props.form_data}
-        />
-        {/* {console.log('hi',props.state.israel_results.status === 200 ? props.state.israel_results.data.persons.Tahi.eligible_for_pension : 'no')} */}
-        {props.state.hasCitizenship && item.name === 'New Zealand' && <Paragraph small>
-          If you are a citizen or permanent resident, not on ACC.
-        </Paragraph>}
-        {props.state.has_partner === 'yes' && item.name === 'New Zealand' && <Paragraph small>
-          If you have a partner you can share your 'pension' with them if they aren't eligible
-        </Paragraph>}
+  render() {
+    return (
+      <Section light>
+        <Container>
+          <Grid>   
+            {this.props.new_zealand !== undefined && <Column>
+              <H2>New Zealand</H2>
+              <EligibleHeader age={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']} />
+              <IconCircle value={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']} />
+              <Paragraph>Government pension is called  New Zealand Superannuation, known as NZ Super for short.</Paragraph>
+              <List>
+                <Item>Gender does not determine eligibility in New Zealand.</Item>
+                <Item>You don't have to be retired from work to get NZ Super as it is not income tested.</Item>
+                <Item>Overseas benefits or pensions will generally be deducted from NZ Super.</Item>
+                <Item>To get NZ Super you must have lived in NZ for at least 10 years since you turned 20. Five of those years must be since you turned 50.</Item>
+              </List>
+              <Paragraph>
+                <Link href="https://www.govt.nz/browse/tax-benefits-and-finance/new-zealand-superannuation-and-the-veterans-pension/nz-superannuation-and-the-veterans-pension-overview/" text="Apply for NZ Super Online"></Link>
+              </Paragraph>
+            </Column>}
+            
+            {this.props.israel !== undefined && <Column>
+              <H2>Israel</H2>
+              <EligibleHeader age={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
+              <IconCircle value={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
+              <Paragraph>Government pensions are known as old age pensions, sometimes referred to as insurance.</Paragraph>
+              <List>
+                <Item>Eligibility is determined by gender, payments to old age insurance, income test and the type of employment you have been in.</Item>
+                <Item>You must have been living in Israel for at least 5 years before you retire.</Item>
+                <Item>There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.</Item>
+              </List>
+            </Column>}
+          </Grid>
+        </Container>
+      </Section>
+    );
+  }
+}
 
-        {props.state.number_of_children > 0 && item.name === 'Israel' && <Paragraph small>
-          Each child (up to max of 5) counts as a 'year of work'.
-        </Paragraph>}
-
-        {props.state.years_worked < item.reqContributionYears && item.name === 'Uruguay' && <Paragraph small>
-          You must have contributed to your pension for {item.reqContributionYears} years or more.
-        </Paragraph>}
-        </div>
-      </Column>)}
-    </Grid>
-  </Container>
-</Section></div>;

@@ -1,18 +1,14 @@
 const countries = [
   {
     name: 'New Zealand',
-    eligible: false,
-    age: 60,
-    hasCitizenship: true,
-    reqContributionYears: 30
+    label: 'new_zealand',
+    api_url: 'https://api.rules.nz/calculate'
   },
   {
     name: 'Israel',
-    eligible: false,
-    age: 62,
-    hasCitizenship: true,
-    reqContributionYears: 30
-  },
+    label: 'israel',
+    api_url: 'https://openfisca-israel.herokuapp.com/calculate'
+  }
   // {
   //   name: 'Uruguay',
   //   eligible: true,
