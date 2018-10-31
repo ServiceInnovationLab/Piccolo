@@ -49,7 +49,7 @@ class App extends Component {
 
     countries.map(country => axios
       .post(country.api_url, DATA[country.name])
-      .then(results => results.status && results.status === 200 ? this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}) : {})
+      .then(results => (results.status && results.status === 200 ? this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}) : {}))
       .catch(err => err)
     );
 
