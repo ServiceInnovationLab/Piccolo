@@ -69,9 +69,6 @@ export class SectionFive extends React.Component {
 }
 
 class Eligibility extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     let results_age;
     if(this.props.country === 'new_zealand') {
