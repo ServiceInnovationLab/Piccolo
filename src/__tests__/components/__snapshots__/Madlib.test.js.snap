@@ -60,7 +60,7 @@ exports[`Madlib renders correctly 1`] = `
     </p>
     <input
       className="c2"
-      defaultValue="55"
+      defaultValue={55}
       readOnly={true}
       type="text"
     />
@@ -88,7 +88,7 @@ exports[`Madlib renders correctly 1`] = `
     </p>
     <input
       className="c2"
-      defaultValue="5"
+      defaultValue={5}
       readOnly={true}
       type="text"
     />
@@ -105,7 +105,7 @@ exports[`Madlib renders correctly 1`] = `
     </p>
     <input
       className="c2"
-      defaultValue="40"
+      defaultValue={40}
       readOnly={true}
       type="text"
     />
@@ -122,7 +122,7 @@ exports[`Madlib renders correctly 1`] = `
     </p>
     <input
       className="c2"
-      defaultValue="55"
+      defaultValue={55}
       readOnly={true}
       type="text"
     />
