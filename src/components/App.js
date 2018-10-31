@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import '../styles/App.css';
 import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
-import {FieldWrapper, Label, TextFieldWrapper} from '../components/Field';
+import { FieldWrapper, Label, TextFieldWrapper } from '../components/Field';
 import Form from '../components/Form';
 import Section from '../elements/Section';
 import TextField from '../elements/TextField';
@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   handleValue(e) {
-    this.setState({[e.target.name]: e.target.value}, this.queryApi);
+    this.setState({ [e.target.name]: e.target.value }, this.queryApi);
   }
 
   queryApi() {
@@ -49,7 +49,7 @@ class App extends Component {
 
     countries.map(country => axios
       .post(country.api_url, DATA[country.name])
-      .then(results => results.status && results.status === 200 ? this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}) : {})
+      .then(results => results.status && results.status === 200 ? this.setState({ [`${country.name.toLowerCase().replace(' ', '_')}_results`]: results }) : {})
       .catch(err => err)
     );
 
@@ -69,7 +69,7 @@ class App extends Component {
             />
             <Container>
               <Form>
-                {formFields.map((field, i)=><FieldWrapper key={i}>
+                {formFields.map((field, i) => <FieldWrapper key={i}>
                   <Label htmlFor={field.name}>
                     <span>{field.label}</span>
                   </Label>
@@ -80,7 +80,7 @@ class App extends Component {
                   {field.type === 'radio' && <TextFieldWrapper>
                     <RadioGroupWrapper>
                       <RadioGroupInner>
-                        <div onChange={e=>this.handleValue(e)}>
+                        <div onChange={e => this.handleValue(e)}>
                           {field.values.map((val, i) => <RadioLabel key={i}>
                             <Radio
                               name={field.name}

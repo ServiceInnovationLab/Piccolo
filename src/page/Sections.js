@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import Paragraph from '../elements/Paragraph';
 import Container from '../elements/Container';
 import Section from '../elements/Section';
@@ -50,7 +50,7 @@ export class SectionFive extends React.Component {
       <Section light>
         <Container>
           <Grid>
-            {countries.map(country=><Column>
+            {countries.map(country => <Column>
               <H2>{country.name}</H2>
               <Eligibility
                 country={country.label}
@@ -58,7 +58,7 @@ export class SectionFive extends React.Component {
               />
               <Paragraph>{country.subtitle}</Paragraph>
               <List>
-                {country.eligibility_list.map(item=><Item>{item}</Item>)}
+                {country.eligibility_list.map(item => <Item>{item}</Item>)}
               </List>
             </Column>)}
           </Grid>
@@ -71,7 +71,7 @@ export class SectionFive extends React.Component {
 class Eligibility extends React.Component {
   render() {
     let results_age;
-    if(this.props.country === 'new_zealand') {
+    if (this.props.country === 'new_zealand') {
       results_age = this.props.age['2018-08'];
     } else {
       results_age = this.props.age['2018-01'];
