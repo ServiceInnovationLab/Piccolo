@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Paragraph from '../elements/Paragraph';
 import Container from '../elements/Container';
 import Section from '../elements/Section';
@@ -93,13 +93,32 @@ export class SectionFive extends React.Component {
                 </List>
               </div>
             </Column>}
+            {this.props.uruguay.status === 200 && <Column>
+              <div>
+                <H2>Uruguay</H2>
+                <Eligibility
+                  age={this.props.uruguay.data.persons.Tahi.edad_de_jubilacion['2018-01']}
+                />
+
+
+                {this.props.uruguay.data.persons.Tahi.edad_de_jubilacion['2018-01'] === 0 &&
+                  <H2>Not eligible</H2>
+                }
+                <Paragraph>Government pensions for work retirement are called Jubilaciones.</Paragraph>
+                <List>
+                  <Item>Eligibility is determined by age and contributions to social security related to labor.</Item>
+                  <Item>You must have completed 30 years of work.</Item>
+                  <Item>There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.For women each child (up to max of 5) counts as a 'year of work'.</Item>
+                </List>
+              </div>
+            </Column>}
           </Grid>
         </Container>
       </Section>
     );
   }
 }
-const Eligibility = props => <div>
-    <EligibleHeader age={props.age} />
-    <IconCircle value={props.age} />
-  </div>;
+const Eligibility = props => <Fragment>
+  <EligibleHeader age={props.age} />
+  <IconCircle value={props.age} />
+</Fragment>;

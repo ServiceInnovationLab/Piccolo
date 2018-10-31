@@ -8,13 +8,12 @@ const countries = [
     name: 'Israel',
     label: 'israel',
     api_url: 'https://openfisca-israel.herokuapp.com/calculate'
+  },
+  {
+    name: 'Uruguay',
+    label: 'uruguay',
+    api_url: 'https://openfisca-uruguay.herokuapp.com/calculate'
   }
-  // {
-  //   name: 'Uruguay',
-  //   eligible: true,
-  //   hasCitizenship: true,
-  //   reqContributionYears: 30
-  // }
 ];
 
 export default countries;

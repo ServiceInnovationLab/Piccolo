@@ -97,19 +97,13 @@ var DATA = {
         'gender': {
           '2018-01': null
         },
-        'pension_contributing_years': {
+        'number_of_years_worked': {
           '2018-01': null
         },
-        'is_resident': {
-          '2018-01': true
-        },
-        'born_in_israel': {
-          '2018-01': true
-        },
-        'pension_eligibility_age': {
+        'number_of_children': {
           '2018-01': null
         },
-        'eligible_for_pension': {
+        'edad_de_jubilacion': {
           '2018-01': null
         }
       }

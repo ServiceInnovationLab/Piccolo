@@ -43,10 +43,13 @@ class App extends Component {
     DATA['Israel'].persons.Tahi.gender['2018-01'] = this.state.gender;
     DATA['Israel'].persons.Tahi.pension_contributing_years['2018-01'] = Number(this.state.years_worked);
 
+    DATA['Uruguay'].persons.Tahi.gender['2018-01'] = this.state.gender;
+    DATA['Uruguay'].persons.Tahi.number_of_years_worked['2018-01'] = Number(this.state.years_worked);
+    DATA['Uruguay'].persons.Tahi.number_of_children['2018-01'] = Number(this.state.number_of_children);
+
     countries.map(country => axios
       .post(country.api_url, DATA[country.name])
       .then(results => results.status && results.status === 200 ? this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}) : {})
-      // .then(results => this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}))
       .catch(err => err)
     );
 
@@ -103,6 +106,7 @@ class App extends Component {
         {this.state.israel_results && this.state.new_zealand_results && <SectionFive
           israel={this.state.israel_results && this.state.israel_results}
           new_zealand={this.state.new_zealand_results && this.state.new_zealand_results}
+          uruguay={this.state.uruguay_results && this.state.uruguay_results}
           age={this.state.age}
         />}
         <PageFooter />
