@@ -109,6 +109,9 @@ class App extends Component {
           uruguay={this.state.uruguay_results && this.state.uruguay_results}
           age={this.state.age}
         />}
+        {console.log(this.state.israel_results && this.state.israel_results)}
+        {console.log(this.state.new_zealand_results && this.state.new_zealand_results)}
+        {console.log(this.state.uruguay_results && this.state.uruguay_results)}
         <PageFooter />
       </Fragment>
     );

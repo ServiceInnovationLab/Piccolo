@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { CreativeCommons } from 'styled-icons/fa-brands';
+// import { CreativeCommons } from 'styled-icons/fa-brands';
 // import { Check } from 'styled-icons/fa-solid';
 
-const CreativeCommonsIcon = styled(CreativeCommons)`
-  color: #000;
-  font-size: 40px;
-  height: 40px;
-  position: relative;
-  top: 7px;
-`;
+// const CreativeCommonsIcon = styled(CreativeCommons)`
+//   color: #000;
+//   font-size: 40px;
+//   height: 40px;
+//   position: relative;
+//   top: 7px;
+// `;
 
 // const CheckIcon = styled(Check)`
 //   color: #fff;
@@ -17,11 +17,11 @@ const CreativeCommonsIcon = styled(CreativeCommons)`
 //   height: 40px;
 // `;
 
-export const Icon = props => (
-  <Fragment>
-    {props.creative_commons && <CreativeCommonsIcon />}
-  </Fragment>
-);
+// export const Icon = props => (
+//   <Fragment>
+//     {props.creative_commons && <CreativeCommonsIcon />}
+//   </Fragment>
+// );
 
 const Circle = styled.div`
   width: 100px;
