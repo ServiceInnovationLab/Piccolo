@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import '../styles/App.css';
+import axios from 'axios';
 import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
 import {FieldWrapper, Label, TextFieldWrapper} from '../components/Field';
@@ -13,7 +14,6 @@ import {
   SectionFive
 } from '../page/Sections';
 import countries from '../data/countries';
-import axios from 'axios';
 import formFields from '../data/formFields';
 import DATA from '../data/Data';
 import Container from '../elements/Container';
