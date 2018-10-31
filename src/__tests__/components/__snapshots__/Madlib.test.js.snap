@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Madlib renders correctly 1`] = `
+.c1 {
+  font-size: 24px;
+  color: #000;
+  line-height: 1.5;
+  height: auto;
+}
+
+.c0 {
+  text-align: center;
+}
+
+.c0 > p {
+  margin-bottom: 5px;
+  font-size: 28px;
+}
+
+.c0 p,
+.c0 input[type=text] {
+  display: inline-block;
+}
+
+.c0 input[type=text] {
+  width: 60px;
+  background: #d9f8fa;
+  text-align: center;
+}
+
+.c2 {
+  display: inline-block;
+  border: none;
+  border-bottom: 2px solid #000;
+  font-size: 24px;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+@media (min-width:1024px) {
+  .c0 > p {
+    font-size: 34px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    font-size: 34px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <p
+      className="c1"
+    >
+      I am a
+    </p>
+    <input
+      className="c2"
+      defaultValue="55"
+      readOnly={true}
+      type="text"
+    />
+    <p
+      className="c1"
+    >
+      year old
+    </p>
+    <input
+      className="c2"
+      defaultValue="woman"
+      readOnly={true}
+      style={
+        Object {
+          "width": "130px",
+        }
+      }
+      type="text"
+    />
+    <br />
+    <p
+      className="c1"
+    >
+      who has had
+    </p>
+    <input
+      className="c2"
+      defaultValue="5"
+      readOnly={true}
+      type="text"
+    />
+    <p
+      className="c1"
+    >
+      children.
+    </p>
+    <br />
+    <p
+      className="c1"
+    >
+      I have lived in the country for
+    </p>
+    <input
+      className="c2"
+      defaultValue="40"
+      readOnly={true}
+      type="text"
+    />
+    <p
+      className="c1"
+    >
+       years, 
+    </p>
+    <br />
+    <p
+      className="c1"
+    >
+       and worked there for 
+    </p>
+    <input
+      className="c2"
+      defaultValue="55"
+      readOnly={true}
+      type="text"
+    />
+    <p
+      className="c1"
+    >
+       years.
+    </p>
+  </div>
+</div>
+`;
