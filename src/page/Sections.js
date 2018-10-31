@@ -53,10 +53,11 @@ export class SectionFive extends React.Component {
             {this.props.new_zealand.status === 200 && <Column>
               <H2>New Zealand</H2>
               {this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] !== 0 &&
-              <div>
-                <EligibleHeader age={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']} />
-                <IconCircle value={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']} />
-              </div>}
+
+              <Eligibility
+                age={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']}
+              />
+              }
               {this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] === 0 &&
                 <H2>Not eligible</H2>
               }
@@ -75,11 +76,11 @@ export class SectionFive extends React.Component {
               <div>
                 <H2>Israel</H2>
                 {this.props.israel.data.persons.Tahi.eligible_for_pension['2018-01'] &&
-                  <div>
-                    <EligibleHeader age=  {this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
-                    <IconCircle value={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
-                  </div>
+                  <Eligibility
+                    age={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']}
+                  />
                 }
+
 
                 {!this.props.israel.data.persons.Tahi.eligible_for_pension['2018-01'] &&
                   <H2>Not eligible</H2>
@@ -98,4 +99,7 @@ export class SectionFive extends React.Component {
     );
   }
 }
-
+const Eligibility = props => <div>
+    <EligibleHeader age={props.age} />
+    <IconCircle value={props.age} />
+  </div>;
