@@ -7,10 +7,10 @@ import Form from '../components/Form';
 import Section from '../elements/Section';
 import TextField from '../elements/TextField';
 import {
-  SectionOne,
-  SectionThree,
+  SectionFive,
   SectionFour,
-  SectionFive
+  SectionOne,
+  SectionThree
 } from '../page/Sections';
 import countries from '../data/countries';
 import axios from 'axios';
@@ -19,9 +19,9 @@ import DATA from '../data/Data';
 import Container from '../elements/Container';
 
 import {
-  RadioGroupWrapper,
-  RadioGroupInner,
   Radio,
+  RadioGroupInner,
+  RadioGroupWrapper,
   RadioLabel,
   RadioSpan
 } from '../elements/RadioGroup';
