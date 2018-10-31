@@ -52,14 +52,10 @@ export class SectionFive extends React.Component {
           <Grid>
             {countries.map(country=><Column>
               <H2>{country.name}</H2>
-              {country.name === 'New Zealand' && <Eligibility
+              <Eligibility
                 country={country.label}
                 age={this.props[country.label].data.persons.Tahi[country.eligible_key]}
-              />}
-              {country.name !== 'New Zealand' && <Eligibility
-                country={country.label}
-                age={this.props[country.label].data.persons.Tahi[country.eligible_key]}
-              />}
+              />
               <Paragraph>{country.subtitle}</Paragraph>
               <List>
                 {country.eligibility_list.map(item=><Item>{item}</Item>)}
