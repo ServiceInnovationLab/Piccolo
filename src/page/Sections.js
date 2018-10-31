@@ -108,7 +108,8 @@ export class SectionFive extends React.Component {
                 <List>
                   <Item>Eligibility is determined by age and contributions to social security related to labor.</Item>
                   <Item>You must have completed 30 years of work.</Item>
-                  <Item>There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.For women each child (up to max of 5) counts as a 'year of work'.</Item>
+                  <Item>There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.</Item>
+                  <Item>For women each child (up to max of 5) counts as a 'year of work'.</Item>
                 </List>
               </div>
             </Column>}
