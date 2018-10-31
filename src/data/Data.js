@@ -1,4 +1,4 @@
-var DATA = {
+let DATA = {
   'New Zealand': {
     'persons': {
       'Tahi': {
