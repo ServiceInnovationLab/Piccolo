@@ -49,12 +49,17 @@ export class SectionFive extends React.Component {
     return (
       <Section light>
         <Container>
-          {console.log(this.props)}
           <Grid>
-            {this.props.new_zealand !== undefined && <Column>
+            {this.props.new_zealand.status === 200 && <Column>
               <H2>New Zealand</H2>
-              <EligibleHeader age={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']} />
-              <IconCircle value={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']} />
+              {this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] !== 0 &&
+              <div>
+                <EligibleHeader age={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']} />
+                <IconCircle value={this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08']} />
+              </div>}
+              {this.props.new_zealand.data.persons.Tahi.super___eligibility_age['2018-08'] === 0 &&
+                <H2>Not eligible</H2>
+              }
               <Paragraph>Government pension is called  New Zealand Superannuation, known as NZ Super for short.</Paragraph>
               <List>
                 <Item>Gender does not determine eligibility in New Zealand.</Item>
@@ -66,17 +71,26 @@ export class SectionFive extends React.Component {
                 <Link href="https://www.govt.nz/browse/tax-benefits-and-finance/new-zealand-superannuation-and-the-veterans-pension/nz-superannuation-and-the-veterans-pension-overview/" text="Apply for NZ Super Online"></Link>
               </Paragraph>
             </Column>}
-            {console.log(this.props)}
-            {this.props.israel !== undefined && this.props.eligible_for_pension && <Column>
-              <H2>Israel</H2>
-              <EligibleHeader age={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
-              <IconCircle value={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
-              <Paragraph>Government pensions are known as old age pensions, sometimes referred to as insurance.</Paragraph>
-              <List>
-                <Item>Eligibility is determined by gender, payments to old age insurance, income test and the type of employment you have been in.</Item>
-                <Item>You must have been living in Israel for at least 5 years before you retire.</Item>
-                <Item>There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.</Item>
-              </List>
+            {this.props.israel.status === 200 && <Column>
+              <div>
+                <H2>Israel</H2>
+                {this.props.israel.data.persons.Tahi.eligible_for_pension['2018-01'] &&
+                  <div>
+                    <EligibleHeader age=  {this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
+                    <IconCircle value={this.props.israel.data.persons.Tahi.pension_eligibility_age['2018-01']} />
+                  </div>
+                }
+
+                {!this.props.israel.data.persons.Tahi.eligible_for_pension['2018-01'] &&
+                  <H2>Not eligible</H2>
+                }
+                <Paragraph>Government pensions are known as old age pensions, sometimes referred to as insurance.</Paragraph>
+                <List>
+                  <Item>Eligibility is determined by gender, payments to old age insurance, income test and the type of employment you have been in.</Item>
+                  <Item>You must have been living in Israel for at least 5 years before you retire.</Item>
+                  <Item>There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.</Item>
+                </List>
+              </div>
             </Column>}
           </Grid>
         </Container>

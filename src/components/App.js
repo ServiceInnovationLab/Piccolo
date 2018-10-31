@@ -34,21 +34,23 @@ class App extends Component {
   }
 
   handleValue(e) {
-    this.setState({[e.target.name]: e.target.value});
-    this.queryApi(e.target.name === 'gender' ? e.target.value : 'unspecified');
+    this.setState({[e.target.name]: e.target.value}, this.queryApi);
   }
 
-  queryApi(state) {
+  queryApi() {
     DATA['New Zealand'].persons.Tahi.total_number_of_years_lived_in_nz_since_age_20['2018-08'] = Number(this.state.years_worked);
     DATA['New Zealand'].persons.Tahi.total_number_of_years_lived_in_nz_since_age_50['2018-08'] = Number(this.state.years_worked);
-    DATA['Israel'].persons.Tahi.gender['2018-01'] = state;
+    DATA['Israel'].persons.Tahi.gender['2018-01'] = this.state.gender;
     DATA['Israel'].persons.Tahi.pension_contributing_years['2018-01'] = Number(this.state.years_worked);
 
     countries.map(country => axios
       .post(country.api_url, DATA[country.name])
       .then(results => results.status && results.status === 200 ? this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}) : {})
+      // .then(results => this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}))
       .catch(err => err)
     );
+
+
   }
 
   render() {
