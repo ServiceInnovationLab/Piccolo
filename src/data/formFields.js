@@ -24,12 +24,6 @@ const formFields = [
     name: 'gender',
     type: 'radio',
     values: ['woman', 'man']
-  },
-  {
-    label: 'Do you have a partner',
-    name: 'has_partner',
-    type: 'radio',
-    values: ['yes', 'no']
   }
 ];
 

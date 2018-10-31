@@ -13,7 +13,7 @@ const MadLibWrapper = styled.div`
     }
   }
 
-  > p,
+  p,
   input[type=text] {
     display: inline-block;
   }
@@ -38,24 +38,22 @@ const Input = styled.input.attrs({ type: 'text' })`
   }
 `;
 
-const MadLib = props => (
-  <MadLibWrapper>
-    <Paragraph>I am a</Paragraph>
-    <Input defaultValue={props.values.age} />
+const MadLib = props => <MadLibWrapper>
+  {props.values && <div><Paragraph>I am a</Paragraph>
+    <Input readonly="readonly" defaultValue={props.values.age} />
     <Paragraph>year old</Paragraph>
-    <Input style={{ width: '130px' }} defaultValue={props.values.setGender} /><br />
+    <Input readonly="readonly" style={{ width: '130px' }} defaultValue={props.values.gender} /><br />
     {props.values.number_of_children > 0 && <Fragment>
       <Paragraph>who has had</Paragraph>
-      <Input defaultValue={props.values.number_of_children} />
+      <Input readonly="readonly" defaultValue={props.values.number_of_children} />
       <Paragraph>children.</Paragraph><br />
     </Fragment>}
     <Paragraph>I have lived in the country for</Paragraph>
-    <Input defaultValue={props.values.years_lived_in_country} />
+    <Input readonly="readonly" defaultValue={props.values.years_lived_in_country} />
     <Paragraph> years, </Paragraph><br />
     <Paragraph> and worked there for </Paragraph>
-    <Input defaultValue={props.values.years_worked} />
-    <Paragraph> years.</Paragraph>
-  </MadLibWrapper>
-);
+    <Input readonly="readonly" defaultValue={props.values.years_worked} />
+    <Paragraph> years.</Paragraph></div>}
+</MadLibWrapper>;
 
 export default MadLib;

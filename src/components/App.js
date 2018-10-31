@@ -1,130 +1,118 @@
 import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
-import * as actionCreators from '../actions/index';
 import '../styles/App.css';
-import { PageHeader } from '../page/Header';
+import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
-import IsraelData from '../data/IsraelData';
-import UruguayData from '../data/UruguayData';
-import NzData from '../data/NzData';
+import {FieldWrapper, Label, TextFieldWrapper} from '../components/Field';
+import Form from '../components/Form';
+import Section from '../elements/Section';
+import TextField from '../elements/TextField';
 import {
   SectionOne,
-  SectionTwo,
   SectionThree,
   SectionFour,
   SectionFive
 } from '../page/Sections';
+import countries from '../data/countries';
+import axios from 'axios';
+import formFields from '../data/formFields';
+import DATA from '../data/Data';
+import Container from '../elements/Container';
+
+import {
+  RadioGroupWrapper,
+  RadioGroupInner,
+  Radio,
+  RadioLabel,
+  RadioSpan
+} from '../elements/RadioGroup';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      israel_input_data: {},
-      israel_results: {},
-      nz_input_data: {},
-      nz_results: {},
-      uruguay_input_data: {},
-      uruguay_results: {},
-      form_data: {},
-      isLoading: true,
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleIsraelResults = this.handleIsraelResults.bind(this);
-    this.handleNzResults = this.handleNzResults.bind(this);
-    this.handleUruguayResults = this.handleUruguayResults.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.setRadio = this.setRadio.bind(this);
-    this.setName = this.setName.bind(this);
+    this.state = {};
+    this.handleValue = this.handleValue.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({isLoading: false});
+  handleValue(e) {
+    this.setState({[e.target.name]: e.target.value}, this.queryApi);
   }
 
-  handleChange(e, name) {
-    this.setState({ [name]: e.target.value });
-  }
+  queryApi() {
+    DATA['New Zealand'].persons.Tahi.total_number_of_years_lived_in_nz_since_age_20['2018-08'] = Number(this.state.years_worked);
+    DATA['New Zealand'].persons.Tahi.total_number_of_years_lived_in_nz_since_age_50['2018-08'] = Number(this.state.years_worked);
+    DATA['Israel'].persons.Tahi.gender['2018-01'] = this.state.gender;
+    DATA['Israel'].persons.Tahi.pension_contributing_years['2018-01'] = Number(this.state.years_worked);
 
-  handleIsraelResults(data) {
-    this.setState({israel_results: data, isLoading: true});
-  }
-  handleNzResults(data) {
-    this.setState({nz_results: data, isLoading: true});
-  }
-  handleUruguayResults(data) {
-    this.setState({uruguay_results: data, isLoading: true});
-  }
+    DATA['Uruguay'].persons.Tahi.gender['2018-01'] = this.state.gender;
+    DATA['Uruguay'].persons.Tahi.number_of_years_worked['2018-01'] = Number(this.state.years_worked);
+    DATA['Uruguay'].persons.Tahi.number_of_children['2018-01'] = Number(this.state.number_of_children);
 
-  setName(el) {
-    if(el.name === 'gender') {
-      return this.state.setGender;
-    } else if(el.name === 'has_partner') {
-      return this.state.setPartner;
-    } else {
-      return el.value;
-    }
-  }
+    countries.map(country => axios
+      .post(country.api_url, DATA[country.name])
+      .then(results => results.status && results.status === 200 ? this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}) : {})
+      .catch(err => err)
+    );
 
-  onSubmit(e) {
-    e.preventDefault();
-    this.setState({isLoading: false});
 
-    const values = Array.prototype.slice.call(e.target)
-      .reduce((form, el) => ({
-        ...form,
-        [el.name]: this.setName(el),
-      }), {});
-    this.setState({
-      israel_input_data: IsraelData(values),
-      isLoading: true,
-      nz_input_data: NzData(values),
-      uruguay_input_data: UruguayData(values),
-      form_data: values
-    });
-  }
-
-  setRadio(event) {
-    this.setState({[event.target.name === 'gender' ? 'setGender' : 'setPartner']: event.target.value});
   }
 
   render() {
-    return <Fragment>
-      <PageHeader />
-      <main>
+    return (
+      <Fragment>
+        <PageHeader />
         <SectionOne />
-        <SectionTwo
-          onSubmit={this.onSubmit}
-          handleChange={this.handleChange}
-          state={this.state}
-          setRadio={this.setRadio.bind(this)} />
+        <main>
+          <Section dark center>
+            <SectionHeader
+              title="When can I get a pension"
+              subtitle="Enter in some details to see eligibility across nations."
+            />
+            <Container>
+              <Form>
+                {formFields.map((field, i)=><FieldWrapper key={i}>
+                  <Label htmlFor={field.name}>
+                    <span>{field.label}</span>
+                  </Label>
+                  {field.type === 'number' && <TextFieldWrapper>
+                    <TextField type={field.type} name={field.name} onChange={e => this.handleValue(e)} small />
+                  </TextFieldWrapper>}
+
+                  {field.type === 'radio' && <TextFieldWrapper>
+                    <RadioGroupWrapper>
+                      <RadioGroupInner>
+                        <div onChange={e=>this.handleValue(e)}>
+                          {field.values.map((val, i) => <RadioLabel key={i}>
+                            <Radio
+                              name={field.name}
+                              value={val || ''}
+                            />
+                            <RadioSpan>{val}</RadioSpan>
+                          </RadioLabel>)}
+                        </div>
+                      </RadioGroupInner>
+                    </RadioGroupWrapper>
+                  </TextFieldWrapper>}
+
+
+                </FieldWrapper>)}
+              </Form>
+            </Container>
+          </Section>
+        </main>
         <SectionThree
-          show={this.state.isLoading ? 'block' : 'none'}
-          state={this.state}
+          values={this.state}
         />
-        <SectionFour
-          show={this.state.isLoading ? 'block' : 'none'}
-        />
-        <SectionFive
-          show={this.state.isLoading ? 'block' : 'none'}
-          state={this.state}
-          israel_input_data={this.state.israel_input_data}
-          handleIsraelResults={this.handleIsraelResults}
-          israel_results={this.state.israel_results}
-          nz_input_data={this.state.nz_input_data}
-          handleNzResults={this.handleNzResults}
-          nz_results={this.state.nz_results}
-          uruguay_input_data={this.state.uruguay_input_data}
-          handleUruguayResults={this.handleUruguayResults}
-          uruguay_results={this.state.uruguay_results}
-        />
-      </main>
-      <PageFooter />
-    </Fragment>;
+        <SectionFour />
+        {this.state.israel_results && this.state.new_zealand_results && <SectionFive
+          israel={this.state.israel_results && this.state.israel_results}
+          new_zealand={this.state.new_zealand_results && this.state.new_zealand_results}
+          uruguay={this.state.uruguay_results && this.state.uruguay_results}
+          age={this.state.age}
+        />}
+        <PageFooter />
+      </Fragment>
+    );
   }
 }
 
-function mapStateToProps(state) {
-  return { state };
-}
-
-export default connect(mapStateToProps, actionCreators)(App);
+export default App;

@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextField from '../elements/TextField';
 import RadioGroup from '../elements/RadioGroup';
 
-const FieldWrapper = styled.div`
+export const FieldWrapper = styled.div`
   margin: 25px 0;
   @media(min-width: 1024px) {
     display: flex;
   }
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   color: #c7c7cc;
   font-size: 18px;
   text-align: left;
@@ -32,7 +31,7 @@ const Label = styled.label`
   }
   `;
 
-const TextFieldWrapper = styled.div`
+export const TextFieldWrapper = styled.div`
   @media(min-width: 1024px) {
     font-size: 24px;
     display: flex;
@@ -51,15 +50,6 @@ const Field = props => (
     <Label htmlFor={props.name} type={props.type}>
       {props.label && <span>{props.label}</span>}
     </Label>
-
-    {props.type === 'number' && <TextFieldWrapper>
-      <TextField
-        name={props.name}
-        type={props.type}
-        onChange={e => props.handleChange(e, props.name)}
-        small
-      />
-    </TextFieldWrapper>}
 
     {props.type === 'radio' && <TextFieldWrapper>
       <RadioGroup {...props} setRadio={props.setRadio} />
