@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import '../styles/App.css';
+import axios from 'axios';
 import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
-import {FieldWrapper, Label, TextFieldWrapper} from '../components/Field';
+import { FieldWrapper, Label, TextFieldWrapper } from '../components/Field';
 import Form from '../components/Form';
 import Section from '../elements/Section';
 import TextField from '../elements/TextField';
@@ -13,7 +14,6 @@ import {
   SectionFive
 } from '../page/Sections';
 import countries from '../data/countries';
-import axios from 'axios';
 import formFields from '../data/formFields';
 import DATA from '../data/Data';
 import Container from '../elements/Container';
@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   handleValue(e) {
-    this.setState({[e.target.name]: e.target.value}, this.queryApi);
+    this.setState({ [e.target.name]: e.target.value }, this.queryApi);
   }
 
   queryApi() {
@@ -49,7 +49,7 @@ class App extends Component {
 
     countries.map(country => axios
       .post(country.api_url, DATA[country.name])
-      .then(results => results.status && results.status === 200 ? this.setState({[`${country.name.toLowerCase().replace(' ', '_')}_results`]: results}) : {})
+      .then(results => (results.status && results.status === 200 ? this.setState({ [`${country.name.toLowerCase().replace(' ', '_')}_results`]: results }) : {}))
       .catch(err => err)
     );
 
@@ -69,7 +69,7 @@ class App extends Component {
             />
             <Container>
               <Form>
-                {formFields.map((field, i)=><FieldWrapper key={i}>
+                {formFields.map((field, i) => <FieldWrapper key={i}>
                   <Label htmlFor={field.name}>
                     <span>{field.label}</span>
                   </Label>
@@ -80,7 +80,7 @@ class App extends Component {
                   {field.type === 'radio' && <TextFieldWrapper>
                     <RadioGroupWrapper>
                       <RadioGroupInner>
-                        <div onChange={e=>this.handleValue(e)}>
+                        <div onChange={e => this.handleValue(e)}>
                           {field.values.map((val, i) => <RadioLabel key={i}>
                             <Radio
                               name={field.name}
@@ -108,7 +108,7 @@ class App extends Component {
           new_zealand={this.state.new_zealand_results && this.state.new_zealand_results}
           uruguay={this.state.uruguay_results && this.state.uruguay_results}
           age={this.state.age}
-        />}
+                                                                        />}
         <PageFooter />
       </Fragment>
     );
