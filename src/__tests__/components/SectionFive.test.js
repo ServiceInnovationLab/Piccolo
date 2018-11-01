@@ -39,7 +39,7 @@ test('SectionFive renders correctly', () => {
     },
     'status': 200
   };
-  let new_zealand  = {
+  let new_zealand = {
     'data': {
       'families': {
         'family': {
@@ -102,7 +102,7 @@ test('SectionFive renders correctly', () => {
     },
     'status': 200
   };
-  
+
   const tree = renderer.create(<SectionFive
     israel={israel}
     new_zealand={new_zealand}
