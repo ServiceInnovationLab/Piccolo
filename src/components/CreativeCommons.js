@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-// import { Icon } from '../elements/Icon';
-import logo from '../cc.svg';
+import cc from '../cc.svg';
 
 const Text = styled.p`
   font-size: 16px;
@@ -19,7 +18,7 @@ const Text = styled.p`
 
 export const CreativeCommons = props => (
   <Fragment>
-    <img src={logo} alt="Creative Commons" height="35" />
+    <img src={cc} alt="Creative Commons" height="35" />
     <Text>{props.label}</Text>
   </Fragment>
 );
