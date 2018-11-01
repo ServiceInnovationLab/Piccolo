@@ -1,27 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { CreativeCommons } from 'styled-icons/fa-brands';
-// import { Check } from 'styled-icons/fa-solid';
-
-// const CreativeCommonsIcon = styled(CreativeCommons)`
-//   color: #000;
-//   font-size: 40px;
-//   height: 40px;
-//   position: relative;
-//   top: 7px;
-// `;
-
-// const CheckIcon = styled(Check)`
-//   color: #fff;
-//   font-size: 40px;
-//   height: 40px;
-// `;
-
-// export const Icon = props => (
-//   <Fragment>
-//     {props.creative_commons && <CreativeCommonsIcon />}
-//   </Fragment>
-// );
 
 const Circle = styled.div`
   width: 100px;
@@ -45,6 +23,5 @@ const Circle = styled.div`
 export const IconCircle = props => (
   <Circle>
     {<span>{props.value}</span>}
-    {/* {props.value === 0 && <span><CheckIcon /></span>} */}
   </Circle>
 );
