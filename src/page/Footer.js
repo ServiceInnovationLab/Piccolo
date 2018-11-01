@@ -20,7 +20,7 @@ const PageFooter = () => (
           <Item>Contact Us</Item>
         </List>
 
-        <CreativeCommons label="Content about creative commons"/>
+        <CreativeCommons label="Creative Commons"/>
 
       </Container>
     </Footer>

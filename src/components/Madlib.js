@@ -40,19 +40,19 @@ const Input = styled.input.attrs({ type: 'text' })`
 
 const MadLib = props => <MadLibWrapper>
   {props.values && <div><Paragraph>I am a</Paragraph>
-    <Input readonly="readonly" defaultValue={props.values.age} />
+    <Input readOnly defaultValue={props.values.age} />
     <Paragraph>year old</Paragraph>
-    <Input readonly="readonly" style={{ width: '130px' }} defaultValue={props.values.gender} /><br />
-    {props.values.number_of_children > 0 && <Fragment>
+    <Input readOnly style={{ width: '130px' }} defaultValue={props.values.gender} /><br />
+    <Fragment>
       <Paragraph>who has had</Paragraph>
-      <Input readonly="readonly" defaultValue={props.values.number_of_children} />
+      <Input readOnly defaultValue={props.values.number_of_children} />
       <Paragraph>children.</Paragraph><br />
-    </Fragment>}
+    </Fragment>
     <Paragraph>I have lived in the country for</Paragraph>
-    <Input readonly="readonly" defaultValue={props.values.years_lived_in_country} />
+    <Input readOnly defaultValue={props.values.years_lived_in_country} />
     <Paragraph> years, </Paragraph><br />
     <Paragraph> and worked there for </Paragraph>
-    <Input readonly="readonly" defaultValue={props.values.years_worked} />
+    <Input readOnly defaultValue={props.values.years_worked} />
     <Paragraph> years.</Paragraph></div>}
 </MadLibWrapper>;
 

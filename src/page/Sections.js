@@ -50,7 +50,7 @@ export class SectionFive extends React.Component {
       <Section light>
         <Container>
           <Grid>
-            {countries.map(country => <Column>
+            {countries.map((country, i) => <Column key={i}>
               <H2>{country.name}</H2>
               <Eligibility
                 country={country.label}
@@ -58,7 +58,7 @@ export class SectionFive extends React.Component {
               />
               <Paragraph>{country.subtitle}</Paragraph>
               <List>
-                {country.eligibility_list.map(item => <Item>{item}</Item>)}
+                {country.eligibility_list.map((item, i) => <Item key={i}>{item}</Item>)}
               </List>
             </Column>)}
           </Grid>
@@ -77,8 +77,14 @@ class Eligibility extends React.Component {
       results_age = this.props.age['2018-01'];
     }
     return <Fragment>
-      <EligibleHeader age={results_age} />
-      <IconCircle value={results_age} />
+      {results_age > 0 && <Fragment>
+        <EligibleHeader age={results_age} />
+        <IconCircle value={results_age} />
+      </Fragment>}
+
+      {results_age < 1 && <Fragment>
+        <H2>You are not eligible for a pension</H2>
+      </Fragment>}
     </Fragment>;
   }
 }

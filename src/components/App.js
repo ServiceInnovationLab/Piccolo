@@ -108,7 +108,7 @@ class App extends Component {
           new_zealand={this.state.new_zealand_results && this.state.new_zealand_results}
           uruguay={this.state.uruguay_results && this.state.uruguay_results}
           age={this.state.age}
-                                                                        />}
+        />}
         <PageFooter />
       </Fragment>
     );
