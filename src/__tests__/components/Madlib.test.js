@@ -5,7 +5,7 @@ import 'jest-styled-components';
 
 test('Madlib renders correctly', () => {
 
-  let values = {
+  const values = {
     age: 55,
     years_worked: 55,
     years_lived_in_country: 40,

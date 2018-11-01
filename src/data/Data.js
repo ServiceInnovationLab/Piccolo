@@ -1,4 +1,4 @@
-let DATA = {
+const DATA = {
   'New Zealand': {
     'persons': {
       'Tahi': {
