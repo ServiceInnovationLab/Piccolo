@@ -5,7 +5,7 @@ import 'jest-styled-components';
 
 test('SectionFive renders correctly', () => {
 
-  let israel = {
+  const israel = {
     'data': {
       'households': {
         'one': {
@@ -39,7 +39,7 @@ test('SectionFive renders correctly', () => {
     },
     'status': 200
   };
-  let new_zealand = {
+  const new_zealand = {
     'data': {
       'families': {
         'family': {
@@ -74,7 +74,7 @@ test('SectionFive renders correctly', () => {
     },
     'status': 200
   };
-  let uruguay = {
+  const uruguay = {
     'data': {
       'households': {
         'one': {
