@@ -107,6 +107,6 @@ test('SectionFive renders correctly', () => {
     israel={israel}
     new_zealand={new_zealand}
     uruguay={uruguay}
-  />).toJSON();
+                               />).toJSON();
   expect(tree).toMatchSnapshot();
 });
