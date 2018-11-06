@@ -3,7 +3,8 @@ const countries = [
     name: 'New Zealand',
     label: 'new_zealand',
     api_url: 'https://api.rules.nz/calculate',
-    eligible_key: 'super___eligibility_age',
+    eligible_key: 'super__eligibility',
+    age_key: 'super___eligibility_age',
     subtitle: 'Government pension is called  New Zealand Superannuation, known as NZ Super for short.',
     eligibility_list: [
       'Gender does not determine eligibility in New Zealand.',
@@ -16,7 +17,8 @@ const countries = [
     name: 'Israel',
     label: 'israel',
     api_url: 'https://openfisca-israel.herokuapp.com/calculate',
-    eligible_key: 'pension_eligibility_age',
+    eligible_key: 'eligible_for_pension',
+    age_key: 'pension_eligibility_age',
     subtitle: 'Government pensions are known as old age pensions, sometimes referred to as insurance.',
     eligibility_list: [
       'Eligibility is determined by gender, payments to old age insurance, income test and the type of employment you have been in.',
@@ -28,7 +30,8 @@ const countries = [
     name: 'Uruguay',
     label: 'uruguay',
     api_url: 'https://openfisca-uruguay.herokuapp.com/calculate',
-    eligible_key: 'edad_de_jubilacion',
+    eligible_key: 'eligible_for_pension',
+    age_key: 'edad_de_jubilacion',
     subtitle: 'Government pensions for work retirement are called Jubilaciones.',
     eligibility_list: [
       'Eligibility is determined by age and contributions to social security related to labor.',

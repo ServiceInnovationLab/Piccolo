@@ -40,12 +40,12 @@ class App extends Component {
   queryApi() {
     DATA['New Zealand'].persons.Tahi.total_number_of_years_lived_in_nz_since_age_20['2018-08'] = Number(this.state.years_worked);
     DATA['New Zealand'].persons.Tahi.total_number_of_years_lived_in_nz_since_age_50['2018-08'] = Number(this.state.years_worked);
-    DATA.Israel.persons.Tahi.gender['2018-01'] = this.state.gender;
-    DATA.Israel.persons.Tahi.pension_contributing_years['2018-01'] = Number(this.state.years_worked);
+    DATA.Israel.persons.Tahi.gender['2018-08'] = this.state.gender;
+    DATA.Israel.persons.Tahi.pension_contributing_years['2018-08'] = Number(this.state.years_worked);
 
-    DATA.Uruguay.persons.Tahi.gender['2018-01'] = this.state.gender;
-    DATA.Uruguay.persons.Tahi.number_of_years_worked['2018-01'] = Number(this.state.years_worked);
-    DATA.Uruguay.persons.Tahi.number_of_children['2018-01'] = Number(this.state.number_of_children);
+    DATA.Uruguay.persons.Tahi.gender['2018-08'] = this.state.gender;
+    DATA.Uruguay.persons.Tahi.number_of_years_worked['2018-08'] = Number(this.state.years_worked);
+    DATA.Uruguay.persons.Tahi.number_of_children['2018-08'] = Number(this.state.number_of_children);
 
     countries.map(country => axios
       .post(country.api_url, DATA[country.name])
