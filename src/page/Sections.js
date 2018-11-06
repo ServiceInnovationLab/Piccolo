@@ -46,6 +46,8 @@ export const SectionFour = props => <div style={{ display: props.show }}><Sectio
 
 export class SectionFive extends React.Component {
   render() {
+    let date_range = '2018-08';
+
     return (
       <Section light>
         <Container>
@@ -54,7 +56,8 @@ export class SectionFive extends React.Component {
               <H2>{country.name}</H2>
               <Eligibility
                 country={country.label}
-                age={this.props[country.label].data.persons.Tahi[country.eligible_key]}
+                age={this.props[country.label].data.persons.Tahi[country.age_key][date_range]}
+                eligible={this.props[country.label].data.persons.Tahi[country.eligible_key][date_range]}
               />
               <Paragraph>{country.subtitle}</Paragraph>
               <List>
@@ -70,19 +73,13 @@ export class SectionFive extends React.Component {
 
 class Eligibility extends React.Component {
   render() {
-    let results_age;
-    if (this.props.country === 'new_zealand') {
-      results_age = this.props.age['2018-08'];
-    } else {
-      results_age = this.props.age['2018-01'];
-    }
     return <Fragment>
-      {results_age > 0 && <Fragment>
-        <EligibleHeader age={results_age} />
-        <IconCircle value={results_age} />
+      {this.props.eligible && <Fragment>
+        <EligibleHeader age={this.props.age} />
+        <IconCircle value={this.props.age} />
       </Fragment>}
 
-      {results_age < 1 && <Fragment>
+      {!this.props.eligible && <Fragment>
         <H2>You are not eligible for a pension</H2>
       </Fragment>}
     </Fragment>;
