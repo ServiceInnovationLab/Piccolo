@@ -1,12 +1,12 @@
 const formFields = [
+  // {
+  //   label: 'What is your age?',
+  //   name: 'age',
+  //   type: 'number'
+  // },
   {
-    label: 'What is your age?',
-    name: 'age',
-    type: 'number'
-  },
-  {
-    label: 'Years worked in the country',
-    name: 'years_worked',
+    label: 'Number of children',
+    name: 'number_of_children',
     type: 'number'
   },
   {
@@ -15,8 +15,8 @@ const formFields = [
     type: 'number'
   },
   {
-    label: 'Number of children',
-    name: 'number_of_children',
+    label: 'Years worked in the country',
+    name: 'years_worked',
     type: 'number'
   },
   {

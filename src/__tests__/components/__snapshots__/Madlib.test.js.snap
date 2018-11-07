@@ -60,17 +60,6 @@ exports[`Madlib renders correctly 1`] = `
     </p>
     <input
       className="c2"
-      defaultValue={55}
-      readOnly={true}
-      type="text"
-    />
-    <p
-      className="c1"
-    >
-      year old
-    </p>
-    <input
-      className="c2"
       defaultValue="woman"
       readOnly={true}
       style={

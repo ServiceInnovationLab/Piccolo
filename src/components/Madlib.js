@@ -40,8 +40,6 @@ const Input = styled.input.attrs({ type: 'text' })`
 
 const MadLib = props => <MadLibWrapper>
   {props.values && <div><Paragraph>I am a</Paragraph>
-    <Input readOnly defaultValue={props.values.age} />
-    <Paragraph>year old</Paragraph>
     <Input readOnly style={{ width: '130px' }} defaultValue={props.values.gender} /><br />
     <Fragment>
       <Paragraph>who has had</Paragraph>
