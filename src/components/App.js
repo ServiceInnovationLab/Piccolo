@@ -102,9 +102,9 @@ class App extends Component {
           values={this.state}
         />
         {this.state.israel_results && this.state.new_zealand_results && <SectionFive
-          israel={this.state.israel_results && this.state.israel_results}
-          new_zealand={this.state.new_zealand_results && this.state.new_zealand_results}
-          uruguay={this.state.uruguay_results && this.state.uruguay_results}
+          israel={this.state.israel_results}
+          new_zealand={this.state.new_zealand_results}
+          uruguay={this.state.uruguay_results}
           age={this.state.age}
         />}
         <PageFooter />
