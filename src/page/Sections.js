@@ -21,6 +21,10 @@ export const SectionOne = () => <Section light>
       Legislation as code is when we turn those rules into things machines can use so they can work things out for us.
     </Paragraph>
 
+    <Paragraph small>
+    This app is a collaboration between the governments of New Zealand, Israel and Uruguay, as member nations of the Digital 9. This small piece of work aims to demonstrate the potential of legislation as code by comparing the eligibility rules for receiving a pension. Each country's rules have been coded into country specific instances of the open source computational law engine, <a href="http://openfisca.org/en/" target="_blank" rel="noopener noreferrer">OpenFisca</a>.
+    </Paragraph>
+
   </Container>
 </Section>;
 
