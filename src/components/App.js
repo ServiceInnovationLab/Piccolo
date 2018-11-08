@@ -54,9 +54,7 @@ class App extends Component {
   }
 
   hasRequiredValues() {
-    if(this.state.israel_results && this.state.new_zealand_results && this.state.uruguay_results) {
-      return true;
-    }
+    return this.state.israel_results && this.state.new_zealand_results && this.state.uruguay_results;
   }
 
   render() {
