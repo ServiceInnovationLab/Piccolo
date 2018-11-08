@@ -10,7 +10,6 @@ import TextField from '../elements/TextField';
 import {
   SectionOne,
   SectionThree,
-  SectionFour,
   SectionFive
 } from '../page/Sections';
 import countries from '../data/countries';
