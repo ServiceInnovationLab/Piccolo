@@ -294,7 +294,7 @@ exports[`SectionFive renders correctly 1`] = `
           <li
             className="c9"
           >
-            There are two stages of pensions; one at age 60, and a second advanced age pension at 70 which has less eligibility requirements than the first age pension.
+            There are two stages of pensions; one at age 60, and a second advanced age pension at 70.
           </li>
           <li
             className="c9"
