@@ -16,8 +16,8 @@ const PageFooter = () => (
     <Footer>
       <Container>
         <List stripped bordered>
-          <Item>About this website</Item>
-          <Item>Contact Us</Item>
+          
+        <Item><a href="mailto:serviceinnovationlab@dia.govt.nz">Contact Us</a></Item>
         </List>
 
         <CreativeCommons label="Creative Commons"/>
