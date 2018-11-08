@@ -8,6 +8,10 @@ exports[`Madlib renders correctly 1`] = `
   height: auto;
 }
 
+.c1 a {
+  color: #2f3045;
+}
+
 .c0 {
   text-align: center;
 }

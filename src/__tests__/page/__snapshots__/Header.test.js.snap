@@ -18,6 +18,10 @@ exports[`SectionHeader renders correctly 1`] = `
   height: auto;
 }
 
+.c2 a {
+  color: #2f3045;
+}
+
 @media (min-width:1024px) {
   .c0 {
     width: 88%;

@@ -9,11 +9,19 @@ exports[`SectionFive renders correctly 1`] = `
   height: 100%;
 }
 
+.c5 a {
+  color: #2f3045;
+}
+
 .c7 {
   font-size: 24px;
   color: #000;
   line-height: 1.5;
   height: auto;
+}
+
+.c7 a {
+  color: #2f3045;
 }
 
 .c1 {
@@ -308,11 +316,6 @@ exports[`SectionFive renders correctly 1`] = `
             className="c9"
           >
             You must have completed 30 years of work.
-          </li>
-          <li
-            className="c9"
-          >
-            There are two stages of pensions; one at age 60, and a second advanced age pension at 70.
           </li>
           <li
             className="c9"
