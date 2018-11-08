@@ -27,7 +27,7 @@ const PageFooter = () => (
           <Item><a href="mailto:serviceinnovationlab@dia.govt.nz">Contact Us</a></Item>
         </List>
 
-        <a href="https://creativecommons.org/licenses/by/4.0/">
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
           <CreativeCommons label="Creative Commons"/>
         </a>
 
