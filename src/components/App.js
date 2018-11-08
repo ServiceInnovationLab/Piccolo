@@ -51,8 +51,12 @@ class App extends Component {
       .then(results => (results.status && results.status === 200 ? this.setState({ [`${country.name.toLowerCase().replace(' ', '_')}_results`]: results }) : {}))
       .catch(err => err)
     );
+  }
 
-
+  hasRequiredValues() {
+    if(this.state.israel_results && this.state.new_zealand_results && this.state.uruguay_results) {
+      return true;
+    }
   }
 
   render() {
@@ -101,7 +105,7 @@ class App extends Component {
         <SectionThree
           values={this.state}
         />
-        {this.state.israel_results && this.state.new_zealand_results && this.state.uruguay_results && <SectionFive
+        {this.hasRequiredValues() && <SectionFive
           israel={this.state.israel_results}
           new_zealand={this.state.new_zealand_results}
           uruguay={this.state.uruguay_results}
