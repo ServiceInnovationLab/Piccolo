@@ -20,7 +20,9 @@ const PageFooter = () => (
           <Item>Contact Us</Item>
         </List>
 
-        <CreativeCommons label="Creative Commons"/>
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          <CreativeCommons label="Creative Commons"/>
+        </a>
 
       </Container>
     </Footer>
