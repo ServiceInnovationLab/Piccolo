@@ -26,10 +26,6 @@ export const Column = styled.div`
     padding-bottom: 0;
   }
 
-  // @media(min-width: 325px) {
-  //   padding: 0 40px 10px 40px;
-  // }
-
   @media(min-width: 1024px) {
     flex: 1;
     border-left: 1px solid #000;
