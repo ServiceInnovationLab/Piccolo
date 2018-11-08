@@ -6,7 +6,11 @@ exports[`SectionFive renders correctly 1`] = `
   color: #000;
   line-height: 1.5;
   font-size: 24px;
-  height: 55px;
+  height: 100%;
+}
+
+.c5 a {
+  color: #2f3045;
 }
 
 .c7 {
@@ -14,6 +18,10 @@ exports[`SectionFive renders correctly 1`] = `
   color: #000;
   line-height: 1.5;
   height: auto;
+}
+
+.c7 a {
+  color: #2f3045;
 }
 
 .c1 {
@@ -118,9 +126,27 @@ exports[`SectionFive renders correctly 1`] = `
   margin-bottom: 18px;
 }
 
+@media (min-width:1024px) {
+  .c5 {
+    height: 55px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c7 {
+    height: auto;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    width: 88%;
+  }
+}
+
 @media (min-width:1440px) {
   .c1 {
-    width: 55%;
+    width: 65%;
   }
 }
 
@@ -284,17 +310,12 @@ exports[`SectionFive renders correctly 1`] = `
           <li
             className="c9"
           >
-            Eligibility is determined by age and contributions to social security related to labor.
+            Eligibility is determined by age and contributions to social security related to labour.
           </li>
           <li
             className="c9"
           >
             You must have completed 30 years of work.
-          </li>
-          <li
-            className="c9"
-          >
-            There are two stages of pensions; one at age 62 for women and 67 for men, and a second age pension at 70 which has less eligibility requirements than the first age pension.
           </li>
           <li
             className="c9"

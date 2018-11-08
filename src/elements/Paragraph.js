@@ -17,7 +17,15 @@ const Paragraph = styled.p`
     color: #fff;
   `}
 
-  height: ${props => (props.adjust ? '55px' : 'auto')};
+  height: ${props => (props.adjust ? '100%' : 'auto')};
+
+  @media(min-width: 1024px) {
+    height: ${props => (props.adjust ? '55px' : 'auto')};
+  }
+
+  a {
+    color: #2f3045;
+  }
 `;
 
 export default Paragraph;

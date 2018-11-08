@@ -21,6 +21,10 @@ export const SectionOne = () => <Section light>
       Legislation as code is when we turn those rules into things machines can use so they can work things out for us.
     </Paragraph>
 
+    <Paragraph small>
+    This app is a collaboration between the governments of New Zealand, Israel and Uruguay, as member nations of the Digital 9. This small piece of work aims to demonstrate the potential of legislation as code by comparing the eligibility rules for receiving a pension. Each country's rules have been coded into country specific instances of the open source computational law engine, <a href="http://openfisca.org/en/" target="_blank" rel="noopener noreferrer">OpenFisca</a>.
+    </Paragraph>
+
   </Container>
 </Section>;
 
@@ -28,13 +32,16 @@ const EligibleHeader = props => <Paragraph medium adjust>
   You are eligible for a pension at age <span>{props.age}</span>
 </Paragraph>;
 
-export const SectionThree = props => <div style={{ display: props.show }}><Section light>
-  <Container>
-    <MadLib
-      values={props.values}
-    />
-  </Container>
-</Section></div>;
+export const SectionThree = props => <Fragment>
+  {props.values.number_of_children && props.values.years_worked && props.values.years_lived_in_country && props.values.gender && <Fragment>
+    <Section light>
+      <Container>
+        <MadLib values={props.values} />
+      </Container>
+    </Section>
+    <SectionFour />
+  </Fragment>}
+</Fragment>;
 
 export const SectionFour = props => <div style={{ display: props.show }}><Section dark>
   <Container>
@@ -46,6 +53,8 @@ export const SectionFour = props => <div style={{ display: props.show }}><Sectio
 
 export class SectionFive extends React.Component {
   render() {
+    let date_range = '2018-08';
+
     return (
       <Section light>
         <Container>
@@ -54,7 +63,8 @@ export class SectionFive extends React.Component {
               <H2>{country.name}</H2>
               <Eligibility
                 country={country.label}
-                age={this.props[country.label].data.persons.Tahi[country.eligible_key]}
+                age={this.props[country.label].data.persons.Tahi[country.age_key][date_range]}
+                eligible={this.props[country.label].data.persons.Tahi[country.eligible_key][date_range]}
               />
               <Paragraph>{country.subtitle}</Paragraph>
               <List>
@@ -70,19 +80,13 @@ export class SectionFive extends React.Component {
 
 class Eligibility extends React.Component {
   render() {
-    let results_age;
-    if (this.props.country === 'new_zealand') {
-      results_age = this.props.age['2018-08'];
-    } else {
-      results_age = this.props.age['2018-01'];
-    }
     return <Fragment>
-      {results_age > 0 && <Fragment>
-        <EligibleHeader age={results_age} />
-        <IconCircle value={results_age} />
+      {this.props.eligible && <Fragment>
+        <EligibleHeader age={this.props.age} />
+        <IconCircle value={this.props.age} />
       </Fragment>}
 
-      {results_age < 1 && <Fragment>
+      {!this.props.eligible && <Fragment>
         <H2>You are not eligible for a pension</H2>
       </Fragment>}
     </Fragment>;

@@ -9,6 +9,16 @@ exports[`Paragraph colour should be light if specified 1`] = `
   height: auto;
 }
 
+.c0 a {
+  color: #2f3045;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    height: auto;
+  }
+}
+
 <p
   className="c0"
 />
@@ -22,6 +32,16 @@ exports[`Paragraph default styles applied 1`] = `
   height: auto;
 }
 
+.c0 a {
+  color: #2f3045;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    height: auto;
+  }
+}
+
 <p
   className="c0"
 />
@@ -33,7 +53,17 @@ exports[`Paragraph height should be adjusted 1`] = `
   color: #000;
   line-height: 1.5;
   color: #fff;
-  height: 55px;
+  height: 100%;
+}
+
+.c0 a {
+  color: #2f3045;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    height: 55px;
+  }
 }
 
 <p
@@ -50,6 +80,16 @@ exports[`Paragraph large styles applied 1`] = `
   height: auto;
 }
 
+.c0 a {
+  color: #2f3045;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    height: auto;
+  }
+}
+
 <p
   className="c0"
 />
@@ -64,6 +104,16 @@ exports[`Paragraph medium styles applied 1`] = `
   height: auto;
 }
 
+.c0 a {
+  color: #2f3045;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    height: auto;
+  }
+}
+
 <p
   className="c0"
 />
@@ -76,6 +126,16 @@ exports[`Paragraph small styles applied 1`] = `
   line-height: 1.5;
   font-size: 22px;
   height: auto;
+}
+
+.c0 a {
+  color: #2f3045;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    height: auto;
+  }
 }
 
 <p

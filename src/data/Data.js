@@ -11,6 +11,9 @@ let DATA = {
         'total_number_of_years_lived_in_nz_since_age_50': {
           '2018-08': null
         },
+        'super__eligibility': {
+          '2018-08': null
+        },
         'super___eligibility_age': {
           '2018-08': null
         }
@@ -31,22 +34,22 @@ let DATA = {
     'persons': {
       'Tahi': {
         'gender': {
-          '2018-01': null
+          '2018-08': null
         },
         'pension_contributing_years': {
-          '2018-01': null
+          '2018-08': null
         },
         'is_resident': {
-          '2018-01': true
+          '2018-08': true
         },
         'born_in_israel': {
-          '2018-01': true
+          '2018-08': true
         },
         'pension_eligibility_age': {
-          '2018-01': null
+          '2018-08': null
         },
         'eligible_for_pension': {
-          '2018-01': null
+          '2018-08': null
         }
       }
     },
@@ -60,16 +63,19 @@ let DATA = {
     'persons': {
       'Tahi': {
         'gender': {
-          '2018-01': null
+          '2018-08': null
         },
         'number_of_years_worked': {
-          '2018-01': null
+          '2018-08': null
         },
         'number_of_children': {
-          '2018-01': null
+          '2018-08': null
+        },
+        'eligible_for_pension': {
+          '2018-08': null
         },
         'edad_de_jubilacion': {
-          '2018-01': null
+          '2018-08': null
         }
       }
     },
