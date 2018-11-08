@@ -36,7 +36,7 @@ const countries = [
     eligibility_list: [
       'Eligibility is determined by age and contributions to social security related to labour.',
       'You must have completed 30 years of work.',
-      'There are two stages of pensions; one at age 60, and a second advanced age pension at 70 which has less eligibility requirements than the first age pension.',
+      'There are two stages of pensions; one at age 60, and a second advanced age pension at 70.',
       'For women each child (up to max of 5) counts as a \'year of work\'.'
     ]
   }
