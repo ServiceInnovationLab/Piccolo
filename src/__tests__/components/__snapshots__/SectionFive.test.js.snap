@@ -6,7 +6,7 @@ exports[`SectionFive renders correctly 1`] = `
   color: #000;
   line-height: 1.5;
   font-size: 24px;
-  height: 55px;
+  height: 100%;
 }
 
 .c7 {
@@ -118,9 +118,27 @@ exports[`SectionFive renders correctly 1`] = `
   margin-bottom: 18px;
 }
 
+@media (min-width:1024px) {
+  .c5 {
+    height: 55px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c7 {
+    height: auto;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    width: 88%;
+  }
+}
+
 @media (min-width:1440px) {
   .c1 {
-    width: 55%;
+    width: 65%;
   }
 }
 

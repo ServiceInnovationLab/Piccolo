@@ -102,7 +102,6 @@ class App extends Component {
         <SectionThree
           values={this.state}
         />
-        <SectionFour />
         {this.state.israel_results && this.state.new_zealand_results && <SectionFive
           israel={this.state.israel_results && this.state.israel_results}
           new_zealand={this.state.new_zealand_results && this.state.new_zealand_results}
