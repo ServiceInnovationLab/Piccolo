@@ -40,5 +40,5 @@ test('Paragraph height should be adjusted', () => {
   const tree = renderer.create(<Paragraph light adjust />).toJSON();
   expect(tree).toMatchSnapshot();
   expect(tree).toHaveStyleRule('color', '#fff');
-  expect(tree).toHaveStyleRule('height', '55px');
+  expect(tree).toHaveStyleRule('height', '100%');
 });

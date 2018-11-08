@@ -18,9 +18,21 @@ exports[`SectionHeader renders correctly 1`] = `
   height: auto;
 }
 
+@media (min-width:1024px) {
+  .c0 {
+    width: 88%;
+  }
+}
+
 @media (min-width:1440px) {
   .c0 {
-    width: 55%;
+    width: 65%;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    height: auto;
   }
 }
 

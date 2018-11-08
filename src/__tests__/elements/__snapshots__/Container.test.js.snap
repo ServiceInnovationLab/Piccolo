@@ -6,9 +6,15 @@ exports[`Container renders correctly 1`] = `
   width: 75%;
 }
 
+@media (min-width:1024px) {
+  .c0 {
+    width: 88%;
+  }
+}
+
 @media (min-width:1440px) {
   .c0 {
-    width: 55%;
+    width: 65%;
   }
 }
 
