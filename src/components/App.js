@@ -10,7 +10,6 @@ import TextField from '../elements/TextField';
 import {
   SectionOne,
   SectionThree,
-  SectionFour,
   SectionFive
 } from '../page/Sections';
 import countries from '../data/countries';
@@ -52,8 +51,10 @@ class App extends Component {
       .then(results => (results.status && results.status === 200 ? this.setState({ [`${country.name.toLowerCase().replace(' ', '_')}_results`]: results }) : {}))
       .catch(err => err)
     );
+  }
 
-
+  hasRequiredValues() {
+    return this.state.israel_results && this.state.new_zealand_results && this.state.uruguay_results;
   }
 
   render() {
@@ -102,11 +103,10 @@ class App extends Component {
         <SectionThree
           values={this.state}
         />
-        <SectionFour />
-        {this.state.israel_results && this.state.new_zealand_results && <SectionFive
-          israel={this.state.israel_results && this.state.israel_results}
-          new_zealand={this.state.new_zealand_results && this.state.new_zealand_results}
-          uruguay={this.state.uruguay_results && this.state.uruguay_results}
+        {this.hasRequiredValues() && <SectionFive
+          israel={this.state.israel_results}
+          new_zealand={this.state.new_zealand_results}
+          uruguay={this.state.uruguay_results}
           age={this.state.age}
         />}
         <PageFooter />

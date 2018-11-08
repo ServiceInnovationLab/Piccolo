@@ -28,13 +28,16 @@ const EligibleHeader = props => <Paragraph medium adjust>
   You are eligible for a pension at age <span>{props.age}</span>
 </Paragraph>;
 
-export const SectionThree = props => <div style={{ display: props.show }}><Section light>
-  <Container>
-    <MadLib
-      values={props.values}
-    />
-  </Container>
-</Section></div>;
+export const SectionThree = props => <Fragment>
+  {props.values.number_of_children && props.values.years_worked && props.values.years_lived_in_country && props.values.gender && <Fragment>
+    <Section light>
+      <Container>
+        <MadLib values={props.values} />
+      </Container>
+    </Section>
+    <SectionFour />
+  </Fragment>}
+</Fragment>;
 
 export const SectionFour = props => <div style={{ display: props.show }}><Section dark>
   <Container>
