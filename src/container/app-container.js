@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import App from '../components/App';
-import * as actionCreators from '../actions/index';
 
 class AppCon extends Component {
   render() {
@@ -13,6 +11,4 @@ class AppCon extends Component {
   }
 }
 
-const mapStateToProps = state => state;
-
-export default connect(mapStateToProps, actionCreators)(AppCon);
+export default AppCon;
