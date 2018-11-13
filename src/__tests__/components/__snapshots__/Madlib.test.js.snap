@@ -77,6 +77,7 @@ exports[`Madlib renders correctly 1`] = `
       }
     }
     type="text"
+    value="woman"
   />
   <br />
   <p
@@ -89,6 +90,7 @@ exports[`Madlib renders correctly 1`] = `
     defaultValue={5}
     readOnly={true}
     type="text"
+    value={5}
   />
   <p
     className="c1"
@@ -106,6 +108,7 @@ exports[`Madlib renders correctly 1`] = `
     defaultValue={40}
     readOnly={true}
     type="text"
+    value={40}
   />
   <p
     className="c1"
@@ -123,6 +126,7 @@ exports[`Madlib renders correctly 1`] = `
     defaultValue={55}
     readOnly={true}
     type="text"
+    value={55}
   />
   <p
     className="c1"
