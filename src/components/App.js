@@ -30,6 +30,7 @@ class App extends Component {
     super(props);
     this.state = {};
     this.handleValue = this.handleValue.bind(this);
+    console.log('this works');
   }
 
   handleValue(e) {
