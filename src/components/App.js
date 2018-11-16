@@ -3,8 +3,8 @@ import '../styles/App.css';
 import axios from 'axios';
 import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
-import { FieldWrapper, Label, TextFieldWrapper } from '../components/Field';
-import Form from '../components/Form';
+import { FieldWrapper, Label, TextFieldWrapper } from "./Field";
+import Form from "./Form";
 import Section from '../elements/Section';
 import TextField from '../elements/TextField';
 import {
