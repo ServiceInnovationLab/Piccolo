@@ -4,7 +4,6 @@ import { SectionFive } from '../../page/Sections';
 import 'jest-styled-components';
 
 test('SectionFive renders correctly', () => {
-
   let israel = {
     'data': {
       'households': {

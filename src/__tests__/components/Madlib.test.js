@@ -4,7 +4,6 @@ import Madlib from '../../components/Madlib';
 import 'jest-styled-components';
 
 test('Madlib renders correctly', () => {
-
   let values = {
     age: 55,
     years_worked: 55,

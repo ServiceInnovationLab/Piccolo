@@ -70,7 +70,6 @@ export const RadioSpan = styled.span`
 `;
 
 class RadioGroup extends React.Component {
-
   render() {
     return <RadioGroupWrapper>
       <RadioGroupInner>
