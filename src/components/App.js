@@ -3,8 +3,8 @@ import '../styles/App.css';
 import axios from 'axios';
 import { PageHeader, SectionHeader } from '../page/Header';
 import PageFooter from '../page/Footer';
-import { FieldWrapper, Label, TextFieldWrapper } from "./Field";
-import Form from "./Form";
+import { FieldWrapper, Label, TextFieldWrapper } from './Field';
+import Form from './Form';
 import Section from '../elements/Section';
 import TextField from '../elements/TextField';
 import {
@@ -49,8 +49,7 @@ class App extends Component {
     countries.map(country => axios
       .post(country.api_url, DATA[country.name])
       .then(results => (results.status && results.status === 200 ? this.setState({ [`${country.name.toLowerCase().replace(' ', '_')}_results`]: results }) : {}))
-      .catch(err => err)
-    );
+      .catch(err => err));
   }
 
   hasRequiredValues() {
