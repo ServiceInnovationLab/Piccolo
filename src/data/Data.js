@@ -1,87 +1,87 @@
 let DATA = {
   'New Zealand': {
-    'persons': {
-      'Tahi': {
-        'is_permanent_resident': {
+    persons: {
+      Tahi: {
+        is_permanent_resident: {
           '2018-08': true
         },
-        'total_number_of_years_lived_in_nz_since_age_20': {
+        total_number_of_years_lived_in_nz_since_age_20: {
           '2018-08': null
         },
-        'total_number_of_years_lived_in_nz_since_age_50': {
+        total_number_of_years_lived_in_nz_since_age_50: {
           '2018-08': null
         },
-        'super__eligibility': {
+        super__eligibility: {
           '2018-08': null
         },
-        'super___eligibility_age': {
+        super___eligibility_age: {
           '2018-08': null
         }
       }
     },
-    'titled_properties': {
-      'house': {
-        'others': ['Tahi']
+    titled_properties: {
+      house: {
+        others: ['Tahi']
       }
     },
-    'families': {
-      'family': {
-        'others': ['Tahi']
+    families: {
+      family: {
+        others: ['Tahi']
       }
     }
   },
-  'Israel': {
-    'persons': {
-      'Tahi': {
-        'gender': {
+  Israel: {
+    persons: {
+      Tahi: {
+        gender: {
           '2018-08': null
         },
-        'pension_contributing_years': {
+        pension_contributing_years: {
           '2018-08': null
         },
-        'is_resident': {
+        is_resident: {
           '2018-08': true
         },
-        'born_in_israel': {
+        born_in_israel: {
           '2018-08': true
         },
-        'pension_eligibility_age': {
+        pension_eligibility_age: {
           '2018-08': null
         },
-        'eligible_for_pension': {
+        eligible_for_pension: {
           '2018-08': null
         }
       }
     },
-    'households': {
-      'one': {
-        'parents': ['Tahi']
+    households: {
+      one: {
+        parents: ['Tahi']
       }
     }
   },
-  'Uruguay': {
-    'persons': {
-      'Tahi': {
-        'gender': {
+  Uruguay: {
+    persons: {
+      Tahi: {
+        gender: {
           '2018-08': null
         },
-        'number_of_years_worked': {
+        number_of_years_worked: {
           '2018-08': null
         },
-        'number_of_children': {
+        number_of_children: {
           '2018-08': null
         },
-        'eligible_for_pension': {
+        eligible_for_pension: {
           '2018-08': null
         },
-        'edad_de_jubilacion': {
+        edad_de_jubilacion: {
           '2018-08': null
         }
       }
     },
-    'households': {
-      'one': {
-        'parents': ['Tahi']
+    households: {
+      one: {
+        parents: ['Tahi']
       }
     }
   }
