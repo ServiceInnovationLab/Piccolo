@@ -4,6 +4,6 @@ import RadioGroup from '../../elements/RadioGroup';
 import 'jest-styled-components';
 
 test('RadioGroup renders correctly', () => {
-  const tree = renderer.create(<RadioGroup values={['yes', 'no']}/>).toJSON();
+  const tree = renderer.create(<RadioGroup values={['yes', 'no']} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

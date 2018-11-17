@@ -9,6 +9,6 @@ test('SectionHeader renders correctly', () => {
     subtitle: 'this is the subtitle'
   };
 
-  const tree = renderer.create(<SectionHeader {...props}/>).toJSON();
+  const tree = renderer.create(<SectionHeader {...props} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
