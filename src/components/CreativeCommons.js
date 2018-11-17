@@ -18,7 +18,9 @@ const Text = styled.p`
 
 export const CreativeCommons = props => (
   <Fragment>
-    <img src={cc} alt="Creative Commons" height="35" />
+    <img src={cc}
+      alt="Creative Commons"
+      height="35" />
     <Text>{props.label}</Text>
   </Fragment>
 );

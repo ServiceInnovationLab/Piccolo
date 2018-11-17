@@ -62,7 +62,8 @@ class App extends Component {
         <PageHeader />
         <SectionOne />
         <main>
-          <Section dark center>
+          <Section dark
+            center>
             <SectionHeader
               title="When can I get a pension"
               subtitle="Enter in some details to see eligibility across nations."
@@ -74,7 +75,10 @@ class App extends Component {
                     <span>{field.label}</span>
                   </Label>
                   {field.type === 'number' && <TextFieldWrapper>
-                    <TextField type={field.type} name={field.name} onChange={e => this.handleValue(e)} small />
+                    <TextField type={field.type}
+                      name={field.name}
+                      onChange={e => this.handleValue(e)}
+                      small />
                   </TextFieldWrapper>}
 
                   {field.type === 'radio' && <TextFieldWrapper>

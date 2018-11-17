@@ -47,12 +47,14 @@ export const TextFieldWrapper = styled.div`
 
 const Field = props => (
   <FieldWrapper>
-    <Label htmlFor={props.name} type={props.type}>
+    <Label htmlFor={props.name}
+      type={props.type}>
       {props.label && <span>{props.label}</span>}
     </Label>
 
     {props.type === 'radio' && <TextFieldWrapper>
-      <RadioGroup {...props} setRadio={props.setRadio} />
+      <RadioGroup {...props}
+        setRadio={props.setRadio} />
     </TextFieldWrapper>}
   </FieldWrapper>
 );

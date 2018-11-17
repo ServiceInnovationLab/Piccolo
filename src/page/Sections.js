@@ -22,13 +22,16 @@ export const SectionOne = () => <Section light>
     </Paragraph>
 
     <Paragraph small>
-    This app is a collaboration between the governments of New Zealand, Israel and Uruguay, as member nations of the Digital 9. This small piece of work aims to demonstrate the potential of legislation as code by comparing the eligibility rules for receiving a pension. Each country's rules have been coded into country specific instances of the open source computational law engine, <a href="http://openfisca.org/en/" target="_blank" rel="noopener noreferrer">OpenFisca</a>.
+    This app is a collaboration between the governments of New Zealand, Israel and Uruguay, as member nations of the Digital 9. This small piece of work aims to demonstrate the potential of legislation as code by comparing the eligibility rules for receiving a pension. Each country's rules have been coded into country specific instances of the open source computational law engine, <a href="http://openfisca.org/en/"
+      target="_blank"
+      rel="noopener noreferrer">OpenFisca</a>.
     </Paragraph>
 
   </Container>
 </Section>;
 
-const EligibleHeader = props => <Paragraph medium adjust>
+const EligibleHeader = props => <Paragraph medium
+  adjust>
   You are eligible for a pension at age <span>{props.age}</span>
 </Paragraph>;
 
