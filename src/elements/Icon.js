@@ -21,7 +21,5 @@ const Circle = styled.div`
 `;
 
 export const IconCircle = props => (
-  <Circle>
-    {<span>{props.value}</span>}
-  </Circle>
+  <Circle>{<span>{props.value}</span>}</Circle>
 );

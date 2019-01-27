@@ -9,10 +9,10 @@ const Header = styled.section`
   padding: 10px;
   background: #24273a;
   border-bottom: 12px solid #42e2ee;
-  @media(min-width: 375px) {
+  @media (min-width: 375px) {
     height: 95px;
   }
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     height: 75px;
   }
 `;
@@ -23,7 +23,7 @@ const Logo = styled.span`
   color: #fff;
   text-shadow: 0px 0px 20px #08fcff;
   font-weight: bold;
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     line-height: 75px;
   }
 `;

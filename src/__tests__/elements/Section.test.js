@@ -12,7 +12,7 @@ test('Section default styles applied', () => {
   expect(tree).toMatchSnapshot();
   expect(tree).toHaveStyleRule('padding', '55px 0');
   expect(tree).toHaveStyleRule('text-align', 'left', {
-    media: '(min-width: 1024px)'
+    media: '(min-width: 1024px)',
   });
 });
 

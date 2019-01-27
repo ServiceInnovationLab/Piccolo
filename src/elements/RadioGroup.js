@@ -12,8 +12,8 @@ export const RadioGroupInner = styled.div`
   justify-content: center;
   flex-flow: column;
   position: relative;
-  @media(min-width: 1024px) {
-    margin-top: .5em;
+  @media (min-width: 1024px) {
+    margin-top: 0.5em;
   }
 `;
 
@@ -71,19 +71,20 @@ export const RadioSpan = styled.span`
 
 class RadioGroup extends React.Component {
   render() {
-    return <RadioGroupWrapper>
-      <RadioGroupInner>
-        <div onChange={this.props.setRadio}>
-          {this.props.values.map((val, i) => <RadioLabel key={i}>
-            <Radio
-              name={this.props.name}
-              value={val || ''}
-            />
-            <RadioSpan>{val}</RadioSpan>
-          </RadioLabel>)}
-        </div>
-      </RadioGroupInner>
-    </RadioGroupWrapper>;
+    return (
+      <RadioGroupWrapper>
+        <RadioGroupInner>
+          <div onChange={this.props.setRadio}>
+            {this.props.values.map((val, i) => (
+              <RadioLabel key={i}>
+                <Radio name={this.props.name} value={val || ''} />
+                <RadioSpan>{val}</RadioSpan>
+              </RadioLabel>
+            ))}
+          </div>
+        </RadioGroupInner>
+      </RadioGroupWrapper>
+    );
   }
 }
 

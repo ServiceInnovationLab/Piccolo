@@ -18,19 +18,23 @@ const Footer = styled.section`
   }
 `;
 
-
 const PageFooter = () => (
   <Fragment>
     <Footer>
       <Container>
         <List stripped bordered>
-          <Item><a href="mailto:serviceinnovationlab@dia.govt.nz">Contact Us</a></Item>
+          <Item>
+            <a href="mailto:serviceinnovationlab@dia.govt.nz">Contact Us</a>
+          </Item>
         </List>
 
-        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <CreativeCommons label="Creative Commons" />
         </a>
-
       </Container>
     </Footer>
   </Fragment>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Grid = styled.div`
   margin: 30px 0;
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     display: flex;
   }
 `;
@@ -26,7 +26,7 @@ export const Column = styled.div`
     padding-bottom: 0;
   }
 
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     flex: 1;
     border-left: 1px solid #000;
     border-top: none;

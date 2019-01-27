@@ -4,7 +4,7 @@ import RadioGroup from '../elements/RadioGroup';
 
 export const FieldWrapper = styled.div`
   margin: 25px 0;
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     display: flex;
   }
 `;
@@ -16,7 +16,7 @@ export const Label = styled.label`
   display: inline-block;
   margin-bottom: 10px;
   font-weight: bold;
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     font-size: 24px;
     display: inline-block;
     color: #c7c7cc;
@@ -29,10 +29,10 @@ export const Label = styled.label`
       margin-right: 15px;
     }
   }
-  `;
+`;
 
 export const TextFieldWrapper = styled.div`
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     font-size: 24px;
     display: flex;
     color: #c7c7cc;
@@ -51,9 +51,11 @@ const Field = props => (
       {props.label && <span>{props.label}</span>}
     </Label>
 
-    {props.type === 'radio' && <TextFieldWrapper>
-      <RadioGroup {...props} setRadio={props.setRadio} />
-    </TextFieldWrapper>}
+    {props.type === 'radio' && (
+      <TextFieldWrapper>
+        <RadioGroup {...props} setRadio={props.setRadio} />
+      </TextFieldWrapper>
+    )}
   </FieldWrapper>
 );
 

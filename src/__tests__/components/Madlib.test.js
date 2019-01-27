@@ -9,7 +9,7 @@ test('Madlib renders correctly', () => {
     years_worked: 55,
     years_lived_in_country: 40,
     number_of_children: 5,
-    gender: 'woman'
+    gender: 'woman',
   };
   const tree = renderer.create(<Madlib values={values} />).toJSON();
   expect(tree).toMatchSnapshot();

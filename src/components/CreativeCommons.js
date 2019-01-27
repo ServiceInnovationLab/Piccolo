@@ -8,7 +8,7 @@ const Text = styled.p`
   margin-left: 10px;
   position: relative;
   top: -10px;
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     font-size: 24px;
     font-weight: 400;
     display: inline-block;

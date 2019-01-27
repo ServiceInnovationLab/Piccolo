@@ -6,7 +6,7 @@ import 'jest-styled-components';
 test('SectionHeader renders correctly', () => {
   const props = {
     title: 'this is the title',
-    subtitle: 'this is the subtitle'
+    subtitle: 'this is the subtitle',
   };
 
   const tree = renderer.create(<SectionHeader {...props} />).toJSON();
